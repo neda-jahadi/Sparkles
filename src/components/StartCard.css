@@ -45,6 +45,7 @@
     padding: .5em;
 	border-radius: 10px;
 	transition: transform ease-in 500ms;
+	cursor: pointer;
 
 }
 .btn-add{
@@ -57,10 +58,8 @@
     padding: .5em;
 	border-radius: 10px;
 	transition: transform ease-in 500ms;
-}
-.btn-add:hover, .btn-list:hover{
 	cursor: pointer;
-	transform: scale(1.2);
+
 }
 
 
@@ -80,4 +79,8 @@
 	.btn-add{
 		width: 70%
 	}
+	.btn-add:hover, .btn-list:hover{
+		transform: scale(1.2);
+	}
+	
 }
