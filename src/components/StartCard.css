@@ -10,7 +10,7 @@
 	display:flex;
 	min-height:25em;
     flex-direction: column;
-   /*  justify-content: space-between; */
+    justify-content: space-between;
     padding: 0 2em 2em;
 	border-radius: 25px;
 	height:100%;
@@ -20,7 +20,6 @@
     transition: 0.4s ease-out;
 }
 .start-card .icon{
-
     align-self: flex-end;
 }
 .start-card:hover{
@@ -45,6 +44,8 @@
     margin-top: 1.5rem;
     padding: .5em;
 	border-radius: 10px;
+	transition: transform ease-in 500ms;
+
 }
 .btn-add{
 	font-size: 1rem;
@@ -55,6 +56,11 @@
     margin-top: 0.8rem;
     padding: .5em;
 	border-radius: 10px;
+	transition: transform ease-in 500ms;
+}
+.btn-add:hover, .btn-list:hover{
+	cursor: pointer;
+	transform: scale(1.2);
 }
 
 

@@ -16,7 +16,6 @@ const StartCard = ({changeScreen}) => {
 				<h2 className="title text-red">Music</h2>
 				{lista}
 				<div className="btn-continer">
-				
 					<button className="btn-list" onClick={()=>changeScreen('listScreen')}>Music</button>
 					<button className="btn-add" onClick={()=>changeScreen('formScreen')}>Add music</button>
 				</div>
