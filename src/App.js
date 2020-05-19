@@ -4,6 +4,7 @@ import StartCard from './components/StartCard';
 import Logo from './assets/LogoBig.png'
 import ListComponent from './components/ListComponent';
 import FormComponent from './components/FormComponent';
+import ListCard from './components/ListCard'
 import { useSelector } from 'react-redux';
 
 
@@ -23,7 +24,7 @@ function App() {
 					<StartCard/>
 				</div>
 			</div>
-			<FormComponent/>
+			{/* <FormComponent/> */}
 			{/* <ListCard/> */}
 			{/* <ListComponent /> */}
 		</div>
