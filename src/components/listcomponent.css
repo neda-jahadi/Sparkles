@@ -1,24 +1,13 @@
-/* .trace {
-    border: 1px solid red;
-    height: 100%;
-} */
+
 .listcomponent-body {
-    
-    
-   
-   
     height: 100vh;
     margin-bottom: 2em;
     background-color: var(--background-color-red);
-   
-    
-    
     display: grid;
     grid-template-rows: 3em 3em 5em 1fr 5em;
     color: var(--text-color-red);
 }
 .listcomponent-body > * {
-    /* border: 3px solid rgb(198, 218, 198); */
     margin: 0.5em;
     margin-left: 2em;
     margin-right: 2em;
@@ -31,14 +20,7 @@
     width: 90%;
     
 }
-.main > div {
-    border: 1px solid white;
-    border-radius: 5px;
-    margin-bottom: 0.5em;
-    background-color: var(--text-color-red);
-	height: 4em;
-	
-}
+
 .listcomponent-body button {
     padding: 1.5em;
     border-radius: 5px;
@@ -63,44 +45,16 @@ header > img.logo{
 header > img.go-back{
 	height: 2rem;
 }
-  
-/* .listcomponent-logo {
-    height: 3em;
-}
-.listcomponent-body header {
-    text-align: right;
-}
-.listcomponent-body button {
-    width: 40%;
-    padding: 1em;
-}
-/* .input input {
-    background: transparent;
-    border: none;
-    padding: 0.3em;
-    color: var(--text-color-red);
-    
-}
-.input input:focus {
-    outline: none;
-} */
-/* input {
-    padding: 0.1em;
 
-}
-.input {
-    border-bottom: 1px solid var(--text-color-red);
-} */
 .listcomponent-menu input {
     background: transparent;
     border: none;
     padding: 0.2em;
     color: var(--text-color-red);
-  /* padding: 2px; */
-  width: 100%;
-  border-radius: 0%;
-  background-color:  var(--background-color-red);
-  border-bottom: 1px solid var(--text-color-red);
+    width: 100%;
+    border-radius: 0%;
+    background-color:  var(--background-color-red);
+    border-bottom: 1px solid var(--text-color-red);
 }
 .listcomponent-menu input:focus {
     outline: none;
@@ -110,13 +64,8 @@ header > img.go-back{
     opacity: 1;
     font-size: 1.5em;
     
-  }  
-/* .listcomponent-menu ::placeholder {
-    color: var(--text-color-red);
-    opacity: 1;
-    font-size: 1.5em;
-    
-  } */
+}  
+
 .listcomponent-menu {
     display: grid;
     grid-template-columns: 7em 1fr;
@@ -126,7 +75,6 @@ header > img.go-back{
 .listcomponent-menu > div {
     margin: 0.5em;
     margin-top: 1em;
-    /* border: 1px solid black; */
 }
 
 .sort {
@@ -172,17 +120,17 @@ header > img.go-back{
     display: none;
 }
 
-
-
 @media screen and (max-width:700px) {
     
      .scrollable {
-        height: 450px;
+        /* height: 450px; */
         overflow-y: auto;
+        border:1px solid orange;
     } 
-    .main > div {
+    /* .main > div {
         height: 8em;
-    }
+        border:1px solid green;
+    } */
     .listcomponent-logo{
         text-align: right;
     }
@@ -197,16 +145,16 @@ header > img.go-back{
         display: grid;
         
          grid-template-rows: 1fr 1fr; 
-         grid-template-columns: repeat(6,1fr);
+         /* grid-template-columns: repeat(6,1fr); */
+         grid-template-columns: 1fr 1fr 1fr;
 
     }
-    .main > div {
+    /* .main > div {
         margin: 0.4em;
         height: 80%;
         width: 20em;
         
-    }
-    
+    } */
     
     .menu-desktop {
         display: block;
