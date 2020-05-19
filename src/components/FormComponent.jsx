@@ -3,6 +3,7 @@ import './FormStyle.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../features/listReducer';
+import HeaderComponent from './HeaderComponent';
 
 
 const FormComponent = ()=>{
@@ -34,11 +35,7 @@ const FormComponent = ()=>{
 
     return(
         <div className="form-view">
-                <header>
-                    <img className="go-back" src="assets/back-red.png" alt="Go to previous page"/>
-                    <img className="logo" src="assets/LogoSmallRed.png" alt="Logo"/>
-                </header>
-
+            <HeaderComponent/>
             <form className="background-red text-red">
                 <h2>Add music</h2>
 

@@ -14,21 +14,17 @@ function App() {
 	switch(currentScreen){
 		case 'listScreen':
 			content = (
-				<div className="App">
-					<ListComponent/>
-				</div>
+				<ListComponent/>
 			)	
 			break;
 		case 'formScreen':
 			content = (
-				<div className="App">
-					<FormComponent/>
-				</div>
+				<FormComponent/>
 			)
 			break;
 		case 'welcomeScreen':
 			content = (
-				<div className="App">
+				<>
 					<img src={Logo} alt="Logo" className="logoBig"></img>
 					<div className="start-card-wrapper">
 						<div className="card first-card">
@@ -41,14 +37,16 @@ function App() {
 							<StartCard changeScreen={(param) => setCurrentScreen(param)}/>
 						</div>
 					</div>
-				</div>
+				</>
 			)
 			break;
 		default:
 			break;
 	}
 	return (
-		content
+		<div className="App">
+			{content}
+		</div>
 	)
 }
 
