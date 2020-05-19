@@ -1,38 +1,66 @@
+/* Global css */
 .App {
-  text-align: center;
+	text-align: center;
+	height: 100vh;
+	width:100vw;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logoBig {
+	width:15em;
+	margin: 3em;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.start-card-wrapper{
+	position: relative;
+	display:grid;
+	width: 19em;
+	grid-template-columns: repeat(3,1fr);
+	grid-auto-rows: 8em;
+	margin:0 auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.first-card{
+	grid-column-start: 1;
+	grid-column-end: 4;
 }
-
-.App-link {
-  color: #61dafb;
+.second-card{
+	width:100%;
+	grid-column-start: 1;
+	grid-column-end: 4;
 }
+.third-card{
+	width:100%;
+	grid-column-start: 1;
+	grid-column-end: 4;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+@media only screen  
+	and (min-device-width: 1200px) 
+	and (max-device-width: 1600px) 
+	and (-webkit-min-device-pixel-ratio: 1) {
+	.start-card-wrapper {
+	}
+	
+}
+@media only screen and (min-width: 700px){
+	.start-card-wrapper{
+		position: relative;
+		display:grid;
+		width:80%;
+		grid-template-columns: repeat(3,1fr);
+		margin:0 auto;
+	}
+	.first-card{
+		grid-column-start: 1;
+		grid-column-end: 1;
+		z-index: 10;
+	}
+	.second-card{
+		grid-column-start: 2;
+		grid-column-end: 2;
+		z-index: 5;
+	}
+	.third-card{
+		grid-column-start: 3;
+		grid-column-end: 3;
+		z-index: 1;
+	
+	}
 }

@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import StartCard from './components/StartCard';
+import Logo from './assets/LogoBig.png'
+import ListComponent from './components/ListComponent';
+import FormComponent from './components/FormComponent';
+import { useSelector } from 'react-redux';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<img src={Logo} alt="Logo" className="logoBig"></img>
+			<div className="start-card-wrapper">
+				<div className="card first-card">
+					<StartCard/>
+				</div>
+				<div className="card second-card">
+					<StartCard/>
+				</div>
+				<div className="card third-card">
+					<StartCard/>
+				</div>
+			</div>
+			<FormComponent/>
+			{/* <ListCard/> */}
+			{/* <ListComponent /> */}
+		</div>
+	)
 }
 
 export default App;

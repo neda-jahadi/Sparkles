@@ -1,0 +1,52 @@
+.list-card{
+    background-color:var(--text-color-red);
+    color:var(--background-color-red);
+    width:238px;
+    min-height:115px;
+    border-radius:5px;
+    padding:15px;
+    display:grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows:auto;
+    font-family:'Roboto', sans-serif;
+
+}
+/* Ändra grid-column 1/10 om man inte vill h3 ska sträcka sig till kanten på kortet, alltså över knapparn*/
+.list-card > h3{
+    grid-column:1/11;
+    text-align:left;
+    font-size:14px;
+    margin-bottom:10px;
+}
+.list-card > p{
+    text-align:left;
+    grid-column:1/8;
+    font-size:14px;
+    align-self:end;
+}
+.list-card > button {
+   background-color: var(--background-color-red);
+   border:none;
+   height:20px;
+   width:20px;
+   justify-self:end;
+   align-self:end;
+   border-radius:5px;
+}
+.list-card > .edit-button{
+    grid-column:9/10;
+    margin-right:5px;
+    
+}
+.edit-button > .edit-logo{
+    height:15px;
+    width:15px;
+    margin-top:2px;
+   
+    
+}
+.list-card >.delete-button{
+    grid-column:10/11;
+    color:var(--text-color-red);
+    cursor:pointer;
+}

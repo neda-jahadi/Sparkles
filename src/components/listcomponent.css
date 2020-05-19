@@ -1,0 +1,277 @@
+/* .trace {
+    border: 1px solid red;
+    height: 100%;
+} */
+.listcomponent-body {
+    
+    
+   
+   
+    height: 100vh;
+    margin-bottom: 2em;
+    background-color: var(--background-color-red);
+   
+    
+    
+    display: grid;
+    grid-template-rows: 3em 3em 5em 1fr 5em;
+    color: var(--text-color-red);
+}
+.listcomponent-body > * {
+    /* border: 3px solid rgb(198, 218, 198); */
+    margin: 0.5em;
+    margin-left: 2em;
+    margin-right: 2em;
+
+}
+.main {
+    display: grid;
+    margin: 0 auto;
+    grid-template-rows: repeat(9, 1fr) ;
+    width: 90%;
+    
+}
+.main > div {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+    background-color: var(--text-color-red);
+	height: 4em;
+	
+}
+.listcomponent-body button {
+    padding: 1.5em;
+    border-radius: 5px;
+    border: none;
+    background-color:  var(--text-color-red);
+    color: var(--background-color-red);
+    width: 30%;
+    
+
+}
+div header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.5rem 5vw 0;
+    margin: 0 auto;
+  }
+  
+header > img.logo{
+	height: 3.2rem;
+}
+header > img.go-back{
+	height: 2rem;
+}
+  
+/* .listcomponent-logo {
+    height: 3em;
+}
+.listcomponent-body header {
+    text-align: right;
+}
+.listcomponent-body button {
+    width: 40%;
+    padding: 1em;
+}
+/* .input input {
+    background: transparent;
+    border: none;
+    padding: 0.3em;
+    color: var(--text-color-red);
+    
+}
+.input input:focus {
+    outline: none;
+} */
+/* input {
+    padding: 0.1em;
+
+}
+.input {
+    border-bottom: 1px solid var(--text-color-red);
+} */
+.listcomponent-menu input {
+    background: transparent;
+    border: none;
+    padding: 0.2em;
+    color: var(--text-color-red);
+  /* padding: 2px; */
+  width: 100%;
+  border-radius: 0%;
+  background-color:  var(--background-color-red);
+  border-bottom: 1px solid var(--text-color-red);
+}
+.listcomponent-menu input:focus {
+    outline: none;
+}
+::placeholder {
+    color: var(--text-color-red);
+    opacity: 1;
+    font-size: 1.5em;
+    
+  }  
+/* .listcomponent-menu ::placeholder {
+    color: var(--text-color-red);
+    opacity: 1;
+    font-size: 1.5em;
+    
+  } */
+.listcomponent-menu {
+    display: grid;
+    grid-template-columns: 7em 1fr;
+    text-align: left;
+
+}
+.listcomponent-menu > div {
+    margin: 0.5em;
+    margin-top: 1em;
+    /* border: 1px solid black; */
+}
+
+.sort {
+    position: relative;
+    display: inline-block;
+   
+}
+.drop-div {
+    border-bottom: 1px solid  var(--text-color-red);
+    padding-left: 1em;
+    font-size: 1.5em;
+}
+.sort:hover {
+    border: 1px solid var(--background-color-red);
+    border-radius: 5px;
+    background-color: var(--text-color-red);
+    color: var(--background-color-red);
+}
+.sort:hover .drop-div {
+    border-bottom: 1px solid  var(--background-color-red);
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+}
+.sort:hover .dropdown-content {
+    display: block;
+    
+}
+.dropdown-content{
+    width:100%;
+}
+.dropdown-content div {
+    padding: 1em;
+}
+.dropdown-content div:hover {
+    background-color: var(--background-color-red);
+    color: var(--text-color-red);
+    width:100%;
+}
+.menu-desktop {
+    display: none;
+}
+
+
+
+@media screen and (max-width:700px) {
+    
+     .scrollable {
+        height: 450px;
+        overflow-y: auto;
+    } 
+    .main > div {
+        height: 8em;
+    }
+    .listcomponent-logo{
+        text-align: right;
+    }
+
+}
+@media screen and (min-width: 701px){
+     .scrollable {
+       
+        overflow: auto;
+    } 
+    .main {
+        display: grid;
+        
+         grid-template-rows: 1fr 1fr; 
+         grid-template-columns: repeat(6,1fr);
+
+    }
+    .main > div {
+        margin: 0.4em;
+        height: 80%;
+        width: 20em;
+        
+    }
+    
+    
+    .menu-desktop {
+        display: block;
+    }
+    .desktop-mobil {
+          margin-left:7em; 
+          margin-right:7em; 
+          margin-top: 3em;
+          height: 80%;
+          border: 2px solid blue;
+         
+    }
+    .desktop-mobil {
+        display: grid;
+        grid-template-rows: 5.5em 1fr;
+    }
+    .desktop-menu img {
+        width: 100%;
+    }
+    .desktop-menu {
+        display: grid;
+        grid-template-columns: 7em 1fr 1fr;
+    }
+    .desktop-menu > * {
+        margin: 0.5em;
+    }
+    .desktop-menu input {
+        background: transparent;
+        border: none;
+        padding: 0.2em;
+        color: var(--background-color-red);
+      /* padding: 2px; */
+      width: 100%;
+      border-radius: 0%;
+      /* background-color:  var(--background-color-red); */
+      border-bottom: 1px solid var(--text-color-red);
+    }
+    .desktop-menu input:focus {
+        outline: none;
+    }
+    ::placeholder {
+        color: var(--background-color-red);
+        opacity: 1;
+        font-size: 1.5em;
+        
+      }
+      
+      .drop-div {
+        border-bottom: 1px solid  var(--text-color-red);
+        padding-left: 0em; 
+        color: var(--background-color-red);
+        font-size: 1.5em;
+       
+    }
+    .listcomponent-menu, .listcomponent-logo {
+        display: none;
+    }
+    .listcomponent-body {
+        display: grid;
+        grid-template-rows: 5em 1fr 5em;
+        height: 100%; 
+    }
+    
+    .listcomponent-body > h1 {
+        text-align: left;
+    }
+     
+}
