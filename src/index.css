@@ -41,6 +41,18 @@ p, h1, h2, h3{
 .background-green{
   background-color: var(--background-color-green);
 }
+.button-red{
+  background-color: var(--text-color-red);
+  color:var(--background-color-red);
+}
+.button-yellow{
+  background-color: var(--text-color-yellow);
+  color:var(--background-color-yellow);
+}
+.button-green{
+  background-color: var(--text-color-green);
+  color:var(--background-color-green);
+}
 .error-red{
   color: var(--error-color-red);
 }
