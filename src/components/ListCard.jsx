@@ -3,17 +3,18 @@ import './ListCardStyle.css'
 import Edit from '../assets/edit.png'
 
 
-const ListCard=()=>{
+const ListCard=({title, creator, usedBefore, rating, comment})=>{
 
 
     return (
 
         <div className='list-card'>
-            <h3>Perfect-Simple Plan</h3>
+            <h3>{title}</h3>
 
-            <p>Listened to: Yes</p>
-            <p>Rating: 3 of 5</p>
-            <p>Best song ever!!! </p>
+            <p>Creator is:{creator}</p>
+            <p>Listened to: {usedBefore}s</p>
+            <p>Rating:{rating} of 5</p>
+            <p>Comment:{comment} </p>
             
             
             <button className='edit-button'>

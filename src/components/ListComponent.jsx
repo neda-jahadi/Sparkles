@@ -2,9 +2,20 @@ import React from 'react';
 import './listcomponent.css';
 import smallRedLogo from '../assets/LogoSmallRed.png';
 import largeLogo from '../assets/LogoBig.png';
+import ListCard from './ListCard'
 const ListComponent = () =>{
      
 
+    let testLista=[
+        {title:'en titel', creator:'en creator', usedBefore:true, rating: 4, comment:'en kommentar'},
+        {title:'2 titel', creator:'2 creator', usedBefore:true, rating: 4, comment:'2 kommentar'},
+        {title:'3 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
+   
+    ]
+
+    const jsxLista=testLista.map(item=><ListCard key={item.title} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
+
+ 
     return(
         <div className="desktop-mobil">
         <div className="menu-desktop">
@@ -17,7 +28,7 @@ const ListComponent = () =>{
                             <div>Rating</div>
                             <div>Listen</div>
                         </div>
-                    
+                  
                 </div> 
                 <div className="listcomponent-input">
                     <input type="text" placeholder="Search" />
@@ -51,24 +62,11 @@ const ListComponent = () =>{
                 </div>
                 
             </div>
-            <div className="main scrollable">
-                
-                   <div>1</div>
-                   <div>2</div>
-                   <div>3</div>
-                   <div>1</div>
-                   <div>2</div>
-                   <div>3</div>
-               
-                
-                   <div>1</div>
-                   <div>2</div>
-                   <div>3</div>
-                   <div>1</div>
-                   <div>2</div>
-                   <div>3</div>
-                
-                   
+            <div className="scrollable">
+
+                    {jsxLista}
+            
+
             </div>
             <div>
                <button>Add music</button>
