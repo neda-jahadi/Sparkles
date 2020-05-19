@@ -16,7 +16,7 @@ const ListComponent = () =>{
         {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'}
     ]
 
-    const jsxLista=testLista.map(item=><ListCard key={item.title} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
+    const jsxLista=testLista.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
 
  
     return(
