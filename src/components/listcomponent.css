@@ -2,7 +2,7 @@
 .listcomponent-body {
     border-radius: 6px;
     height: 100vh;
-    margin-bottom: 2em;
+   padding:1em;
     background-color: var(--background-color-red);
     display: grid;
     grid-template-rows: 3em 3em 5em 1fr 5em;
@@ -14,21 +14,14 @@
     margin-right: 2em;
 
 }
-.main {
-    display: grid;
-    margin: 0 auto;
-    grid-template-rows: repeat(9, 1fr) ;
-    width: 90%;
-    
-}
 
-.listcomponent-body button {
+.add-button > button {
     padding: 1.5em;
     border-radius: 5px;
     border: none;
     background-color:  var(--text-color-red);
     color: var(--background-color-red);
-    width: 30%;
+   
     
 
 }
@@ -145,7 +138,7 @@ header > img.go-back{
         
     }
     .main > div {
-        margin-bottom: 0.2em;
+        margin-bottom: 1em;
     }
 
 }
@@ -155,33 +148,45 @@ header > img.go-back{
         overflow-x: auto; 
     }  */
      .main {
-        display: flex;
-        flex-wrap: nowrap;
+   
+
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap:1em;
         overflow-x: auto;
+        border:1px solid blue;
+
          /* flex-direction: row; */
     }
-    .main > div {
+    /* .main > div {
          flex: 0 0 auto; 
          margin: 0.4em;
-         /* width: 15em; */
         
-    }  
-    
+        
+    }   */
+    .add-button{
+        display:flex;
+       justify-content:flex-end;
+    }
+
+
+
     .menu-desktop {
         display: block;
     }
     .desktop-mobil {
-          margin-left:7em; 
-          margin-right:7em; 
-          margin-top: 3em;
-          height: 80%;
-          
-         
-    }
-    .desktop-mobil {
+        margin-left:7em; 
+        margin-right:7em; 
+        margin-top: 3em;
+        height: 80%;
+        font-family: 'Roboto', sans-serif;
         display: grid;
         grid-template-rows: 5.5em 1fr;
+        
+         
     }
+ 
     .desktop-menu img {
         width: 100%;
     }

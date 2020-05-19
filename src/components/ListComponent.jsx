@@ -11,6 +11,8 @@ const ListComponent = () =>{
         {title:'2 titel', creator:'2 creator', usedBefore:true, rating: 4, comment:'2 kommentar'},
         {title:'3 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
         {title:'4 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
+        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
+        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
         {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'}
     ]
 
@@ -69,7 +71,7 @@ const ListComponent = () =>{
             
 
             </div>
-            <div>
+            <div className='add-button'>
                <button>Add music</button>
             </div>
         </div>

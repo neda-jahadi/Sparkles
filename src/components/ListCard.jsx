@@ -11,10 +11,10 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
         <div className='list-card'>
             <h3>{title}</h3>
 
-            <p>Creator is:{creator}</p>
+            <p>Creator is: {creator}</p>
             <p>Listened to: {usedBefore}s</p>
-            <p>Rating:{rating} of 5</p>
-            <p>Comment:{comment} </p>
+            <p>Rating: {rating} of 5</p>
+            <p>Comment: {comment} </p>
             
             
             <button className='edit-button'>
