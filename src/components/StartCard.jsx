@@ -7,7 +7,7 @@ const StartCard = () => {
 	let lista = null;
 
 	const list = useSelector(state => state.list)
-	if(list.length == 0){
+	if(list.length === 0){
 		lista = <p className="text-red">No list items</p> 
 	}
 	else{
