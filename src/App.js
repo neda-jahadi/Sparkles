@@ -11,8 +11,8 @@ import { useSelector } from 'react-redux';
 function App() {
 	return (
 		<div className="App">
-			<img src={Logo} alt="Logo" className="logoBig"></img>
-			<div className="start-card-wrapper">
+			{/* <img src={Logo} alt="Logo" className="logoBig"></img> */}
+			{/* <div className="start-card-wrapper">
 				<div className="card first-card">
 					<StartCard/>
 				</div>
@@ -22,10 +22,10 @@ function App() {
 				<div className="card third-card">
 					<StartCard/>
 				</div>
-			</div>
-			<FormComponent/>
+			</div> */}
+			{/* <FormComponent/> */}
 			{/* <ListCard/> */}
-			{/* <ListComponent /> */}
+			 <ListComponent /> 
 		</div>
 	)
 }
