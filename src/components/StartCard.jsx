@@ -3,7 +3,7 @@ import './StartCard.css';
 import Music from '../assets/music.png'
 import { useSelector } from 'react-redux';
 
-const StartCard = () => {
+const StartCard = ({changeScreen}) => {
 	const list = useSelector(state => state.list)
 	const lista = list.map(item => (
 		<p key={item.title} className="list-item text-red">{item.title} - {item.creator}</p>	
@@ -16,8 +16,9 @@ const StartCard = () => {
 				<h2 className="title text-red">Music</h2>
 				{lista}
 				<div className="btn-continer">
-					<button className="btn-list">Music</button>
-					<button className="btn-add">Add music</button>
+				
+					<button className="btn-list" onClick={()=>changeScreen('listScreen')}>Music</button>
+					<button className="btn-add" onClick={()=>changeScreen('formScreen')}>Add music</button>
 				</div>
 				
 			</div>
