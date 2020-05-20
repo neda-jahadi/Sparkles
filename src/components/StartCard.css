@@ -2,20 +2,19 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	
-
 }
 .title-container .title{
 	padding: 2em 0 0.5em;
 	color: var(--text-color-red);
 	display: inline-block;
+	
 }
 .title-container .icon{
 	margin:auto 0;
 }
 .start-card{
 	display: flex;
-	min-height: 25em;
+	min-height: 27em;
     flex-direction: column;
     padding: 0 2em 3em;
 	border-radius: 25px;
@@ -40,23 +39,25 @@
 }
 .btn-list{
 	font-size: 1rem;
-    color: var(--background-color-red);
-    background-color: var(--text-color-red);
     width: 100%;
     border: none;
     margin-top: 1.5rem;
     padding: .5em;
 	border-radius: 10px;
+	transition: transform ease-in 500ms;
+	cursor: pointer;
+
 }
 .btn-add{
 	font-size: 1rem;
-    color: var(--background-color-red);
-    background-color: var(--text-color-red);
     width: 100%;
     border: none;
     margin-top: 0.8rem;
     padding: .5em;
 	border-radius: 10px;
+	transition: transform ease-in 500ms;
+	cursor: pointer;
+
 }
 
 @media only screen and (min-width: 700px){
@@ -74,4 +75,8 @@
 	.btn-add{
 		width: 70%
 	}
+	.btn-add:hover, .btn-list:hover{
+		transform: scale(1.2);
+	}
+	
 }

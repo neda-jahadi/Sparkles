@@ -4,11 +4,9 @@ import StartCard from './components/StartCard';
 import Logo from './assets/LogoBig.png'
 import ListComponent from './components/ListComponent';
 import FormComponent from './components/FormComponent';
+import ListCard from './components/ListCard'
 import { useSelector } from 'react-redux';
 import HeaderComponent from './components/HeaderComponent';
-
-
-// const [currentScreen, setCurrentScreen] = useState('welcomeScreen');
 
 function App() {
 

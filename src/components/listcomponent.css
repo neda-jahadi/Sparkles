@@ -1,10 +1,8 @@
-/* .trace {
-    border: 1px solid red;
-    height: 100%;
-} */
+
 .listcomponent-body {
+    border-radius: 6px;
     height: 100vh;
-    margin-bottom: 2em;
+   padding:1em;
     background-color: var(--background-color-red);
     
     display: grid;
@@ -12,34 +10,19 @@
     color: var(--text-color-red);
 }
 .listcomponent-body > * {
-    /* border: 3px solid rgb(198, 218, 198); */
     margin: 0.5em;
     margin-left: 2em;
     margin-right: 2em;
 
 }
-.main {
-    display: grid;
-    margin: 0 auto;
-    grid-template-rows: repeat(9, 1fr) ;
-    width: 90%;
-    
-}
-.main > div {
-    border: 1px solid white;
-    border-radius: 5px;
-    margin-bottom: 0.5em;
-    background-color: var(--text-color-red);
-	height: 4em;
-	
-}
-.listcomponent-body button {
+
+.add-button > button {
     padding: 1.5em;
     border-radius: 5px;
     border: none;
     background-color:  var(--text-color-red);
     color: var(--background-color-red);
-    width: 30%;
+   
     
 
 }
@@ -66,21 +49,20 @@
 } */
 /* input {
     padding: 0.1em;
-
-}
-.input {
-    border-bottom: 1px solid var(--text-color-red);
 } */
+
 .listcomponent-menu input {
     background: transparent;
     border: none;
     padding: 0.2em;
     color: var(--text-color-red);
-  /* padding: 2px; */
-  width: 100%;
-  border-radius: 0%;
-  background-color:  var(--background-color-red);
-  border-bottom: 1px solid var(--text-color-red);
+    width: 100%;
+    border-radius: 0%;
+    background-color:  var(--background-color-red);
+    
+    
+    padding: 0.55em;
+    border-bottom: 1px solid var(--text-color-red);
 }
 .listcomponent-menu input:focus {
     outline: none;
@@ -90,13 +72,8 @@
     opacity: 1;
     font-size: 1.5em;
     
-  }  
-/* .listcomponent-menu ::placeholder {
-    color: var(--text-color-red);
-    opacity: 1;
-    font-size: 1.5em;
-    
-  } */
+}  
+
 .listcomponent-menu {
     display: grid;
     grid-template-columns: 7em 1fr;
@@ -106,7 +83,6 @@
 .listcomponent-menu > div {
     margin: 0.5em;
     margin-top: 1em;
-    /* border: 1px solid black; */
 }
 
 .sort {
@@ -152,57 +128,75 @@
     display: none;
 }
 
-
-
 @media screen and (max-width:700px) {
     
      .scrollable {
-        height: 450px;
+        /* height: 450px; */
         overflow-y: auto;
+        
     } 
-    .main > div {
+    /* .main > div {
         height: 8em;
-    }
+        border:1px solid green;
+    } */
     .listcomponent-logo{
         text-align: right;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .main > div {
+        margin-bottom: 1em;
     }
 
 }
 @media screen and (min-width: 701px){
-     .scrollable {
-       
-        overflow: auto;
-    } 
-    .main {
-        display: grid;
-        
-         grid-template-rows: 1fr 1fr; 
-         grid-template-columns: repeat(6,1fr);
+     /* .scrollable {
+        flex-wrap: nowrap;
+        overflow-x: auto; 
+    }  */
+     .main {
+   
 
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap:1em;
+        overflow-x: auto;
+        border:1px solid blue;
+
+         /* flex-direction: row; */
     }
-    .main > div {
-        margin: 0.4em;
-        height: 80%;
-        width: 20em;
+    /* .main > div {
+         flex: 0 0 auto; 
+         margin: 0.4em;
         
+        
+    }   */
+    .add-button{
+        display:flex;
+       justify-content:flex-end;
     }
-    
-    
+
+
+
     .menu-desktop {
         display: block;
     }
     .desktop-mobil {
-          margin-left:7em; 
-          margin-right:7em; 
-          margin-top: 3em;
-          height: 80%;
-          border: 2px solid blue;
-         
-    }
-    .desktop-mobil {
+        margin-left:7em; 
+        margin-right:7em; 
+        margin-top: 3em;
+        height: 80%;
+        font-family: 'Roboto', sans-serif;
         display: grid;
         grid-template-rows: 5.5em 1fr;
+        
+         
     }
+ 
     .desktop-menu img {
         width: 100%;
     }
@@ -216,13 +210,15 @@
     .desktop-menu input {
         background: transparent;
         border: none;
-        padding: 0.2em;
+        
         color: var(--background-color-red);
       /* padding: 2px; */
       width: 100%;
       border-radius: 0%;
       /* background-color:  var(--background-color-red); */
       border-bottom: 1px solid var(--text-color-red);
+      
+      padding: 0.45em;
     }
     .desktop-menu input:focus {
         outline: none;

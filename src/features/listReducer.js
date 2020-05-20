@@ -9,7 +9,11 @@ const listActions = {
     removeFromList
 }
 
-const intialState = [];
+const intialState = [
+    {titel: 'Lida', creator: 'Stephen King', usedBefore:true, comment: 'Apläskig'},
+    {titel: 'Sagan om ringen', creator: 'JRR Tolkien', usedBefore:false, comment: 'Kan den här vara bra?'},
+    {titel: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'}
+];
 
 const reducer = createReducer(intialState, {
     [addToList]: (state, action) => [...state, action.payload],

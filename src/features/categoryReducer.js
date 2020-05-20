@@ -1,6 +1,6 @@
 import {createReducer, createAction} from '@reduxjs/toolkit';
 
-const categoryDisplayed = 'music';
+const categoryDisplayed = 'books';
 
 const choseMusic = createAction('music');
 const choseBooks = createAction('books');
