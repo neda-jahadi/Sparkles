@@ -3,7 +3,7 @@ import './listcomponent.css';
 import smallRedLogo from '../assets/LogoSmallRed.png';
 import largeLogo from '../assets/LogoBig.png';
 import ListCard from './ListCard'
-const ListComponent = () =>{
+const ListComponent = ({formScreen,startCard}) =>{
      
 
     let testLista=[
@@ -15,6 +15,7 @@ const ListComponent = () =>{
     ]
 
     const jsxLista=testLista.map(item=><ListCard key={item.title} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
+    
 
  
     return(
@@ -34,15 +35,16 @@ const ListComponent = () =>{
                 <div className="listcomponent-input">
                     <input type="text" placeholder="Search" />
                 </div>
-                <div>
-                    <img className='listcomponent-largelogo' src={largeLogo} alt=" large logo" />
+                <div >
+                    
+                    <img className='listcomponent-largelogo' src={largeLogo} onClick ={startCard}  alt=" large logo" />
                 </div>
                 
             </div>
         </div>
         <div className="listcomponent-body">
             <div className="listcomponent-logo">
-                <img className='listcomponent-logo' src={smallRedLogo} alt=" small red logo" />
+                <img className='listcomponent-logo' src={smallRedLogo}  onClick ={startCard} alt=" small red logo" />
             </div>
             <h1>
                 Music
@@ -70,7 +72,7 @@ const ListComponent = () =>{
 
             </div>
             <div>
-               <button>Add music</button>
+               <button onClick = {formScreen}>Add music</button>
             </div>
         </div>
         </div>

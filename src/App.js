@@ -16,7 +16,8 @@ function App() {
 		case 'listScreen':
 			content = (
 				<div className="App">
-					<ListComponent/>
+					<ListComponent formScreen={() =>setCurrentScreen('formScreen')} 
+					               startCard={() =>setCurrentScreen('welcomeScreen')}/>
 				</div>
 			)	
 			break;

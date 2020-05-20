@@ -14,13 +14,13 @@
     margin-right: 2em;
 
 }
-.main {
+/* .main {
     display: grid;
     margin: 0 auto;
     grid-template-rows: repeat(9, 1fr) ;
     width: 90%;
     
-}
+} */
 
 .listcomponent-body button {
     padding: 1.5em;
@@ -139,6 +139,7 @@ header > img.go-back{
     .listcomponent-logo{
         text-align: right;
     }
+    
     .main {
         display: flex;
         flex-direction: column;
@@ -150,10 +151,9 @@ header > img.go-back{
 
 }
 @media screen and (min-width: 701px){
-     /* .scrollable {
-        flex-wrap: nowrap;
-        overflow-x: auto; 
-    }  */
+    .listcomponent-largelogo:hover{
+        cursor: pointer;
+    }
      .main {
         display: flex;
         flex-wrap: nowrap;
