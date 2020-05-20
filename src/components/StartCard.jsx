@@ -85,20 +85,17 @@ const StartCard = ({genre}) => {
 
 	return(
 		<div>
-			<input type="checkbox" id={title} className="checkbox"/>
-			<label htmlFor={title}>
-				<div className={`start-card background-${color}`} onClick={handleClick}>
-					<div className="title-container">
-						<h2 className={`title text-${color}`}>{title}</h2>
-						<img src={icon} alt="Icon" width="30em" height="40em" className="icon"/>
-					</div>
-					{lista}
-					<div className="btn-container">
-						<button className={`btn-list button-${color}`} onClick={()=> handler(title, 'list')}>{title}</button>
-						<button className={`btn-add button-${color}`}  onClick={() => handler(title, 'form')}>Add {title}</button>
-					</div>
+			<div className={`start-card background-${color}`} onClick={handleClick}>
+				<div className="title-container">
+					<h2 className={`title text-${color}`}>{title}</h2>
+					<img src={icon} alt="Icon" width="30em" height="40em" className="icon"/>
 				</div>
-			</label>
+				{lista}
+				<div className="btn-container">
+					<button className={`btn-list button-${color}`} onClick={()=> handler(title, 'list')}>{title}</button>
+					<button className={`btn-add button-${color}`}  onClick={() => handler(title, 'form')}>Add {title}</button>
+				</div>
+			</div>
 		</div>
 		
 	)
