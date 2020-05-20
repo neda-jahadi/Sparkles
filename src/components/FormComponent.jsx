@@ -2,10 +2,38 @@ import React,{useState} from 'react';
 import './FormStyle.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { actions } from '../features/listReducer';
+import { listActions } from '../features/listReducer';
 
 
 const FormComponent = ()=>{
+
+    const category = useSelector(state => state.category);
+    let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
+    let colorClass = '';
+
+    switch(category){
+        case 'music':
+            h2 = 'Add Music';
+            titleText = 'Song Title';
+            creatorText = 'Artist';
+            usedBeforeText = 'Listened to'
+            colorClass = 'background-red text-red'
+        break;
+        case 'books':
+            h2 = 'Add Book';
+            titleText = 'Book Title';
+            creatorText = 'Author';
+            usedBeforeText = 'Read before';
+            colorClass = 'background-yellow text-yellow';
+        break;
+        case 'movies':
+            h2 = 'Add Movie';
+            titleText = 'Movie Title';
+            creatorText = 'Director';
+            usedBeforeText = 'Seen';
+            colorClass = 'background-green text-green';
+        break;
+    }
 
    	const [title, setTitle] = useState('')
     const [creator, setCreator] = useState('');
@@ -14,7 +42,6 @@ const FormComponent = ()=>{
     const [comment, setComment] = useState('');
     
     const dispatch = useDispatch();
-	// användes för test const list = useSelector(state => state.list)	
 
     const addItem = (event) =>{
 
@@ -27,30 +54,23 @@ const FormComponent = ()=>{
             rating: rating,
             comment:comment
 		} 		
-        dispatch(actions.addToList(newItem));
+        dispatch(listActions.addToList(newItem));
     }
-
-
 
     return(
         <div className="form-view">
-                <header>
-                    <img className="go-back" src="assets/back-red.png" alt="Go to previous page"/>
-                    <img className="logo" src="assets/LogoSmallRed.png" alt="Logo"/>
-                </header>
+            <form className={colorClass}>
+                <h2>{h2}</h2>
 
-            <form className="background-red text-red">
-                <h2>Add music</h2>
-
-                <label htmlFor="title">Song Title</label>
+                <label htmlFor="title">{titleText}</label>
                 <input id="title" type="text" value={title} onChange={e => setTitle(e.target.value)}/>
 
-                <label htmlFor="creator">Artist</label>
+                <label htmlFor="creator">{creatorText}</label>
                 <input id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value)}/>
                 <div>
 
                     <fieldset>
-                        <legend>Listened to</legend>
+                        <legend>{usedBeforeText}</legend>
 
                             <label htmlFor="yes">Yes</label>
                             <input id="yes" type="radio" name="usedBefore" onClick={() => setUsedBefore(true)}/>

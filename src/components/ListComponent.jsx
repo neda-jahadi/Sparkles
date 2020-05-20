@@ -2,21 +2,27 @@ import React from 'react';
 import './listcomponent.css';
 import smallRedLogo from '../assets/LogoSmallRed.png';
 import largeLogo from '../assets/LogoBig.png';
-import ListCard from './ListCard'
+import ListCard from './ListCard';
+import { useDispatch,useSelector } from 'react-redux';
+import {screenActions} from '../features/screenReducer';
+
 const ListComponent = ({formScreen,startCard}) =>{
      
-
+    const dispatch = useDispatch();
     let testLista=[
         {title:'en titel', creator:'en creator', usedBefore:true, rating: 4, comment:'en kommentar'},
         {title:'2 titel', creator:'2 creator', usedBefore:true, rating: 4, comment:'2 kommentar'},
         {title:'3 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
         {title:'4 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
+        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
+        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
         {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'}
     ]
 
-    const jsxLista=testLista.map(item=><ListCard key={item.title} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
-    
-
+    const jsxLista=testLista.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
+     const handleFormScreen = (e) => {
+        dispatch(screenActions.formScreen(e));
+    }
  
     return(
         <div className="desktop-mobil">
@@ -71,8 +77,8 @@ const ListComponent = ({formScreen,startCard}) =>{
             
 
             </div>
-            <div>
-               <button onClick = {formScreen}>Add music</button>
+            <div className='add-button'>
+               <button onClick={handleFormScreen}>Add music</button>
             </div>
         </div>
         </div>

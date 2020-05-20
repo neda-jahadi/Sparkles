@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './StartCard.css';
 import Music from '../assets/music.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { screenActions } from '../features/screenReducer';
 import Movies from '../assets/video-camera.png'
 import Books from '../assets/good.png'
-import { useSelector } from 'react-redux';
 
 const StartCard = ({changeScreen, genre}) => {
 	// const [title, setTitle] = useState('');
 	// const [icon, setIcon] = useState(null);
+	const dispatch = useDispatch();
 	const list = useSelector(state => state.list)
 	let title = '';
 	let icon = null;
@@ -56,15 +58,21 @@ const StartCard = ({changeScreen, genre}) => {
 				</div>
 			
 				{lista}
-				<div className="btn-container">
+				<div className="btn-continer">
+				
+					<button className="btn-list" onClick={()=>dispatch(screenActions.listScreen())}>Music</button>
+					<button className="btn-add" onClick={()=>dispatch(screenActions.formScreen())}>Add music</button>
+
+				{/* <div className="btn-container">
 					<button className={`btn-list button-${color}`} onClick={()=>changeScreen('listScreen')}>{title} list</button>
 					<button className={`btn-add button-${color}`} onClick={()=>changeScreen('formScreen')}>Add {title}</button>
-				</div>
+				</div> */}
 				
 			</div>
+		</div>
 		</div>
 		
 	)
 }
 
-export default StartCard ;
+export default StartCard;
