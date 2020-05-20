@@ -1,6 +1,5 @@
 .list-card{
-    background-color:var(--text-color-red);
-    color:var(--background-color-red);
+    
     /* width:238px;
     min-height:115px; */
     border-radius:5px;
@@ -10,7 +9,10 @@
     grid-template-rows:auto;
     font-family:'Roboto', sans-serif;
     /* border:2px solid blue; */
-
+}
+.red{
+    background-color:var(--text-color-red);
+    color:var(--background-color-red);
 }
 /* Ändra grid-column 1/10 om man inte vill h3 ska sträcka sig till kanten på kortet, alltså över knapparn*/
 .list-card > h3{
