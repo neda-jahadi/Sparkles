@@ -24,7 +24,7 @@ const ListComponent = ({formScreen,startCard}) =>{
              creatorText = 'Artist';
              usedBeforeText = 'Listened to';
              addButtonText = 'Add music';
-            // colorClass = 'background-red text-red'
+             colorClass = 'background-red text-red'
         break;
         case 'books':
             h2 = 'Book';
@@ -32,7 +32,7 @@ const ListComponent = ({formScreen,startCard}) =>{
             creatorText = 'Author';
             usedBeforeText = 'Read before';
             addButtonText = 'Add book';
-            // colorClass = 'background-yellow text-yellow';
+             colorClass = 'background-yellow text-yellow';
         break;
         case 'movies':
             h2 = 'Movie';
@@ -40,7 +40,7 @@ const ListComponent = ({formScreen,startCard}) =>{
             creatorText = 'Director';
             usedBeforeText = 'Seen';
             addButtonText = 'Add movie';
-            // colorClass = 'background-green text-green';
+             colorClass = 'background-green text-green';
         break;
     }
 
@@ -50,6 +50,7 @@ const ListComponent = ({formScreen,startCard}) =>{
     }
  
     return(
+        
         <div className="desktop-mobil">
         
             <div className='desktop-menu'>
@@ -72,8 +73,8 @@ const ListComponent = ({formScreen,startCard}) =>{
                 </div> */}
                 
             </div>
-        
-        <div className="listcomponent-body">
+        <div className={colorClass}>
+        <div className ="listcomponent-body" >
             {/* <div className="listcomponent-logo">
                 <img className='listcomponent-logo' src={smallRedLogo}  onClick ={startCard} alt=" small red logo" />
             </div> */}
@@ -107,6 +108,8 @@ const ListComponent = ({formScreen,startCard}) =>{
             </div>
         </div>
         </div>
+        </div>
+        
     );
 }
 export default ListComponent;
