@@ -9,13 +9,13 @@ const listActions = {
     removeFromList
 }
 
-const intialState = [
-    {titel: 'Lida', creator: 'Stephen King', usedBefore:true, comment: 'Apläskig'},
-    {titel: 'Sagan om ringen', creator: 'JRR Tolkien', usedBefore:false, comment: 'Kan den här vara bra?'},
-    {titel: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'}
+const moviesList = [
+    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'}
 ];
 
-const reducer = createReducer(intialState, {
+
+
+const reducer = createReducer(moviesList, {
     [addToList]: (state, action) => [...state, action.payload],
 	[removeFromList]: (state, action) => state.filter(item => item.id !== action.payload.id)
 })

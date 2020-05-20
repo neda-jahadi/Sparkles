@@ -2,22 +2,52 @@ import React from 'react';
 import './listcomponent.css';
 import smallRedLogo from '../assets/LogoSmallRed.png';
 import largeLogo from '../assets/LogoBig.png';
-import ListCard from './ListCard'
-const ListComponent = () =>{
-     
+import ListCard from './ListCard';
+import { useDispatch,useSelector } from 'react-redux';
+import {screenActions} from '../features/screenReducer';
+import {categoryActions} from '../features/categoryReducer';
+import {listActions} from '../features/musicReducer';
 
-    let testLista=[
-        {title:'en titel', creator:'en creator', usedBefore:true, rating: 4, comment:'en kommentar'},
-        {title:'2 titel', creator:'2 creator', usedBefore:true, rating: 4, comment:'2 kommentar'},
-        {title:'3 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'4 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'}
-    ]
+const ListComponent = ({formScreen,startCard}) =>{
+    const dispatch = useDispatch();
+
+    const category = useSelector(state => state.category);
+    const testLista = useSelector(state => state.musicList);
+
+    let h2 = '', titleText = '', creatorText = '', usedBeforeText = '' , addButtonText = '';
+    let colorClass = '';
+
+    switch(category){
+        case 'music':
+            h2 = 'Music';
+            titleText = 'Song Title';
+             creatorText = 'Artist';
+             usedBeforeText = 'Listened to';
+             addButtonText = 'Add music';
+            // colorClass = 'background-red text-red'
+        break;
+        case 'books':
+            h2 = 'Book';
+            titleText = 'Book Title';
+            creatorText = 'Author';
+            usedBeforeText = 'Read before';
+            addButtonText = 'Add book';
+            // colorClass = 'background-yellow text-yellow';
+        break;
+        case 'movies':
+            h2 = 'Movie';
+            titleText = 'Movie Title';
+            creatorText = 'Director';
+            usedBeforeText = 'Seen';
+            addButtonText = 'Add movie';
+            // colorClass = 'background-green text-green';
+        break;
+    }
 
     const jsxLista=testLista.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
-
+     const handleFormScreen = (e) => {
+        dispatch(screenActions.formScreen(e));
+    }
  
     return(
         <div className="desktop-mobil">
@@ -26,28 +56,29 @@ const ListComponent = () =>{
                 <div className="sort">
                         <div className="drop-div">Sort</div>
                         <div className="dropdown-content">
-                            <div>Song title</div>
-                            <div>Artist</div>
+                            <div>{titleText}</div>
+                            <div>{creatorText}</div>
                             <div>Rating</div>
-                            <div>Listen</div>
+                            <div>{usedBeforeText}</div>
                         </div>
                   
                 </div> 
                 <div className="listcomponent-input">
                     <input type="text" placeholder="Search" />
                 </div>
-                <div>
-                    <img className='listcomponent-largelogo' src={largeLogo} alt=" large logo" />
-                </div>
+                {/* <div >
+                    
+                    <img className='listcomponent-largelogo' src={largeLogo} onClick ={startCard}  alt=" large logo" />
+                </div> */}
                 
             </div>
         </div>
         <div className="listcomponent-body">
-            <div className="listcomponent-logo">
-                <img className='listcomponent-logo' src={smallRedLogo} alt=" small red logo" />
-            </div>
+            {/* <div className="listcomponent-logo">
+                <img className='listcomponent-logo' src={smallRedLogo}  onClick ={startCard} alt=" small red logo" />
+            </div> */}
             <h1>
-                Music
+                {h2}
             </h1>
             <div className='listcomponent-menu'>
                 <div className="sort">
@@ -72,7 +103,7 @@ const ListComponent = () =>{
 
             </div>
             <div className='add-button'>
-               <button>Add music</button>
+               <button onClick={handleFormScreen}>{addButtonText}</button>
             </div>
         </div>
         </div>

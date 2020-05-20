@@ -2,15 +2,15 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	padding: 2em 0.5em;
 }
-.title-container .title{
-	padding: 2em 0 0.5em;
-	color: var(--text-color-red);
-	display: inline-block;
-	
+.title-container .title{	
+	width:90%;
+	height:40px;
+	line-height: 40px;
 }
 .title-container .icon{
-	margin:auto 0;
+	align-self: flex-end;
 }
 .start-card{
 	display: flex;
@@ -46,7 +46,6 @@
 	border-radius: 10px;
 	transition: transform ease-in 500ms;
 	cursor: pointer;
-
 }
 .btn-add{
 	font-size: 1rem;
@@ -67,7 +66,6 @@
 	.start-card:hover {
 		transform: translateY(-20px);
 		transition: 0.4s ease-out;
-		cursor: pointer;
 	}
 	.btn-list{
 		width: 70%
