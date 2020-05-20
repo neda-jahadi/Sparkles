@@ -1,12 +1,13 @@
 .title-container{
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 }
 .title-container .title{
 	padding: 2em 0 0.5em;
 	color: var(--text-color-red);
 	display: inline-block;
+	
 }
 .title-container .icon{
 	margin:auto 0;
