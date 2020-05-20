@@ -2,32 +2,34 @@ import React from 'react';
 import './headerstyle.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { screenActions } from '../features/screenReducer';
+import bigLogo from '../assets/LogoBig.png';
+import arrowBack from '../assets/back-red.png';
 
 const HeaderComponent = () => {
 
     const dispatch = useDispatch();
     const screen = useSelector(state => state.screen);
 
-    let goBackBtn = null;
-    let logo = <img className="logo" src="assets/LogoSmallRed.png" alt="Logo" onClick={()=> dispatch(screenActions.homeScreen())}/>
+    let logoClass = 'logo';
 
-    switch(screen){
-        case 'formScreen':
-            goBackBtn = <img onClick={()=>dispatch(screenActions.listScreen())} className="go-back" src="assets/back-red.png" alt="Go to previous page"/>
-            break;
-        
-        case 'listScreen':
-            goBackBtn = <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back" src="assets/back-red.png" alt="Go to previous page"/>
-            break;
-        default:
-            goBackBtn = null;
-            logo = null;
+    let content = (<>            
+        <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back" src={arrowBack} alt="Go to previous page"/>
+
+        <img className={logoClass} src={bigLogo} alt="Logo" onClick={()=> dispatch(screenActions.homeScreen())}/>
+        </>
+    )
+
+    if(screen === 'welcomeScreen'){
+        content = 
+        <img className={logoClass} src={bigLogo} alt="Logo" onClick={()=> dispatch(screenActions.homeScreen())}/>;
+
+        logoClass = 'logo big';
     }
+
 
     return(
         <header>
-            {goBackBtn}
-            {logo}
+            {content}
         </header>
     )
 }

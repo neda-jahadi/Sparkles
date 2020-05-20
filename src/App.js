@@ -26,21 +26,19 @@ function App() {
 		case 'welcomeScreen':
 			content = (
 				<>
-					<img src={Logo} alt="Logo" className="logoBig"></img>
 					<div className="start-card-wrapper">
 						<div className="card first-card">
-							<StartCard/>
+							<StartCard genre={'music'}/>
 						</div>
 						<div className="card second-card">
-							<StartCard/>
+							<StartCard genre={'books'}/>
 						</div>
 						<div className="card third-card">
-							<StartCard/>
+							<StartCard genre={'movies'}/>
 						</div>
 					</div>
 				</>
 			)
-			showHeader = null;
 			break;
 		default:
 			break;
