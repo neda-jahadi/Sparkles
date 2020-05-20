@@ -15,6 +15,7 @@
 .start-card{
 	display: flex;
 	min-height: 27em;
+	max-height: 27em;
     flex-direction: column;
     padding: 0 2em 3em;
 	border-radius: 25px;

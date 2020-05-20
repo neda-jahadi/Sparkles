@@ -67,10 +67,11 @@
 }
 @media only screen and (min-width: 1200px){
 	.start-card-wrapper{
-		position: relative;
-		display:grid;
 		width:60%;
-		grid-template-columns: repeat(3,1fr);
-		margin:0 auto;
+	}
+}
+@media only screen and (min-width: 1200px){
+	.start-card-wrapper{
+		width:60%;
 	}
 }

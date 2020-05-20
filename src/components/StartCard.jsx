@@ -9,12 +9,9 @@ import Books from '../assets/good.png'
 
 const StartCard = ({genre}) => {
 	const dispatch = useDispatch();
-	
 	const musicList = useSelector(state => state.musicList)
 	const booksList = useSelector(state => state.booksList)	
 	const moviesList = useSelector(state => state.moviesList)
-
-	
 	let title = '';
 	let icon = null;
 	let color = null;
