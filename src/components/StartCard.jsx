@@ -3,6 +3,7 @@ import './StartCard.css';
 import Music from '../assets/music.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { screenActions } from '../features/screenReducer';
+import { categoryReducer } from '../features/categoryReducer';
 import Movies from '../assets/video-camera.png'
 import Books from '../assets/good.png'
 
@@ -35,7 +36,12 @@ const StartCard = ({genre}) => {
 			icon = Movies; 
 			break;		
 	}
-	
+	const listHandler = (title) =>{
+		console.log(title)
+		dispatch(categoryReducer.choseMusic())
+		dispatch(screenActions.listScreen())
+
+	}
 	if(list.length === 0){
 		lista = <p className={`text-${color}`}>No list items</p> 
 	}
@@ -55,8 +61,8 @@ const StartCard = ({genre}) => {
 				</div>
 				{lista}
 				<div className="btn-container">
-					<button className={`btn-list button-${color}`} onClick={()=>dispatch(screenActions.listScreen())}>Music</button>
-					<button className={`btn-add button-${color}`}  onClick={()=>dispatch(screenActions.formScreen())}>Add music</button>
+					<button className={`btn-list button-${color}`} onClick={()=> listHandler(title)}>{title}</button>
+					<button className={`btn-add button-${color}`}  onClick={()=>dispatch(screenActions.formScreen())}>Add {title}</button>
 			</div>
 		</div>
 		</div>
