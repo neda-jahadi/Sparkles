@@ -6,13 +6,13 @@ import ListCard from './ListCard';
 import { useDispatch,useSelector } from 'react-redux';
 import {screenActions} from '../features/screenReducer';
 import {categoryActions} from '../features/categoryReducer';
-import {listActions} from '../features/listReducer';
+import {listActions} from '../features/musicReducer';
 
 const ListComponent = ({formScreen,startCard}) =>{
     const dispatch = useDispatch();
 
     const category = useSelector(state => state.category);
-    const testLista = useSelector(state => state.list);
+    const testLista = useSelector(state => state.musicList);
 
     let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
     let colorClass = '';
