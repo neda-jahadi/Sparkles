@@ -5,19 +5,41 @@ import largeLogo from '../assets/LogoBig.png';
 import ListCard from './ListCard';
 import { useDispatch,useSelector } from 'react-redux';
 import {screenActions} from '../features/screenReducer';
+import {categoryActions} from '../features/categoryReducer';
+import {listActions} from '../features/listReducer';
 
 const ListComponent = ({formScreen,startCard}) =>{
-     
     const dispatch = useDispatch();
-    let testLista=[
-        {title:'en titel', creator:'en creator', usedBefore:true, rating: 4, comment:'en kommentar'},
-        {title:'2 titel', creator:'2 creator', usedBefore:true, rating: 4, comment:'2 kommentar'},
-        {title:'3 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'4 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'}
-    ]
+
+    const category = useSelector(state => state.category);
+    const testLista = useSelector(state => state.list);
+
+    let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
+    let colorClass = '';
+
+    switch(category){
+        case 'music':
+            h2 = 'Add Music';
+            // titleText = 'Song Title';
+            // creatorText = 'Artist';
+            // usedBeforeText = 'Listened to'
+            // colorClass = 'background-red text-red'
+        break;
+        case 'books':
+            h2 = 'Add Book';
+            // titleText = 'Book Title';
+            // creatorText = 'Author';
+            // usedBeforeText = 'Read before';
+            // colorClass = 'background-yellow text-yellow';
+        break;
+        case 'movies':
+            h2 = 'Add Movie';
+            // titleText = 'Movie Title';
+            // creatorText = 'Director';
+            // usedBeforeText = 'Seen';
+            // colorClass = 'background-green text-green';
+        break;
+    }
 
     const jsxLista=testLista.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
      const handleFormScreen = (e) => {
