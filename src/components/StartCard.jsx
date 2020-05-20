@@ -6,14 +6,12 @@ import Books from '../assets/good.png'
 import { useSelector } from 'react-redux';
 
 const StartCard = ({changeScreen, genre}) => {
-	// const [title, setTitle] = useState('');
-	// const [icon, setIcon] = useState(null);
+
 	const list = useSelector(state => state.list)
 	let title = '';
 	let icon = null;
 	let color = null;
 	let lista = null;
-	console.log(genre)
 	switch(genre){
 		case 'Music': 
 			title = 'Music';
@@ -42,8 +40,8 @@ const StartCard = ({changeScreen, genre}) => {
 	}
 	else{
 		let fiveLatestItems = list.slice(Math.max(list.length - 5, 0))
-		lista = fiveLatestItems.map(item => (
-		<p key={item.title} className={`list-item text-${color}`}>{item.title} - {item.creator}</p>	
+		lista = fiveLatestItems.map((item,index) => (
+		<p key={item.title+index} className={`list-item text-${color}`}>{item.title} - {item.creator}</p>	
 		))
 	}
 	

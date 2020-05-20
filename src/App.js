@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 function App() {
 	const [currentScreen, setCurrentScreen] = useState('welcomeScreen');
-	let content= null;
+	let content = null;
 	switch(currentScreen){
 		case 'listScreen':
 			content = (
