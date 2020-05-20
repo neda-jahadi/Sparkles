@@ -2,11 +2,37 @@ import React,{useState} from 'react';
 import './FormStyle.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { actions } from '../features/listReducer';
-import HeaderComponent from './HeaderComponent';
+import { listActions } from '../features/listReducer';
 
 
 const FormComponent = ()=>{
+
+    const category = useSelector(state => state.category);
+    console.log(category);
+
+    let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
+
+
+    switch(category){
+        case 'music':
+            h2 = 'Add Music';
+            titleText = 'Song Title';
+            creatorText = 'Artist';
+            usedBeforeText = 'Listened to'
+        break;
+        case 'books':
+            h2 = 'Add Book';
+            titleText = 'Book Title';
+            creatorText = 'Author';
+            usedBeforeText = 'Read before'
+        break;
+        case 'movies':
+            h2 = 'Add Movie';
+            titleText = 'Movie Title';
+            creatorText = 'Director';
+            usedBeforeText = 'Seen'
+        break;
+    }
 
    	const [title, setTitle] = useState('')
     const [creator, setCreator] = useState('');
@@ -15,7 +41,6 @@ const FormComponent = ()=>{
     const [comment, setComment] = useState('');
     
     const dispatch = useDispatch();
-	// användes för test const list = useSelector(state => state.list)	
 
     const addItem = (event) =>{
 
@@ -28,25 +53,23 @@ const FormComponent = ()=>{
             rating: rating,
             comment:comment
 		} 		
-        dispatch(actions.addToList(newItem));
+        dispatch(listActions.addToList(newItem));
     }
-
-
 
     return(
         <div className="form-view">
             <form className="background-red text-red">
-                <h2>Add music</h2>
+                <h2>{h2}</h2>
 
-                <label htmlFor="title">Song Title</label>
+                <label htmlFor="title">{titleText}</label>
                 <input id="title" type="text" value={title} onChange={e => setTitle(e.target.value)}/>
 
-                <label htmlFor="creator">Artist</label>
+                <label htmlFor="creator">{creatorText}</label>
                 <input id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value)}/>
                 <div>
 
                     <fieldset>
-                        <legend>Listened to</legend>
+                        <legend>{usedBeforeText}</legend>
 
                             <label htmlFor="yes">Yes</label>
                             <input id="yes" type="radio" name="usedBefore" onClick={() => setUsedBefore(true)}/>

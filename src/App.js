@@ -20,14 +20,10 @@ function App() {
 
 	switch(currentScreen){
 		case 'listScreen':
-			content = (
-				<ListComponent/>
-			)	
+			content = <ListComponent/>
 			break;
 		case 'formScreen':
-			content = (
-				<FormComponent/>
-			)
+			content = <FormComponent/>
 			break;
 		case 'welcomeScreen':
 			content = (

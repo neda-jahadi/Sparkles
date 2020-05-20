@@ -1,6 +1,6 @@
 import {createReducer, createAction} from '@reduxjs/toolkit';
 
-const categoryDisplayed = '';
+const categoryDisplayed = 'music';
 
 const choseMusic = createAction('music');
 const choseBooks = createAction('books');
@@ -15,9 +15,9 @@ const categoryActions = {
 
 
 const reducer = createReducer(categoryDisplayed, {
-    [choseMusic]: choseMusic,
-    [choseBooks]: choseBooks,
-    [choseMovies]: choseMovies
+    [choseMusic]: ()=> 'music',
+    [choseBooks]: ()=> 'books',
+    [choseMovies]: ()=> 'movie'
 });
 
 export { reducer , categoryActions };
