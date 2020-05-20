@@ -15,7 +15,6 @@ const categoryActions = {
 }
 
 
-
 const reducer = createReducer(categoryDisplayed, {
     [choseMusic]: ()=> 'music',
     [choseBooks]: ()=> 'books',
