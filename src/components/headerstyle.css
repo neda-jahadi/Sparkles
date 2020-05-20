@@ -1,25 +1,64 @@
 header {
   display: flex;
+  justify-content:center;
   width: 100vw;
-  margin: 0 auto;
-  background-color: transparent;
   padding: 2rem;
 }
-  
-img.logo{
-  height: 3.2rem;
-  margin: 0 auto;
+header.red{
+  background-color: var(--background-color-red);
+} 
+header.yellow{
+  background-color: var(--background-color-yellow);
 }
+header.green{
+  background-color: var(--background-color-green);
+}
+img.big{
+  width: 20rem;
+  height: auto;
+ 
+} 
 img.go-back{
   height: 2rem;
 }
+img.go-back:hover{
+  cursor:pointer;
+}
+.desktop-size{
+  display:none;
+}
+.mobile-size{
+  display:inline-block;
+}
+.logo-mobile{
+  margin:0 0 0 auto;
+  height: 3.2rem;
+ 
+}
+
 
 @media(min-width: 700px){
   header{
-      background-color: white;
+    background-color: white;
   }
   img.big{
     width: 35rem;
-    height: auto;
+   
+  }
+  img.medium{
+    width:25rem;
+    margin-right:5.5rem;
+  }
+  .mobile-size{
+    display:none;
+  }
+  .desktop-size{
+    display:inline-block;
+  }
+  .go-back-text{
+    margin:0 auto 0 0;
+    text-decoration: none;
+    color:black;
+    font-size:1.3em;
   }
 }

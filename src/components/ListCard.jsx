@@ -9,7 +9,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
    //const dispatch
     const category=useSelector(state=>state.category);
    
-    let creatorText='', usedBeforeText='', colorClass='';
+    let creatorText='', usedBeforeText='', colorClass='', colorClassButton='';
  
     
     switch (category){
@@ -18,25 +18,25 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             creatorText='Artist';
             usedBeforeText='Listened to';
             colorClass='red'
+            colorClassButton='red-button'
             break;
 
         case 'books':
             creatorText='Author';
             usedBeforeText='Read';
             colorClass='yellow'
+            colorClassButton='yellow-button'
             break;
 
         case 'movies':
             creatorText='Producer';
             usedBeforeText='Seen';
             colorClass='green'
+            colorClassButton='green-button'
             break;
 
         default:
-        console.log('Oklart vad jag ska ha i default')
-
-
-
+  
     }
 
     return (
@@ -50,13 +50,13 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             <p>Comment: {comment} </p>
             
             
-            <button className='edit-button'>
+            <button className={'edit-button '+colorClassButton}>
                 <img src={Edit} alt="Edit" className="edit-logo"/>
             </button>
           
 
             
-            <button className='delete-button'>X</button>
+            <button className={'delete-button '+colorClassButton}>X</button>
 
         </div>
 

@@ -3,32 +3,60 @@ import './headerstyle.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { screenActions } from '../features/screenReducer';
 import bigLogo from '../assets/LogoBig.png';
+import smallLogoRed from '../assets/LogoSmallRed.png'
 import arrowBack from '../assets/back-red.png';
+
 
 const HeaderComponent = () => {
 
     const dispatch = useDispatch();
     const screen = useSelector(state => state.screen);
+    const category = useSelector(state => state.category);
 
-    let logoClass = 'logo';
+    let logoClass = 'medium';
+    let headerColor='';
 
-    let content = (<>            
-        <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back" src={arrowBack} alt="Go to previous page"/>
+    switch(category){
+        case 'music':
+        headerColor='red';
+        break;
 
-        <img className={logoClass} src={bigLogo} alt="Logo" onClick={()=> dispatch(screenActions.homeScreen())}/>
+        case 'books':
+        headerColor='yellow';
+        break;
+
+        case 'movies':
+        headerColor='green'
+        break;
+
+        default:
+        headerColor='';
+    }
+
+    let content = (<> 
+    {/* ska visas i desktop */}
+        <a className='go-back-text desktop-size' href='#' onClick={()=> dispatch(screenActions.listScreen())}>Go back</a>
+    {/* ska visas i mobilvy */}
+        <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back mobile-size" src={arrowBack} alt="Go to previous page"/>
+    {/* ska visas i desktopvy */}
+        <img className={logoClass +' desktop-size'} src={bigLogo} alt="Go to homescreen" onClick={()=> dispatch(screenActions.homeScreen())}/>
+    {/* ska visas i mobilvy */}
+        <img className='logo-mobile mobile-size' src={smallLogoRed} alt="Go to homescreen" onClick={()=> dispatch(screenActions.homeScreen())}/>
+
         </>
     )
 
     if(screen === 'welcomeScreen'){
+        logoClass = 'big';
         content = 
         <img className={logoClass} src={bigLogo} alt="Logo" onClick={()=> dispatch(screenActions.homeScreen())}/>;
 
-        logoClass = 'logo big';
+        
     }
 
 
     return(
-        <header>
+        <header className={headerColor}>
             {content}
         </header>
     )
