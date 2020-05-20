@@ -7,8 +7,6 @@ import FormComponent from './components/FormComponent';
 import ListCard from './components/ListCard'
 import { useSelector } from 'react-redux';
 
-
-
 function App() {
 	const [currentScreen, setCurrentScreen] = useState('welcomeScreen');
 	let content= null;
@@ -34,13 +32,13 @@ function App() {
 					<img src={Logo} alt="Logo" className="logoBig"></img>
 					<div className="start-card-wrapper">
 						<div className="card first-card">
-							<StartCard changeScreen={(param) => setCurrentScreen(param)}/>
+							<StartCard  genre={'Music'} changeScreen={(param) => setCurrentScreen(param)}/>
 						</div>
 						<div className="card second-card">
-							<StartCard changeScreen={(param) => setCurrentScreen(param)}/>
+							<StartCard genre={'Books'} changeScreen={(param) => setCurrentScreen(param)}/>
 						</div>
 						<div className="card third-card">
-							<StartCard changeScreen={(param) => setCurrentScreen(param)}/>
+							<StartCard genre={'Movies'} changeScreen={(param) => setCurrentScreen(param)}/>
 						</div>
 					</div>
 				</div>
