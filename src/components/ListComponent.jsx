@@ -63,17 +63,17 @@ const ListComponent = ({formScreen,startCard}) =>{
                 <div className="listcomponent-input">
                     <input type="text" placeholder="Search" />
                 </div>
-                <div >
+                {/* <div >
                     
                     <img className='listcomponent-largelogo' src={largeLogo} onClick ={startCard}  alt=" large logo" />
-                </div>
+                </div> */}
                 
             </div>
         </div>
         <div className="listcomponent-body">
-            <div className="listcomponent-logo">
+            {/* <div className="listcomponent-logo">
                 <img className='listcomponent-logo' src={smallRedLogo}  onClick ={startCard} alt=" small red logo" />
-            </div>
+            </div> */}
             <h1>
                 Music
             </h1>

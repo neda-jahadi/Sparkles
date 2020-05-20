@@ -6,7 +6,7 @@
     background-color: var(--background-color-red);
     
     display: grid;
-    grid-template-rows: 3em 3em 5em 1fr 5em;
+    grid-template-rows: 3em 5em 1fr 5em;
     color: var(--text-color-red);
 }
 .listcomponent-body > * {
@@ -131,6 +131,11 @@
     .listcomponent-largelogo:hover{
         cursor: pointer;
     }
+    .scrollable {
+        
+        overflow-y: auto;
+        
+    } 
      .main {
    
 
@@ -138,9 +143,7 @@
         grid-template-columns:1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-gap:1em;
-        overflow-x: auto;
-        border:1px solid blue;
-
+        height: 300px;
         
     }
    
@@ -219,4 +222,12 @@
         text-align: left;
     }
      
+}
+@media screen and (max-width: 870px){
+    .main{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap:1em;
+        
+    }
 }
