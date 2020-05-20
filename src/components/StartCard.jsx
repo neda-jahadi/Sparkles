@@ -3,73 +3,99 @@ import './StartCard.css';
 import Music from '../assets/music.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { screenActions } from '../features/screenReducer';
+import { categoryActions } from '../features/categoryReducer';
 import Movies from '../assets/video-camera.png'
 import Books from '../assets/good.png'
 
-const StartCard = ({changeScreen, genre}) => {
-	// const [title, setTitle] = useState('');
-	// const [icon, setIcon] = useState(null);
+const StartCard = ({genre}) => {
 	const dispatch = useDispatch();
-	const list = useSelector(state => state.list)
+	
+	const musicList = useSelector(state => state.musicList)
+	const booksList = useSelector(state => state.booksList)	
+	const moviesList = useSelector(state => state.moviesList)
+
+	
 	let title = '';
 	let icon = null;
 	let color = null;
 	let lista = null;
-	console.log(genre)
+	let list = null;
 	switch(genre){
-		case 'Music': 
+		case 'music': 
+			list = musicList;
 			title = 'Music';
 			icon = Music; 
 			color = 'red'
 			break;
-		case 'Books': 
+		case 'books': 
+			list = booksList;
 			title = 'Books';
 			icon = Books;
 			color = 'yellow'
 			break;
-		case 'Movies':
+		case 'movies':
+			list = moviesList;
 			color = 'green'
 			title = 'Movies';
 			icon = Movies;
 			break;
 		default:
+			list = moviesList;
 			color = 'green'
 			title = 'Movies';
 			icon = Movies; 
 			break;		
 	}
+
+	const handler = (title, category) =>{
+		if(title === 'Music'){
+			dispatch(categoryActions.choseMusic())
+			console.log('i if sats category', category)
+		}
+		else if(title === 'Books'){
+			dispatch(categoryActions.choseBooks())
+		}
+		else if(title === 'Movies'){
+			dispatch(categoryActions.choseMovies())
+		}
+		if(category === 'list'){
+			dispatch(screenActions.listScreen())
+		}
+		else if(category === 'form'){
+			dispatch(screenActions.formScreen())
+		}
+	}
+	const handleClick = () => {
+		// på clicket ska korten sepereras för att man ska kunna se hela kortet med listan
+	}
 	
+
+
+
+
 	if(list.length === 0){
-		lista = <p className="text-red">No list items</p> 
+		lista = <p className={`text-${color}`}>No list items</p> 
 	}
 	else{
 		let fiveLatestItems = list.slice(Math.max(list.length - 5, 0))
-		lista = fiveLatestItems.map(item => (
-		<p key={item.title} className="list-item text-red">{item.title} - {item.creator}</p>	
+		lista = fiveLatestItems.map((item,index) => (
+			<p key={item.title+index} className={`list-item text-${color}`}>{item.title} - {item.creator}</p>	
 		))
 	}
-	
+
 	return(
 		<div>
-			<div className={`start-card background-${color}`}>
+			<div className={`start-card background-${color}`} onClick={handleClick}>
 				<div className="title-container">
 					<h2 className={`title text-${color}`}>{title}</h2>
 					<img src={icon} alt="Icon" width="30em" height="40em" className="icon"/>
 				</div>
-			
 				{lista}
-				<div className="btn-continer">
-				
-					<button className="btn-list" onClick={()=>dispatch(screenActions.listScreen())}>Music</button>
-					<button className="btn-add" onClick={()=>dispatch(screenActions.formScreen())}>Add music</button>
-
-				{/* <div className="btn-container">
-					<button className={`btn-list button-${color}`} onClick={()=>changeScreen('listScreen')}>{title} list</button>
-					<button className={`btn-add button-${color}`} onClick={()=>changeScreen('formScreen')}>Add {title}</button>
-				</div> */}
-				
+				<div className="btn-container">
+					<button className={`btn-list button-${color}`} onClick={()=> handler(title, 'list')}>{title}</button>
+					<button className={`btn-add button-${color}`}  onClick={() => handler(title, 'form')}>Add {title}</button>
+				</div>
 			</div>
-		</div>
 		</div>
 		
 	)

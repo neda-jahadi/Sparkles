@@ -3,6 +3,7 @@ import './listcomponent.css';
 import smallRedLogo from '../assets/LogoSmallRed.png';
 import largeLogo from '../assets/LogoBig.png';
 import ListCard from './ListCard'
+
 const ListComponent = () =>{
      
 

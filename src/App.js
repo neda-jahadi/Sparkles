@@ -27,6 +27,7 @@ function App() {
 			content = (
 				<>
 					<div className="start-card-wrapper">
+<<<<<<< HEAD
 						<div className="card first-card">
 							<StartCard genre={'music'}/>
 						</div>
@@ -36,6 +37,29 @@ function App() {
 						<div className="card third-card">
 							<StartCard genre={'movies'}/>
 						</div>
+=======
+
+						<input type="radio" id="x1" className="radio" name="x"/>
+						<label htmlFor="x1">
+							<div className="card first-card">
+								<StartCard genre={'music'}/>
+							</div>
+						</label>
+
+						<input type="radio" id="x2" className="radio" name="x"/>
+						<label htmlFor="x2">
+							<div className="card second-card">
+									<StartCard genre={'books'}/>
+							</div>
+						</label>
+
+						<input type="radio" id="x3" className="radio" name="x"/>
+						<label htmlFor="x3">
+							<div className="card third-card">
+									<StartCard genre={'movies'}/>
+							</div>
+						</label>
+>>>>>>> origin/hanna
 					</div>
 				</>
 			)
