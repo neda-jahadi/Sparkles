@@ -1,0 +1,21 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 1.5rem 5vw 0;
+    margin: 0 auto;
+    background-color: #EB9191;
+}
+  
+header > img.logo{
+    height: 3.2rem;
+  }
+header > img.go-back{
+    height: 2rem;
+  }
+
+@media(min-width: 700px){
+    header{
+        background-color: white;
+    }
+}

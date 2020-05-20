@@ -1,9 +1,11 @@
 import React from 'react';
 import './StartCard.css';
 import Music from '../assets/music.png'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { screenActions } from '../features/screenReducer';
 
-const StartCard = ({changeScreen}) => {
+const StartCard = () => {
+	const dispatch = useDispatch();
 	let lista = null;
 
 	const list = useSelector(state => state.list)
@@ -28,8 +30,8 @@ const StartCard = ({changeScreen}) => {
 				{lista}
 				<div className="btn-continer">
 				
-					<button className="btn-list" onClick={()=>changeScreen('listScreen')}>Music</button>
-					<button className="btn-add" onClick={()=>changeScreen('formScreen')}>Add music</button>
+					<button className="btn-list" onClick={()=>dispatch(screenActions.listScreen())}>Music</button>
+					<button className="btn-add" onClick={()=>dispatch(screenActions.formScreen())}>Add music</button>
 				</div>
 				
 			</div>

@@ -16,6 +16,4 @@ const reducer = createReducer(intialState, {
 	[removeFromList]: (state, action) => state.filter(item => item.id !== action.payload.id)
 })
 
-console.log('addToList i listReducer', intialState);
-
 export { reducer, actions };

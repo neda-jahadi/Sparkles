@@ -35,7 +35,6 @@ const FormComponent = ()=>{
 
     return(
         <div className="form-view">
-            <HeaderComponent/>
             <form className="background-red text-red">
                 <h2>Add music</h2>
 
