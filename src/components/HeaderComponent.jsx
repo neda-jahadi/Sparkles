@@ -11,7 +11,6 @@ const HeaderComponent = () => {
 
     const dispatch = useDispatch();
     const screen = useSelector(state => state.screen);
-    const category = useSelector(state => state.category);
 
     let logoClass = 'medium';
 
