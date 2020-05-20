@@ -12,6 +12,31 @@
 .title-container .icon{
 	align-self: flex-end;
 }
+
+
+/*! */
+.checkbox{
+	display: none;
+} 
+.checkbox:checked ~ label > .start-card {
+	background-color: aqua;
+
+}
+
+/* .start-card:hover {
+	transform: translateY(-20px);
+	transition: 0.4s ease-out;
+  }
+  
+  .start-card:hover ~ .start-card {
+	position: relative;
+	left: 50px;
+	transition: 0.4s ease-out;
+  }
+ */
+
+
+
 .start-card{
 	display: flex;
 	min-height: 27em;

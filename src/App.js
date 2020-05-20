@@ -26,7 +26,6 @@ function App() {
 		case 'welcomeScreen':
 			content = (
 				<>
-					<img src={Logo} alt="Logo" className="logoBig"></img>
 					<div className="start-card-wrapper">
 						<div className="card first-card">
 							<StartCard genre={'music'}/>
