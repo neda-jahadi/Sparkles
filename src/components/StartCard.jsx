@@ -38,12 +38,12 @@ const StartCard = ({changeScreen, genre}) => {
 			
 	}
 	if(list.length === 0){
-		lista = <p className="text-red">No list items</p> 
+		lista = <p className={`text-${color}`}>No list items</p> 
 	}
 	else{
 		let fiveLatestItems = list.slice(Math.max(list.length - 5, 0))
 		lista = fiveLatestItems.map(item => (
-		<p key={item.title} className="list-item text-red">{item.title} - {item.creator}</p>	
+		<p key={item.title} className={`list-item text-${color}`}>{item.title} - {item.creator}</p>	
 		))
 	}
 	
