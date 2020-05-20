@@ -51,7 +51,7 @@ const ListComponent = ({formScreen,startCard}) =>{
  
     return(
         <div className="desktop-mobil">
-        <div className="menu-desktop">
+        
             <div className='desktop-menu'>
                 <div className="sort">
                         <div className="drop-div">Sort</div>
@@ -72,7 +72,7 @@ const ListComponent = ({formScreen,startCard}) =>{
                 </div> */}
                 
             </div>
-        </div>
+        
         <div className="listcomponent-body">
             {/* <div className="listcomponent-logo">
                 <img className='listcomponent-logo' src={smallRedLogo}  onClick ={startCard} alt=" small red logo" />
@@ -91,7 +91,7 @@ const ListComponent = ({formScreen,startCard}) =>{
                         </div>
                     
                 </div> 
-                <div className="listcomponent-input">
+                <div>
                    <input type="text" placeholder="Search" />
                 </div>
                 
@@ -110,4 +110,3 @@ const ListComponent = ({formScreen,startCard}) =>{
     );
 }
 export default ListComponent;
-
