@@ -9,28 +9,38 @@ import Books from '../assets/good.png'
 
 const StartCard = ({genre}) => {
 	const dispatch = useDispatch();
-	const list = useSelector(state => state.list)
+	
+	const musicList = useSelector(state => state.musicList)
+	const booksList = useSelector(state => state.booksList)	
+	const moviesList = useSelector(state => state.moviesList)
+
+	
 	let title = '';
 	let icon = null;
 	let color = null;
 	let lista = null;
+	let list = null;
 	switch(genre){
 		case 'music': 
+			list = musicList;
 			title = 'Music';
 			icon = Music; 
 			color = 'red'
 			break;
 		case 'books': 
+			list = booksList;
 			title = 'Books';
 			icon = Books;
 			color = 'yellow'
 			break;
 		case 'movies':
+			list = moviesList;
 			color = 'green'
 			title = 'Movies';
 			icon = Movies;
 			break;
 		default:
+			list = moviesList;
 			color = 'green'
 			title = 'Movies';
 			icon = Movies; 
@@ -38,8 +48,6 @@ const StartCard = ({genre}) => {
 	}
 
 	const handler = (title, category) =>{
-		console.log(title)
-		console.log(category)
 		if(title === 'Music'){
 			dispatch(categoryActions.choseMusic())
 			console.log('i if sats category', category)
@@ -62,7 +70,6 @@ const StartCard = ({genre}) => {
 
 
 
-
 	if(list.length === 0){
 		lista = <p className={`text-${color}`}>No list items</p> 
 	}
@@ -72,7 +79,7 @@ const StartCard = ({genre}) => {
 			<p key={item.title+index} className={`list-item text-${color}`}>{item.title} - {item.creator}</p>	
 		))
 	}
-	
+
 	return(
 		<div>
 			<div className={`start-card background-${color}`}>

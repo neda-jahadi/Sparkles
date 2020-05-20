@@ -1,5 +1,4 @@
 import {createReducer, createAction} from '@reduxjs/toolkit';
-import { actions } from './listReducer';
 
 const currentScreen = 'welcomeScreen'
 
