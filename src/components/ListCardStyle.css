@@ -14,6 +14,14 @@
     background-color:var(--text-color-red);
     color:var(--background-color-red);
 }
+.yellow{
+    background-color: var(--text-color-yellow);
+    color: var(--background-color-red);
+}
+.green{
+    background-color: var(--text-color-green);
+    color: var(--background-color-green);
+}
 /* Ändra grid-column 1/10 om man inte vill h3 ska sträcka sig till kanten på kortet, alltså över knapparn*/
 .list-card > h3{
     grid-column:1/11;

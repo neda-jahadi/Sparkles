@@ -22,12 +22,14 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
 
         case 'books':
             creatorText='Author';
-            usedBeforeText='Read'; 
+            usedBeforeText='Read';
+            colorClass='yellow'
             break;
 
         case 'movies':
             creatorText='Producer';
             usedBeforeText='Seen';
+            colorClass='green'
             break;
 
         default:
