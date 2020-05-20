@@ -8,10 +8,8 @@ import { listActions } from '../features/listReducer';
 const FormComponent = ()=>{
 
     const category = useSelector(state => state.category);
-    console.log(category);
-
     let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
-
+    let colorClass = '';
 
     switch(category){
         case 'music':
@@ -19,18 +17,21 @@ const FormComponent = ()=>{
             titleText = 'Song Title';
             creatorText = 'Artist';
             usedBeforeText = 'Listened to'
+            colorClass = 'background-red text-red'
         break;
         case 'books':
             h2 = 'Add Book';
             titleText = 'Book Title';
             creatorText = 'Author';
-            usedBeforeText = 'Read before'
+            usedBeforeText = 'Read before';
+            colorClass = 'background-yellow text-yellow';
         break;
         case 'movies':
             h2 = 'Add Movie';
             titleText = 'Movie Title';
             creatorText = 'Director';
-            usedBeforeText = 'Seen'
+            usedBeforeText = 'Seen';
+            colorClass = 'background-green text-green';
         break;
     }
 
@@ -58,7 +59,7 @@ const FormComponent = ()=>{
 
     return(
         <div className="form-view">
-            <form className="background-red text-red">
+            <form className={colorClass}>
                 <h2>{h2}</h2>
 
                 <label htmlFor="title">{titleText}</label>
