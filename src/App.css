@@ -5,7 +5,8 @@
 	width:100vw;
 }
 .logoBig {
-	width:15em;
+	width:30em;
+	height:10em;
 	margin: 3em;
 }
 .start-card-wrapper{
@@ -62,5 +63,14 @@
 		grid-column-end: 3;
 		z-index: 1;
 	
+	}
+}
+@media only screen and (min-width: 1200px){
+	.start-card-wrapper{
+		position: relative;
+		display:grid;
+		width:60%;
+		grid-template-columns: repeat(3,1fr);
+		margin:0 auto;
 	}
 }

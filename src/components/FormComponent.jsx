@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import './FormStyle.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { listActions } from '../features/listReducer';
+import { listActions } from '../features/musicReducer';
 
 
 const FormComponent = ()=>{
