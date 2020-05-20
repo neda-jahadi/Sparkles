@@ -14,28 +14,10 @@ const HeaderComponent = () => {
     const category = useSelector(state => state.category);
 
     let logoClass = 'medium';
-    let headerColor='';
-
-    switch(category){
-        case 'music':
-        headerColor='red';
-        break;
-
-        case 'books':
-        headerColor='yellow';
-        break;
-
-        case 'movies':
-        headerColor='green'
-        break;
-
-        default:
-        headerColor='';
-    }
 
     let content = (<> 
     {/* ska visas i desktop */}
-        <a className='go-back-text desktop-size' href='#' onClick={()=> dispatch(screenActions.listScreen())}>Go back</a>
+        <a className='go-back-text desktop-size' href='#' onClick={()=> dispatch(screenActions.homeScreen())}>Go back</a>
     {/* ska visas i mobilvy */}
         <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back mobile-size" src={arrowBack} alt="Go to previous page"/>
     {/* ska visas i desktopvy */}
@@ -51,12 +33,11 @@ const HeaderComponent = () => {
         content = 
         <img className={logoClass} src={bigLogo} alt="Logo" onClick={()=> dispatch(screenActions.homeScreen())}/>;
 
-        
     }
 
 
     return(
-        <header className={headerColor}>
+        <header>
             {content}
         </header>
     )

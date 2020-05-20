@@ -3,16 +3,10 @@ header {
   justify-content:center;
   width: 100vw;
   padding: 2rem;
+  background-color: transparent;
+  position: absolute;
 }
-header.red{
-  background-color: var(--background-color-red);
-} 
-header.yellow{
-  background-color: var(--background-color-yellow);
-}
-header.green{
-  background-color: var(--background-color-green);
-}
+
 img.big{
   width: 20rem;
   height: auto;
@@ -22,16 +16,16 @@ img.go-back{
   height: 2rem;
 }
 img.go-back:hover{
-  cursor:pointer;
+  cursor: pointer;
 }
 .desktop-size{
-  display:none;
+  display: none;
 }
 .mobile-size{
-  display:inline-block;
+  display: inline-block;
 }
 .logo-mobile{
-  margin:0 0 0 auto;
+  margin: 0 0 0 auto;
   height: 3.2rem;
  
 }
@@ -40,25 +34,26 @@ img.go-back:hover{
 @media(min-width: 700px){
   header{
     background-color: white;
+    position: static;
   }
   img.big{
     width: 35rem;
    
   }
   img.medium{
-    width:25rem;
-    margin-right:5.5rem;
+    width: 25rem;
+    margin-right: 5.5rem;
   }
   .mobile-size{
-    display:none;
+    display: none;
   }
   .desktop-size{
-    display:inline-block;
+    display: inline-block;
   }
   .go-back-text{
-    margin:0 auto 0 0;
+    margin: 0 auto 0 0;
     text-decoration: none;
-    color:black;
-    font-size:1.3em;
+    color: #333333;
+    font-size: 1.3em;
   }
 }
