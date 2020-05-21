@@ -59,11 +59,11 @@ const ListComponent = ({formScreen,startCard}) =>{
             <div className='desktop-menu'>
                 <div className="sort">
                         <div className={`drop-div text-${colorClass} background-${colorClass} `}>Sort</div>
-                        <div className="dropdown-content">
-                            <div>{titleText}</div>
-                            <div>{creatorText}</div>
-                            <div>Rating</div>
-                            <div>{usedBeforeText}</div>
+                        <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
+                            <div className={`sortItem-${colorClass}`}>{titleText}</div>
+                            <div className={`sortItem-${colorClass}`}>{creatorText}</div>
+                            <div className={`sortItem-${colorClass}`}>Rating</div>
+                            <div className={`sortItem-${colorClass}`}>{usedBeforeText}</div>
                         </div>
                   
                 </div> 
@@ -87,12 +87,12 @@ const ListComponent = ({formScreen,startCard}) =>{
                 </h1>
                 <div className='listcomponent-menu'>
                     <div className="sort">
-                        <h2 className="drop-div">Sort</h2>
-                        <div className="dropdown-content">
-                            <div>Song title</div>
-                            <div>Artist</div>
-                            <div>Rating</div>
-                            <div>Listen</div>
+                        <h2 className={`drop-div text-${colorClass} background-${colorClass}`}>Sort</h2>
+                        <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
+                            <div className={`sortItem-${colorClass}`}>{titleText}</div>
+                            <div className={`sortItem-${colorClass}`} >{creatorText}</div>
+                            <div className={`sortItem-${colorClass}`}>Rating</div>
+                            <div className={`sortItem-${colorClass}`}>{usedBeforeText}</div>
                         </div>
                     
                     </div> 
@@ -108,7 +108,7 @@ const ListComponent = ({formScreen,startCard}) =>{
 
                  </div>
                 <div className='add-button'>
-                   <button onClick={handleFormScreen}>{addButtonText}</button>
+                   <button className={`button-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
                 </div>
             </main>
         </div>

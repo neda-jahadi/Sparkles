@@ -23,11 +23,22 @@
     border: none;
     /* background-color:  var(--text-color-red);
     color: var(--background-color-red); */
-   
-    
-
 }
+
   
+.sortItem-red:hover {
+    background-color:  var(--text-color-red);
+    color: var(--background-color-red);
+}
+.sortItem-yellow:hover {
+    background-color:  var(--text-color-yellow);
+    color: var(--background-color-yellow);
+}
+.sortItem-green:hover {
+    background-color:  var(--text-color-green);
+    color: var(--background-color-green);
+}
+
 
 .listcomponent-menu input {
     background: transparent;
@@ -66,22 +77,17 @@
 .sort {
     position: relative;
     display: inline-block;
+    border-radius: 5px;
    
 }
 .drop-div {
+
     border-bottom: 1px solid  var(--text-color-red);
+    /* border-radius: 5px; */
     padding-left: 1em;
     font-size: 1.5em;
 }
-.sort:hover {
-    /* border: 1px solid var(--background-color-red); */
-    border-radius: 5px;
-    /* background-color: var(--text-color-red);
-    color: var(--background-color-red); */
-}
-/* .sort:hover .drop-div {
-    border-bottom: 1px solid  var(--background-color-red);
-} */
+
 
 .dropdown-content {
     display: none;
