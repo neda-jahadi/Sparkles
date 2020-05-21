@@ -36,7 +36,8 @@ const HeaderComponent = () => {
 
     let content = (<> 
     {/* ska visas i desktop */}
-        <a className='go-back-text desktop-size' href='#' onClick={()=> dispatch(screenActions.homeScreen())}>Go back</a>
+        {/* <a className='go-back-text desktop-size' href='#' onClick={()=> dispatch(screenActions.homeScreen())}>Go back</a> */}
+        <button className='go-back-text desktop-size' onClick={()=>dispatch(screenActions.homeScreen())}>Go back</button>
     {/* ska visas i mobilvy */}
         <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back mobile-size" src={arrowBack} alt="Go to previous page"/>
     {/* ska visas i desktopvy */}
