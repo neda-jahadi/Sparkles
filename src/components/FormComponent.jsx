@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listActions } from '../features/musicReducer';
 
 
+
 const FormComponent = ()=>{
 
     const category = useSelector(state => state.category);
@@ -58,6 +59,15 @@ const FormComponent = ()=>{
     }
 
     return(
+
+    <>   
+
+    //todo importera ikonerna till knapparna
+
+        <button></button>   
+        <button></button>
+        <button></button>
+
         <div className="form-view">
             <form className={colorClass}>
                 <h2>{h2}</h2>
@@ -90,6 +100,7 @@ const FormComponent = ()=>{
             </form>
 
         </div>
+    </>
 
     )
 }
