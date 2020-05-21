@@ -15,6 +15,7 @@
 .start-card-container{
 	height:100%;
 }
+/* DISPLAY NONE I DESKTOP VY på ALLT utom korten */
 .start-card{
 	display: flex;
 	min-height: 22em;
