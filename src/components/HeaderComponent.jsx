@@ -18,20 +18,24 @@ const HeaderComponent = () => {
     const category=useSelector(state=> state.category)
     let smallLogo=''
     let arrowBack=''
+    let textColor=''
 
     switch(category){
 
         case 'music':
-            smallLogo=smallLogoRed
-            arrowBack=arrowBackRed
+            smallLogo=smallLogoRed;
+            arrowBack=arrowBackRed;
+            textColor=' error-red';
             break;
         case 'books':
-            smallLogo=smallLogoYellow
-            arrowBack=arrowBackYellow
+            smallLogo=smallLogoYellow;
+            arrowBack=arrowBackYellow;
+            textColor=' error-yellow';
             break;
         case 'movies':
-            smallLogo=smallLogoGreen
-            arrowBack=arrowBackGreen
+            smallLogo=smallLogoGreen;
+            arrowBack=arrowBackGreen;
+            textColor=' error-green';
             break;
         default:
             console.log('inget just nu')
@@ -42,8 +46,7 @@ const HeaderComponent = () => {
 
     let content = (<> 
     {/* ska visas i desktop */}
-        {/* <a className='go-back-text desktop-size' href='#' onClick={()=> dispatch(screenActions.homeScreen())}>Go back</a> */}
-        <button className='go-back-text desktop-size' onClick={()=>dispatch(screenActions.homeScreen())}>Go back</button>
+        <button className={'go-back-text desktop-size '+textColor} onClick={()=>dispatch(screenActions.homeScreen())}>Go back</button>
     {/* ska visas i mobilvy */}
         <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back mobile-size" src={arrowBack} alt="Go to previous page"/>
     {/* ska visas i desktopvy */}
