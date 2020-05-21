@@ -6,15 +6,17 @@ import ListCard from './ListCard';
 import { useDispatch,useSelector } from 'react-redux';
 import {screenActions} from '../features/screenReducer';
 import {categoryActions} from '../features/categoryReducer';
-import {listActions} from '../features/musicReducer';
+// import {listActions} from '../features/musicReducer';
 
 const ListComponent = ({formScreen,startCard}) =>{
     const dispatch = useDispatch();
 
     const category = useSelector(state => state.category);
-    const testLista = useSelector(state => state.musicList);
+    const musicList = useSelector(state => state.musicList);
+    const moviesList = useSelector(state => state.moviesList);
+    const booksList = useSelector(state => state.booksList);
 
-    let h2 = '', titleText = '', creatorText = '', usedBeforeText = '' , addButtonText = '';
+    let h2 = '', titleText = '', creatorText = '', usedBeforeText = '' , addButtonText = '' , list =[];
     let colorClass = '';
 
     switch(category){
@@ -24,10 +26,10 @@ const ListComponent = ({formScreen,startCard}) =>{
              creatorText = 'Artist';
              usedBeforeText = 'Listened to';
              addButtonText = 'Add music';
-             colorClass = 'red'
+             colorClass = 'red';
         break;
         case 'books':
-            h2 = 'Book';
+            h2 = 'Books';
             titleText = 'Book Title';
             creatorText = 'Author';
             usedBeforeText = 'Read before';
@@ -35,7 +37,7 @@ const ListComponent = ({formScreen,startCard}) =>{
              colorClass = 'yellow';
         break;
         case 'movies':
-            h2 = 'Movie';
+            h2 = 'Movies';
             titleText = 'Movie Title';
             creatorText = 'Director';
             usedBeforeText = 'Seen';
@@ -44,13 +46,21 @@ const ListComponent = ({formScreen,startCard}) =>{
         break;
     }
 
-    const jsxLista=testLista.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
+    if(h2 ==='Music'){
+        list = musicList;
+    } else if (h2 === 'Movies'){
+        list = moviesList;
+    }else {
+        list = booksList;
+    }
+
+    const jsxLista=list.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
      const handleFormScreen = (e) => {
         dispatch(screenActions.formScreen(e));
     }
 
    
-    // colorClass += ' listcomponent-body';
+    
  
     return(
         
