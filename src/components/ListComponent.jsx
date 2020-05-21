@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './listcomponent.css';
 import smallRedLogo from '../assets/LogoSmallRed.png';
 import largeLogo from '../assets/LogoBig.png';
@@ -7,7 +7,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import {screenActions} from '../features/screenReducer';
 import {categoryActions} from '../features/categoryReducer';
 // import {listActions} from '../features/musicReducer';
-
+let search = [];
 const ListComponent = ({formScreen,startCard}) =>{
     const dispatch = useDispatch();
 
@@ -16,8 +16,13 @@ const ListComponent = ({formScreen,startCard}) =>{
     const moviesList = useSelector(state => state.moviesList);
     const booksList = useSelector(state => state.booksList);
 
-    let h2 = '', titleText = '', creatorText = '', usedBeforeText = '' , addButtonText = '' , list =[];
+    
+    const [mySearch, setMySearch] = useState('');
+
+    let h2 = '', titleText = '', creatorText = '',
+     usedBeforeText = '' , addButtonText = '' , list =[] , copy = [], sorteringsNyckel = 'title';
     let colorClass = '';
+    
 
     switch(category){
         case 'music':
@@ -48,18 +53,61 @@ const ListComponent = ({formScreen,startCard}) =>{
 
     if(h2 ==='Music'){
         list = musicList;
+       
+       
     } else if (h2 === 'Movies'){
         list = moviesList;
+        
     }else {
         list = booksList;
+        
     }
+    
+    
+    const handleSearch =(event) => {
+        
+        setMySearch(event.target.value);
+       
+        
+    }
+     if (mySearch !==''){
+         search =[...list].filter(item=>
+            (item.title).toLowerCase().includes(mySearch)||
+            (item.creator).toLowerCase().includes(mySearch)||
+            (item.comment).toLowerCase().includes(mySearch)
+        );
+     }else {
+         search = list;
+     }
+    
+     
 
-    const jsxLista=list.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
+    const handleSortTitle = () => {
+       sorteringsNyckel = 'title';
+    }
+    const handleSortCreator = () => {
+        sorteringsNyckel = 'creator';
+    }
+    const handleSortUsedBefore = () => {
+        sorteringsNyckel = 'usedBedfore';
+    }
+    const handleSortRate = () => {
+        sorteringsNyckel = 'rating';
+    }
+     const sorteradeList = () => {
+         copy = [...list];
+         
+         return copy;
+     }
+
+    const jsxLista=search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
      const handleFormScreen = (e) => {
         dispatch(screenActions.formScreen(e));
     }
 
    
+
+    
     
  
     return(
@@ -78,7 +126,7 @@ const ListComponent = ({formScreen,startCard}) =>{
                   
                 </div> 
                 <div className="listcomponent-input">
-                    <input type="text" placeholder="Search" />
+                    <input type="text" value={mySearch} onChange = {handleSearch} placeholder="Search"></input>
                 </div>
                 {/* <div >
                     
@@ -99,10 +147,10 @@ const ListComponent = ({formScreen,startCard}) =>{
                     <div className="sort">
                         <h2 className={`drop-div text-${colorClass} background-${colorClass}`}>Sort</h2>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
-                            <div className={`sortItem-${colorClass}`}>{titleText}</div>
-                            <div className={`sortItem-${colorClass}`} >{creatorText}</div>
-                            <div className={`sortItem-${colorClass}`}>Rating</div>
-                            <div className={`sortItem-${colorClass}`}>{usedBeforeText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={handleSortTitle}>{titleText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={handleSortCreator}>{creatorText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={handleSortRate}>Rating</div>
+                            <div className={`sortItem-${colorClass}`} onClick={handleSortUsedBefore}>{usedBeforeText}</div>
                         </div>
                     
                     </div> 
@@ -119,6 +167,9 @@ const ListComponent = ({formScreen,startCard}) =>{
                  </div>
                 <div className='add-button'>
                    <button className={`button-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
+                   
+                  
+
                 </div>
             </main>
         </div>
