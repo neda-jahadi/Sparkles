@@ -10,14 +10,17 @@
 	margin: 3em;
 }
 .start-card-wrapper{
-	width: 19em;
+	width: 20em;
 	display: flex;
+	height: 100vh;
 	flex-direction: column;
 	margin:0 auto;
+	padding-top:10em;
 }
-.start-card-wrapper input[type="radio"] {
-	display: none;
+.card{
+	height:100%;
 }
+
 .start-card-wrapper input[type="radio"]:checked + label {
 	flex: 1 1 auto;
 }
@@ -26,18 +29,14 @@
 	transition: all 1s;
 }
 .first-card{
-
+	margin-top: -11em;
 }
 .second-card{
-
+	margin-top: -16.3em;
 }
 .third-card{
-
+	margin-top: -16.3em;
 }
-
-
-
-
 
 
 @media only screen  

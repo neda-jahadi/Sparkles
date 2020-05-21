@@ -27,7 +27,6 @@ function App() {
 			content = (
 				<>
 					<div className="start-card-wrapper">
-
 						<input type="radio" id="x1" className="radio" name="x"/>
 						<label htmlFor="x1">
 							<div className="card first-card">
@@ -42,7 +41,7 @@ function App() {
 							</div>
 						</label>
 
-						<input type="radio" id="x3" className="radio" name="x"/>
+						<input type="radio" id="x3" className="radio" name="x" defaultChecked/>
 						<label htmlFor="x3">
 							<div className="card third-card">
 									<StartCard genre={'movies'}/>
