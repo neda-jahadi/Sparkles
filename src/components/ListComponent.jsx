@@ -24,7 +24,7 @@ const ListComponent = ({formScreen,startCard}) =>{
              creatorText = 'Artist';
              usedBeforeText = 'Listened to';
              addButtonText = 'Add music';
-             colorClass = 'background-red text-red'
+             colorClass = 'red'
         break;
         case 'books':
             h2 = 'Book';
@@ -32,7 +32,7 @@ const ListComponent = ({formScreen,startCard}) =>{
             creatorText = 'Author';
             usedBeforeText = 'Read before';
             addButtonText = 'Add book';
-             colorClass = 'background-yellow text-yellow';
+             colorClass = 'yellow';
         break;
         case 'movies':
             h2 = 'Movie';
@@ -40,7 +40,7 @@ const ListComponent = ({formScreen,startCard}) =>{
             creatorText = 'Director';
             usedBeforeText = 'Seen';
             addButtonText = 'Add movie';
-             colorClass = 'background-green text-green';
+             colorClass = 'green';
         break;
     }
 
@@ -48,14 +48,17 @@ const ListComponent = ({formScreen,startCard}) =>{
      const handleFormScreen = (e) => {
         dispatch(screenActions.formScreen(e));
     }
+
+   
+    // colorClass += ' listcomponent-body';
  
     return(
         
         <div className="desktop-mobil">
-        
+            
             <div className='desktop-menu'>
                 <div className="sort">
-                        <div className="drop-div">Sort</div>
+                        <div className={`drop-div text-${colorClass} background-${colorClass} `}>Sort</div>
                         <div className="dropdown-content">
                             <div>{titleText}</div>
                             <div>{creatorText}</div>
@@ -73,16 +76,17 @@ const ListComponent = ({formScreen,startCard}) =>{
                 </div> */}
                 
             </div>
-        <div className={colorClass}>
-        <div className ="listcomponent-body" >
-            {/* <div className="listcomponent-logo">
+           
+        
+            <main className={`text-${colorClass} background-${colorClass}`}>
+                {/* <div className="listcomponent-logo">
                 <img className='listcomponent-logo' src={smallRedLogo}  onClick ={startCard} alt=" small red logo" />
-            </div> */}
-            <h1>
-                {h2}
-            </h1>
-            <div className='listcomponent-menu'>
-                <div className="sort">
+                  </div> */}
+                <h1>
+                   {h2}
+                </h1>
+                <div className='listcomponent-menu'>
+                    <div className="sort">
                         <h2 className="drop-div">Sort</h2>
                         <div className="dropdown-content">
                             <div>Song title</div>
@@ -91,24 +95,24 @@ const ListComponent = ({formScreen,startCard}) =>{
                             <div>Listen</div>
                         </div>
                     
-                </div> 
-                <div>
-                   <input type="text" placeholder="Search" />
-                </div>
+                    </div> 
+                    <div>
+                        <input type="text" placeholder="Search" />
+                    </div>
                 
-            </div>
-            <div className=" main scrollable">
+                </div>
+                <div className=" main scrollable">
 
                     {jsxLista}
             
 
-            </div>
-            <div className='add-button'>
-               <button onClick={handleFormScreen}>{addButtonText}</button>
-            </div>
+                 </div>
+                <div className='add-button'>
+                   <button onClick={handleFormScreen}>{addButtonText}</button>
+                </div>
+            </main>
         </div>
-        </div>
-        </div>
+        
         
     );
 }
