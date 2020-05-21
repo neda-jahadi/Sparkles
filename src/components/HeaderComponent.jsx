@@ -2,32 +2,42 @@ import React from 'react';
 import './headerstyle.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { screenActions } from '../features/screenReducer';
+import bigLogo from '../assets/LogoBig.png';
+import smallLogoRed from '../assets/LogoSmallRed.png'
+import arrowBack from '../assets/back-red.png';
+
 
 const HeaderComponent = () => {
 
     const dispatch = useDispatch();
     const screen = useSelector(state => state.screen);
 
-    let goBackBtn = null;
-    let logo = <img className="logo" src="assets/LogoSmallRed.png" alt="Logo" onClick={()=> dispatch(screenActions.homeScreen())}/>
+    let logoClass = 'medium';
 
-    switch(screen){
-        case 'formScreen':
-            goBackBtn = <img onClick={()=>dispatch(screenActions.listScreen())} className="go-back" src="assets/back-red.png" alt="Go to previous page"/>
-            break;
-        
-        case 'listScreen':
-            goBackBtn = <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back" src="assets/back-red.png" alt="Go to previous page"/>
-            break;
-        default:
-            goBackBtn = null;
-            logo = null;
+    let content = (<> 
+    {/* ska visas i desktop */}
+        <a className='go-back-text desktop-size' href='#' onClick={()=> dispatch(screenActions.homeScreen())}>Go back</a>
+    {/* ska visas i mobilvy */}
+        <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back mobile-size" src={arrowBack} alt="Go to previous page"/>
+    {/* ska visas i desktopvy */}
+        <img className={logoClass +' desktop-size'} src={bigLogo} alt="Go to homescreen" onClick={()=> dispatch(screenActions.homeScreen())}/>
+    {/* ska visas i mobilvy */}
+        <img className='logo-mobile mobile-size' src={smallLogoRed} alt="Go to homescreen" onClick={()=> dispatch(screenActions.homeScreen())}/>
+
+        </>
+    )
+
+    if(screen === 'welcomeScreen'){
+        logoClass = 'big';
+        content = 
+        <img className={logoClass} src={bigLogo} alt="Logo" onClick={()=> dispatch(screenActions.homeScreen())}/>;
+
     }
+
 
     return(
         <header>
-            {goBackBtn}
-            {logo}
+            {content}
         </header>
     )
 }

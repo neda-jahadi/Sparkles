@@ -15,7 +15,8 @@
 	height: 100vh;
 	flex-direction: column;
 	margin:0 auto;
-	padding-top:10em;
+	/* NY */
+	padding-top: 18em;
 }
 .card{
 	height:95%;
@@ -58,6 +59,7 @@
 		width:80%;
 		grid-template-columns: repeat(3,1fr);
 		margin:0 auto;
+		padding-top: 5rem;
 	}
 	.first-card{
 		grid-column-start: 1;

@@ -37,16 +37,12 @@ const ListComponent = () =>{
                 <div className="listcomponent-input">
                     <input type="text" placeholder="Search" />
                 </div>
-                <div>
-                    <img className='listcomponent-largelogo' src={largeLogo} alt=" large logo" />
-                </div>
+        
                 
             </div>
         </div>
         <div className="listcomponent-body">
-            <div className="listcomponent-logo">
-                <img className='listcomponent-logo' src={smallRedLogo} alt=" small red logo" />
-            </div>
+       
             <h1>
                 Music
             </h1>

@@ -1,6 +1,5 @@
 .list-card{
-    background-color:var(--text-color-red);
-    color:var(--background-color-red);
+    
     /* width:238px;
     min-height:115px; */
     border-radius:5px;
@@ -9,8 +8,32 @@
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows:auto;
     font-family:'Roboto', sans-serif;
-    /* border:2px solid blue; */
+    
+}
+.red{
+    background-color:var(--text-color-red);
+    color:var(--background-color-red);
+}
+.yellow{
+    background-color: var(--text-color-yellow);
+    color: var(--background-color-yellow);
+}
+.green{
+    background-color: var(--text-color-green);
+    color: var(--background-color-green);
+}
+.red-button{
+    color:var(--text-color-red);
+    background-color:var(--background-color-red);
+}
+.yellow-button{
+    color: var(--text-color-yellow);
+    background-color: var(--background-color-yellow);
 
+}
+.green-button{
+    color: var(--text-color-green);
+    background-color: var(--background-color-green);
 }
 /* Ändra grid-column 1/10 om man inte vill h3 ska sträcka sig till kanten på kortet, alltså över knapparn*/
 .list-card > h3{
@@ -26,13 +49,13 @@
     align-self:end;
 }
 .list-card > button {
-   background-color: var(--background-color-red);
-   border:none;
-   height:20px;
-   width:20px;
-   justify-self:end;
-   align-self:end;
-   border-radius:5px;
+    /* background-color: var(--background-color-red); */
+    border:none;
+    height:20px;
+    width:20px;
+    justify-self:end;
+    align-self:end;
+    border-radius:5px;
 }
 .list-card > .edit-button{
     grid-column:9/10;
@@ -49,7 +72,7 @@
 }
 .list-card >.delete-button{
     grid-column:10/11;
-    color:var(--text-color-red);
+    /* color:var(--text-color-red); */
     cursor:pointer;
    
 }

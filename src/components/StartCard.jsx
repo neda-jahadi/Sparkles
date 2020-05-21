@@ -82,7 +82,7 @@ const StartCard = ({genre}) => {
 
 	return(
 		<div className="start-card-container ">
-			<div className={`start-card background-${color} ${color}`} onClick={handleClick}>
+			<div className={`start-card background-${color}`} onClick={handleClick}>
 				<div className="title-container">
 					<h2 className={`title text-${color}`}>{title}</h2>
 					<img src={icon} alt="Icon" width="30em" height="40em" className="icon"/>

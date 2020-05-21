@@ -50,7 +50,6 @@ function App() {
 					</div>
 				</>
 			)
-			showHeader = null;
 			break;
 		default:
 			break;

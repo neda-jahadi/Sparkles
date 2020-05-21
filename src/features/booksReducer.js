@@ -12,7 +12,7 @@ const listActions = {
 const booksList = [
     {title: 'Astrid lindgren', creator: 'Kalle', usedBefore:true, comment: 'Apläskig'},
     {title: 'Sagan om ringen', creator: 'JRR Tolkien', usedBefore:false, comment: 'Kan den här vara bra?'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'}
+    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
 ];
 
 
