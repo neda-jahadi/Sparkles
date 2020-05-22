@@ -1,12 +1,10 @@
 import React,{useState} from 'react';
 import './listcomponent.css';
-import smallRedLogo from '../assets/LogoSmallRed.png';
-import largeLogo from '../assets/LogoBig.png';
 import ListCard from './ListCard';
 import { useDispatch,useSelector } from 'react-redux';
 import {screenActions} from '../features/screenReducer';
 import {categoryActions} from '../features/categoryReducer';
-// import {listActions} from '../features/musicReducer';
+
 let search = [];
 const ListComponent = ({formScreen,startCard}) =>{
     const dispatch = useDispatch();
@@ -128,18 +126,11 @@ const ListComponent = ({formScreen,startCard}) =>{
                 <div className="listcomponent-input">
                     <input type="text" value={mySearch} onChange = {handleSearch} placeholder="Search"></input>
                 </div>
-                {/* <div >
-                    
-                    <img className='listcomponent-largelogo' src={largeLogo} onClick ={startCard}  alt=" large logo" />
-                </div> */}
-                
             </div>
            
         
             <main className={`text-${colorClass} background-${colorClass}`}>
-                {/* <div className="listcomponent-logo">
-                <img className='listcomponent-logo' src={smallRedLogo}  onClick ={startCard} alt=" small red logo" />
-                  </div> */}
+               
                 <h1>
                    {h2}
                 </h1>
