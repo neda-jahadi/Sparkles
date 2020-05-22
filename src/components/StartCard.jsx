@@ -9,12 +9,9 @@ import Books from '../assets/good.png'
 
 const StartCard = ({genre}) => {
 	const dispatch = useDispatch();
-	
 	const musicList = useSelector(state => state.musicList)
 	const booksList = useSelector(state => state.booksList)	
 	const moviesList = useSelector(state => state.moviesList)
-
-	
 	let title = '';
 	let icon = null;
 	let color = null;
@@ -65,6 +62,9 @@ const StartCard = ({genre}) => {
 			dispatch(screenActions.formScreen())
 		}
 	}
+	const handleClick = () => {
+		// på clicket ska korten sepereras för att man ska kunna se hela kortet med listan
+	}
 	
 
 
@@ -81,8 +81,8 @@ const StartCard = ({genre}) => {
 	}
 
 	return(
-		<div>
-			<div className={`start-card background-${color}`}>
+		<div className="start-card-container ">
+			<div className={`start-card background-${color}`} onClick={handleClick}>
 				<div className="title-container">
 					<h2 className={`title text-${color}`}>{title}</h2>
 					<img src={icon} alt="Icon" width="30em" height="40em" className="icon"/>
@@ -91,8 +91,8 @@ const StartCard = ({genre}) => {
 				<div className="btn-container">
 					<button className={`btn-list button-${color}`} onClick={()=> handler(title, 'list')}>{title}</button>
 					<button className={`btn-add button-${color}`}  onClick={() => handler(title, 'form')}>Add {title}</button>
+				</div>
 			</div>
-		</div>
 		</div>
 		
 	)
