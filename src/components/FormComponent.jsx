@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import './FormStyle.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { listActions } from '../features/musicReducer';
+import { musicListActions } from '../features/musicReducer';
 import {categoryActions} from '../features/categoryReducer';
 import bookIcon from '../assets/good.png';
 import musicIcon from '../assets/music.png';
@@ -69,7 +69,7 @@ const FormComponent = ()=>{
             rating: rating,
             comment:comment
 		} 		
-        dispatch(listActions.addToList(newItem));
+        dispatch(musicListActions.addToList(newItem));
     }
  
 
