@@ -4,25 +4,57 @@ import { useDispatch, useSelector } from 'react-redux';
 import { screenActions } from '../features/screenReducer';
 import bigLogo from '../assets/LogoBig.png';
 import smallLogoRed from '../assets/LogoSmallRed.png'
-import arrowBack from '../assets/back-red.png';
+import smallLogoYellow from '../assets/LogoSmallYellow.png'
+import smallLogoGreen from '../assets/LogoSmallGreen.png'
+import arrowBackRed from '../assets/back-red.png';
+import arrowBackYellow from '../assets/back-yellow.png';
+import arrowBackGreen from '../assets/back-green.png';
 
 
 const HeaderComponent = () => {
 
     const dispatch = useDispatch();
     const screen = useSelector(state => state.screen);
+    const category=useSelector(state=> state.category)
+    let smallLogo=''
+    let arrowBack=''
+    let textColor=''
+
+    switch(category){
+
+        case 'music':
+            smallLogo=smallLogoRed;
+            arrowBack=arrowBackRed;
+            textColor=' error-red';
+            break;
+        case 'books':
+            smallLogo=smallLogoYellow;
+            arrowBack=arrowBackYellow;
+            textColor=' error-yellow';
+            break;
+        case 'movies':
+            smallLogo=smallLogoGreen;
+            arrowBack=arrowBackGreen;
+            textColor=' error-green';
+            break;
+        default:
+            console.log('inget just nu')
+
+    }
 
     let logoClass = 'medium';
 
     let content = (<> 
     {/* ska visas i desktop */}
-        <a className='go-back-text desktop-size' href='#' onClick={()=> dispatch(screenActions.homeScreen())}>Go back</a>
+        <button className={'go-back-text desktop-size '+textColor} onClick={()=>dispatch(screenActions.homeScreen())}>Go back</button>
     {/* ska visas i mobilvy */}
         <img onClick={()=>dispatch(screenActions.homeScreen())} className="go-back mobile-size" src={arrowBack} alt="Go to previous page"/>
     {/* ska visas i desktopvy */}
         <img className={logoClass +' desktop-size'} src={bigLogo} alt="Go to homescreen" onClick={()=> dispatch(screenActions.homeScreen())}/>
     {/* ska visas i mobilvy */}
-        <img className='logo-mobile mobile-size' src={smallLogoRed} alt="Go to homescreen" onClick={()=> dispatch(screenActions.homeScreen())}/>
+
+        <img className='logo-mobile mobile-size' src={smallLogo} alt="Go to homescreen" onClick={()=> dispatch(screenActions.homeScreen())}/>
+        
 
         </>
     )
