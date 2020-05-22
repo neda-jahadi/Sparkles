@@ -1,19 +1,17 @@
 import React from 'react'
 import './ListCardStyle.css'
 import Edit from '../assets/edit.png'
-import { useSelector } from 'react-redux';
-import { listActions } from '../features/musicReducer';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { musicListActions } from '../features/musicReducer'
+import { booksListActions } from '../features/booksReducer'
+import { moviesListActions } from '../features/moviesReducer'
 
 const ListCard=({title, creator, usedBefore, rating, comment})=>{
     
-   //const dispatch
-    const category=useSelector(state=>state.category);
-    const musicList=useSelector(state=> state.musicList)
-    console.log(musicList)
-   
+    const dispatch = useDispatch();
+    const category = useSelector(state=>state.category);
+
     let creatorText='', usedBeforeText='', colorClass='', colorClassButton='';
- 
     
     switch (category){
 
@@ -41,6 +39,21 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
         default:
   
     }
+    
+    const handleDelete=(item)=>{
+
+        if(category==='music'){
+            dispatch(musicListActions.removeFromList(item));
+        }
+        else if (category==='books'){
+            dispatch(booksListActions.removeFromList(item));
+        }
+        else if (category==='movies'){
+            dispatch(moviesListActions.removeFromList(item));
+        }
+
+
+    }
 
     return (
 
@@ -48,7 +61,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             <h3>{title}</h3>
 
             <p>{creatorText}: {creator}</p>
-            <p>{usedBeforeText}: {usedBefore}s</p>
+            <p>{usedBeforeText}: {usedBefore}</p>
             <p>Rating: {rating} of 5</p>
             <p>Comment: {comment} </p>
             
@@ -59,7 +72,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
           
 
             {/* skapa onClick dispatch delete from musiclist */}
-            <button className={'delete-button '+colorClassButton} >X</button>
+            <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
 
         </div>
 

@@ -1,7 +1,7 @@
 import {createReducer, createAction} from '@reduxjs/toolkit';
 
 
-const currentScreen = 'welcomeScreen'
+const currentScreen = 'formScreen';
 
 const listScreen = createAction('listScreen');
 const formScreen = createAction('formScreen');
