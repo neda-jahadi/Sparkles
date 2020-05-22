@@ -10,12 +10,10 @@ const moviesListActions = {
 }
 
 const moviesList = [
-    {title: 'Jag fem', creator: 'David Leviathan', rating:'1', usedBefore:'no', comment: 'Läs den!'},
-    {title: 'Jag sex', creator: 'David Leviathan', rating:'2', usedBefore:'yes', comment: 'Läs den!'},
+    {title: 'Kill Bill', creator: 'Quentin Tarantino', rating:'', usedBefore:'no', comment: 'Läs den!'},
+    {title: 'Fight Club', creator: 'David Fincher', rating:'5', usedBefore:'yes', comment: 'We do not talk about fight club!'},
 
 ];
-
-
 
 const reducer = createReducer(moviesList, {
     [addToMoviesList]: (state, action) => [...state, action.payload],

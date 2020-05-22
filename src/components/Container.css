@@ -18,7 +18,7 @@ section {
   section{
     width: 80vw;
     max-width: 60rem;
-    height: 70vh;
+    height: 60vh;
     margin: 5rem auto;
     padding: 0 3.5rem 2rem;
     border-radius: 20px;
@@ -62,8 +62,9 @@ section {
     .tab:hover{
      cursor:pointer;
     }
-    button.tab-active{
+    nav button.tab-active{
       height: calc(100% + 1rem);
+      z-index: 4;
     
     }
     .tab > img{
