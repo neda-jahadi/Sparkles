@@ -22,7 +22,7 @@ const FormComponent = ()=>{
             titleText = 'Song Title';
             creatorText = 'Artist';
             usedBeforeText = 'Listened to';
-            colorFormClass = 'background-red text-red';
+            colorFormClass = 'text-red';
             colorInputClass='input-background-red';
             buttonColor='button-red'
         break;
@@ -31,7 +31,7 @@ const FormComponent = ()=>{
             titleText = 'Book Title';
             creatorText = 'Author';
             usedBeforeText = 'Read before';
-            colorFormClass = 'background-yellow text-yellow';
+            colorFormClass = 'text-yellow';
             colorInputClass='input-background-yellow';
             buttonColor='button-yellow'
         break;
@@ -40,7 +40,7 @@ const FormComponent = ()=>{
             titleText = 'Movie Title';
             creatorText = 'Director';
             usedBeforeText = 'Seen';
-            colorFormClass = 'background-green text-green';
+            colorFormClass = 'text-green';
             buttonColor='button-green'
             colorInputClass='input-background-green';
         break;
@@ -84,10 +84,10 @@ const FormComponent = ()=>{
                 <h2>{h2}</h2>
 
                 <label htmlFor="title">{titleText}</label>
-                 <input className={colorInputClass} id="title" type="text" value={title} onChange={e => setTitle(e.target.value)}/>
+                <input className={colorInputClass} id="title" type="text" value={title} onChange={e => setTitle(e.target.value)}/>
 
                 <label htmlFor="creator">{creatorText}</label>
-                 <input className={colorInputClass} id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value)}/>
+                    <input className={colorInputClass} id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value)}/>
                 <div>
 
                     <fieldset>
@@ -102,7 +102,7 @@ const FormComponent = ()=>{
 
                     <div className="rate-div">
                         <label className="rate" htmlFor="rating">Rating 1-5</label>
-                         <input className={colorInputClass} type="number" min="1" max="5" value={rating} onChange={e => setRating(e.target.value)}/>
+                        <input className={colorInputClass} type="number" min="1" max="5" value={rating} onChange={e => setRating(e.target.value)}/>
                     </div>
                 </div>
                 <label htmlFor="comment">Comment</label>

@@ -24,4 +24,4 @@ const reducer = createReducer(booksList, {
 	[removeFromList]: (state, action) => state.filter(item => item.title !== action.payload)
 })
 
-export { reducer, booksListActions }
+export { reducer, booksListActions };

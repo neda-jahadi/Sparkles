@@ -14,23 +14,27 @@ const Container = ({children}) => {
     let musicTab='';
     let bookTab='';
     let movieTab='';
+    let colorBackground = '';
 
     switch(category){
         case 'music':
             musicTab=' tab-active';
+            colorBackground = 'background-red';
         break;
         case 'books':
             bookTab=' tab-active';
+            colorBackground = 'background-yellow';
         break;
         case 'movies':
             movieTab=' tab-active';
+            colorBackground = 'background-green';
         break;
         default:
     }
 
     return(
 
-        <section>
+        <section className={colorBackground}>
             <nav>
                     <button className={'tab background-red'+musicTab} 
                     onClick={()=> dispatch(categoryActions.choseMusic())}>
@@ -48,7 +52,10 @@ const Container = ({children}) => {
                     </button>
 
                 </nav>
-                {children}
+                <div className="content-wrapper">
+                    {children}
+                </div>
+                
         </section>
     )
 }
