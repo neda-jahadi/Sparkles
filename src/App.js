@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import StartCard from './components/StartCard';
-import Logo from './assets/LogoBig.png'
 import ListComponent from './components/ListComponent';
 import FormComponent from './components/FormComponent';
-import ListCard from './components/ListCard'
 import { useSelector } from 'react-redux';
 import HeaderComponent from './components/HeaderComponent';
+import Container from './components/Container';
 
 function App() {
 
@@ -18,10 +17,14 @@ function App() {
 
 	switch(currentScreen){
 		case 'listScreen':
-			content = <ListComponent/>
+			content = <Container>
+						<ListComponent/>
+					</Container>
 			break;
 		case 'formScreen':
-			content = <FormComponent/>
+			content = <Container>
+						<FormComponent/>
+					</Container>
 			break;
 		case 'welcomeScreen':
 			content = (
