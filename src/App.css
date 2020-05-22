@@ -3,6 +3,7 @@
 	
 	height: 100vh;
 	width:100vw;
+	overflow:hidden;
 }
 .logoBig {
 	width:30em;
@@ -10,15 +11,19 @@
 	margin: 3em;
 }
 .start-card-wrapper{
-	width: 19em;
+	width: 20em;
 	display: flex;
+	height: 110vh;
 	flex-direction: column;
 	margin:0 auto;
-	padding-top: 8rem;
+	/* NY */
+	padding-top: 19em;
 }
-.start-card-wrapper input[type="radio"] {
-	display: none;
+.card{
+	height:95%;
+	margin-top: -13em;
 }
+
 .start-card-wrapper input[type="radio"]:checked + label {
 	flex: 1 1 auto;
 }
@@ -26,20 +31,21 @@
 	flex: 0 0 auto;
 	transition: all 1s;
 }
+/*
 .first-card{
-
+	margin-top: -11em;
 }
 .second-card{
-
+	margin-top: -13em;
 }
 .third-card{
+	margin-top: -15em;
+} */
 
+/* DISPLAY NONE I DESKTOP VY på ALLT utom korten */
+.start-card-wrapper > input	{
+	display: none;
 }
-
-
-
-
-
 
 @media only screen  
 	and (min-device-width: 1200px) 
@@ -62,25 +68,30 @@
 		grid-column-start: 1;
 		grid-column-end: 1;
 		z-index: 10;
+		margin-top: 0;
 	}
 	.second-card{
 		grid-column-start: 2;
 		grid-column-end: 2;
 		z-index: 5;
+		margin-top: 0;
 	}
 	.third-card{
 		grid-column-start: 3;
 		grid-column-end: 3;
 		z-index: 1;
+		margin-top: 0;
 	
+	}
+
+}
+@media only screen and (min-width: 1200px){
+	.start-card-wrapper{
+		width:60%;
 	}
 }
 @media only screen and (min-width: 1200px){
 	.start-card-wrapper{
-		position: relative;
-		display:grid;
 		width:60%;
-		grid-template-columns: repeat(3,1fr);
-		margin:0 auto;
 	}
 }
