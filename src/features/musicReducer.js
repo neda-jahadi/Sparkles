@@ -11,10 +11,10 @@ const listActions = {
 
 const musicList = [
     {title: 'Sagan om ringen', creator: 'JRR Tolkien', usedBefore:false, comment: 'Kan den här vara bra?'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
+    {title: 'bag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
+    {title: 'aag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
+    {title: 'xag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
+    {title: 'cag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
 ];
 
 

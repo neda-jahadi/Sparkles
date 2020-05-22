@@ -10,7 +10,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
    //const dispatch
     const category=useSelector(state=>state.category);
     const musicList=useSelector(state=> state.musicList)
-    console.log(musicList)
+    // console.log(musicList)
    
     let creatorText='', usedBeforeText='', colorClass='', colorClassButton='';
  
