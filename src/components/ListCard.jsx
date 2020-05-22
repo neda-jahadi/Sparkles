@@ -2,12 +2,15 @@ import React from 'react'
 import './ListCardStyle.css'
 import Edit from '../assets/edit.png'
 import { useSelector } from 'react-redux';
+import { listActions } from '../features/musicReducer';
 
 
 const ListCard=({title, creator, usedBefore, rating, comment})=>{
     
    //const dispatch
     const category=useSelector(state=>state.category);
+    const musicList=useSelector(state=> state.musicList)
+    console.log(musicList)
    
     let creatorText='', usedBeforeText='', colorClass='', colorClassButton='';
  
@@ -55,8 +58,8 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             </button>
           
 
-            
-            <button className={'delete-button '+colorClassButton}>X</button>
+            {/* skapa onClick dispatch delete from musiclist */}
+            <button className={'delete-button '+colorClassButton} >X</button>
 
         </div>
 
