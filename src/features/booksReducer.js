@@ -1,12 +1,13 @@
 import {createReducer, createAction} from '@reduxjs/toolkit';
 
-const addToList = createAction('add to list');
-const editList = createAction('edit list');
-const removeFromList = createAction('remove from list');
+const addToBooksList = createAction('add to book list');
+const editBooksList = createAction('edit to book list');
+const removeFromBooksList = createAction('remove from book list');
+
 const booksListActions = {
-    addToList,
-    editList,
-    removeFromList
+    addToBooksList,
+    editBooksList,
+    removeFromBooksList
 }
 
 const booksList = [
@@ -20,8 +21,8 @@ const booksList = [
 
 
 const reducer = createReducer(booksList, {
-    [addToList]: (state, action) => [...state, action.payload],
-	[removeFromList]: (state, action) => state.filter(item => item.title !== action.payload)
+    [addToBooksList]: (state, action) => [...state, action.payload],
+	[removeFromBooksList]: (state, action) => state.filter(item => item.title !== action.payload)
 })
 
 export { reducer, booksListActions };

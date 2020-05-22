@@ -67,13 +67,13 @@ const FormComponent = ()=>{
             comment:comment
         }
         if(category==='music'){
-            dispatch(musicListActions.addToList(newItem));
+            dispatch(musicListActions.addToMusicList(newItem));
         } 
         else if(category==='books'){
-            dispatch(booksListActions.addToList(newItem));
+            dispatch(booksListActions.addToBooksList(newItem));
         }
         else if(category==='movies'){
-            dispatch(moviesListActions.addToList(newItem));
+            dispatch(moviesListActions.addToMoviesList(newItem));
         }
     }
 
