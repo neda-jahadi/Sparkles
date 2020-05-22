@@ -17,6 +17,7 @@ const FormComponent = ()=>{
     let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
     let colorFormClass = '';
     let colorInputClass='';
+    let buttonColor=''
     let musicTab=''
     let bookTab=''
     let movieTab=''
@@ -30,6 +31,7 @@ const FormComponent = ()=>{
             usedBeforeText = 'Listened to';
             colorFormClass = 'background-red text-red';
             colorInputClass='input-background-red';
+            buttonColor='button-red'
             musicTab=' tab-active'
         break;
         case 'books':
@@ -39,6 +41,7 @@ const FormComponent = ()=>{
             usedBeforeText = 'Read before';
             colorFormClass = 'background-yellow text-yellow';
             colorInputClass='input-background-yellow';
+            buttonColor='button-yellow'
             bookTab=' tab-active';
         break;
         case 'movies':
@@ -47,6 +50,7 @@ const FormComponent = ()=>{
             creatorText = 'Director';
             usedBeforeText = 'Seen';
             colorFormClass = 'background-green text-green';
+            buttonColor='button-green'
             colorInputClass='input-background-green';
             movieTab=' tab-active';
         break;
@@ -81,7 +85,6 @@ const FormComponent = ()=>{
             dispatch(moviesListActions.addToList(newItem));
         }
     }
- 
 
     return(
 
@@ -127,7 +130,7 @@ const FormComponent = ()=>{
                 </div>
                 <label htmlFor="comment">Comment</label>
                 <textarea className={colorInputClass}  id="comment" cols="30" rows="8" alue={comment} onChange={e => setComment(e.target.value)}></textarea>
-                <button onClick={event => addItem(event)}>Submit</button>
+                <button className={buttonColor} onClick={event => addItem(event)}>Submit</button>
             </form>
 
         </div>

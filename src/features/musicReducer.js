@@ -21,7 +21,7 @@ const musicList = [
 
 const reducer = createReducer(musicList, {
     [addToList]: (state, action) => [...state, action.payload],
-	[removeFromList]: (state, action) => state.filter(item => item.title !== action.payload.title)
+	[removeFromList]: (state, action) => state.filter(item => item.title !== action.payload)
 })
 
 export { reducer, musicListActions };

@@ -1,21 +1,17 @@
 div.form-view{
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
    
 }
 nav {
   display:none;
 }
-
-
-
 .tab > img {
   height:3em;
   
   
 }
-
 form{
     width: 100vw;
     height: 100%;
@@ -27,80 +23,92 @@ form{
    
 }
   
- form h2{
-    font-size: 1.875rem;
-    font-weight: lighter;
-  }
-  form label{
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    padding-bottom: .3rem;
-    align-self: flex-start;
-  }
-  form input{
-    width: 70vw;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    padding: .5rem;
-    font-weight: lighter;
-    border: none;
-    background-color: var(--text-color-red);
-  }
-  form > div{
-    width: 100%;
-    margin-top: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  input[type="radio"]{
-    width: 1.6em;
-    height: 1.5rem;
-    margin-right: 1rem;
-    position: relative;
-    top: .3rem;
-  }
-  input[type="radio"]:nth-of-type(2){
-      margin-right: 0;
-  }
+form h2{
+  font-size: 1.875rem;
+  font-weight: lighter;
+}
+form label{
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding-bottom: .3rem;
+  align-self: flex-start;
+}
+form input{
+  width: 70vw;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: .5rem;
+  font-weight: lighter;
+  border: none;
+  background-color: var(--text-color-red);
+}
+form > div{
+  width: 100%;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
 
-  input[type="number"]{
-    width: 6rem;
-    position: relative;
-    top: .3rem;
-  }
-  
-  fieldset{
-    border: none;
-    padding: 0;
-  }
+input[type="radio"]{
+  width: 1.6em;
+  height: 1.5rem;
+  margin-right: 1rem;
+  position: relative;
+  top: .3rem;
+}
+input[type="radio"]:nth-of-type(2){
+    margin-right: 0;
+}
 
-  legend{
-    font-size: 1.125rem;
-    display: inline;
-  }
-  div.rate-div{
-    width: min-content;
-  }
+input[type="number"]{
+  width: 6rem;
+  position: relative;
+  top: .3rem;
+}
+
+fieldset{
+  border: none;
+  padding: 0;
+}
+
+legend{
+  font-size: 1.125rem;
+  display: inline;
+}
+div.rate-div{
+  width: min-content;
+}
   
-  textarea{
-    resize: none;
-    border: none;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 100%;
-  }
+textarea{
+  resize: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 100%;
+}
+form > button{
+  font-size: 1.5rem;
   
-  form > button{
-    font-size: 1.5rem;
-    color: var(--background-color-red);
-    background-color: var(--text-color-red);
-    width: 100%;
-    border: none;
-    margin-top: 1.5rem;
-    padding: .5em;
-    border-radius: 10px;
-  }
+  width: 100%;
+  border: none;
+  margin-top: 1.5rem;
+  padding: .5em;
+  border-radius: 10px;
+  cursor:pointer;
+}
+.button-red{
+  color: var(--background-color-red);
+  background-color: var(--text-color-red);
+}
+.button-yellow{
+  color: var(--background-color-yellow);
+  background-color: var(--text-color-yellow);
+}
+.button-green{
+  color: var(--background-color-green);
+  background-color: var(--text-color-green);
+}
+
 
   /* For those crazy ass small screens */
 

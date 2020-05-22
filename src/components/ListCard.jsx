@@ -43,13 +43,13 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
     const handleDelete=(item)=>{
 
         if(category==='music'){
-            dispatch(musicListActions.RemoveFromList(item));
+            dispatch(musicListActions.removeFromList(item));
         }
         else if (category==='books'){
-            dispatch(booksListActions.RemoveFromList(item));
+            dispatch(booksListActions.removeFromList(item));
         }
         else if (category==='movies'){
-            dispatch(moviesListActions.RemoveFromList(item));
+            dispatch(moviesListActions.removeFromList(item));
         }
 
 
