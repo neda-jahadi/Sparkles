@@ -52,8 +52,13 @@ img.go-back:hover{
   }
   .go-back-text{
     margin: 0 auto 0 0;
-    text-decoration: none;
-    color: #333333;
+    padding:0;
+    padding-top:.7em;
+    align-self:flex-start;
+    
     font-size: 1.3em;
+    border:none;
+    background-color:transparent;
   }
+
 }
