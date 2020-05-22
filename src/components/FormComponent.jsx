@@ -2,7 +2,9 @@ import React,{useState} from 'react';
 import './FormStyle.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { listActions } from '../features/musicReducer';
+import { musicListActions } from '../features/musicReducer';
+import { booksListActions } from '../features/booksReducer';
+import { moviesListActions } from '../features/moviesReducer';
 import {categoryActions} from '../features/categoryReducer';
 import bookIcon from '../assets/good.png';
 import musicIcon from '../assets/music.png';
@@ -68,13 +70,16 @@ const FormComponent = ()=>{
             usedBefore: usedBefore,
             rating: rating,
             comment:comment
-		} 		
-        dispatch(listActions.addToList(newItem));
+        } 
+        if(category === 'music')	
+        dispatch(musicListActions.addToList(newItem));
+        else if(category === 'books')	
+        dispatch(booksListActions.addToList(newItem));
+        else if(category === 'movies')	
+        dispatch(moviesListActions.addToList(newItem));
     }
- 
 
     return(
-
     <>   
 
         <div className="form-view">
@@ -85,7 +90,7 @@ const FormComponent = ()=>{
                 <button className={'tab background-green'+movieTab} onClick={()=> dispatch(categoryActions.choseMovies())}><img src={movieIcon} alt="Go to movie category" className="movie-icon"/></button>
 
             </nav>
-     
+            
             <form className={colorFormClass}>
 
             
@@ -94,25 +99,25 @@ const FormComponent = ()=>{
                 <h2>{h2}</h2>
 
                 <label htmlFor="title">{titleText}</label>
-                 <input className={colorInputClass} id="title" type="text" value={title} onChange={e => setTitle(e.target.value)}/>
+                <input className={colorInputClass} id="title" type="text" value={title} onChange={e => setTitle(e.target.value)}/>
 
                 <label htmlFor="creator">{creatorText}</label>
-                 <input className={colorInputClass} id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value)}/>
+                    <input className={colorInputClass} id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value)}/>
                 <div>
 
                     <fieldset>
                         <legend>{usedBeforeText}</legend>
 
                             <label htmlFor="yes">Yes</label>
-                             <input className={colorInputClass} id="yes" type="radio" name="usedBefore" onClick={() => setUsedBefore(true)} />
+                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" onClick={() => setUsedBefore(true)} />
 
                             <label htmlFor="no">No</label>
-                             <input className={colorInputClass} id="no" type="radio" name="usedBefore" onClick={() => setUsedBefore(false)}/>
+                            <input className={colorInputClass} id="no" type="radio" name="usedBefore" onClick={() => setUsedBefore(false)}/>
                     </fieldset>
 
                     <div className="rate-div">
                         <label className="rate" htmlFor="rating">Rating 1-5</label>
-                         <input className={colorInputClass} type="number" min="1" max="5" value={rating} onChange={e => setRating(e.target.value)}/>
+                        <input className={colorInputClass} type="number" min="1" max="5" value={rating} onChange={e => setRating(e.target.value)}/>
                     </div>
                 </div>
                 <label htmlFor="comment">Comment</label>

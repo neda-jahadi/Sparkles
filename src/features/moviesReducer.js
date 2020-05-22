@@ -3,7 +3,7 @@ import {createReducer, createAction} from '@reduxjs/toolkit';
 const addToList = createAction('add to list');
 const editList = createAction('edit list');
 const removeFromList = createAction('remove from list');
-const listActions = {
+const moviesListActions = {
     addToList,
     editList,
     removeFromList
@@ -22,4 +22,4 @@ const reducer = createReducer(moviesList, {
 	[removeFromList]: (state, action) => state.filter(item => item.id !== action.payload.id)
 })
 
-export { reducer, listActions };
+export { reducer, moviesListActions };
