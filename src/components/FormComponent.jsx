@@ -10,6 +10,10 @@ import movieIcon from '../assets/video-camera.png';
 
 
 const FormComponent = ()=>{
+	const [titleIsTouched, setTitleIsTouched ] = useState(false);
+	const [creatorIsTouched, setCreatorIsTouched ] = useState(false);
+	const [ratingIsTouched, setRatingIsTouched ] = useState(false);
+	const [commentIsTouched, setCommentIsTouched ] = useState(false);
 
     const category = useSelector(state => state.category);
     let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
@@ -70,7 +74,12 @@ const FormComponent = ()=>{
             comment:comment
 		} 		
         dispatch(listActions.addToList(newItem));
-    }
+	}
+	
+	// VALIDERING
+
+
+	//
  
 
     return(
@@ -87,17 +96,13 @@ const FormComponent = ()=>{
             </nav>
      
             <form className={colorFormClass}>
-
-            
-
-            
                 <h2>{h2}</h2>
 
                 <label htmlFor="title">{titleText}</label>
-                 <input className={colorInputClass} id="title" type="text" value={title} onChange={e => setTitle(e.target.value)}/>
+                 <input className={colorInputClass} id="title" type="text" value={title} onChange={e => setTitle(e.target.value)} maxLength="20" minLength="2" onBlur={() => setTitleIsTouched(true)} />
 
                 <label htmlFor="creator">{creatorText}</label>
-                 <input className={colorInputClass} id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value)}/>
+                 <input className={colorInputClass} id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value) } onBlur={() => setCreatorIsTouched(true)}/>
                 <div>
 
                     <fieldset>
@@ -112,11 +117,11 @@ const FormComponent = ()=>{
 
                     <div className="rate-div">
                         <label className="rate" htmlFor="rating">Rating 1-5</label>
-                         <input className={colorInputClass} type="number" min="1" max="5" value={rating} onChange={e => setRating(e.target.value)}/>
+                         <input className={colorInputClass} type="number" min="1" max="5" value={rating} onChange={e => setRating(e.target.value)} onBlur={() => setRatingIsTouched(true)}/>
                     </div>
                 </div>
                 <label htmlFor="comment">Comment</label>
-                <textarea className={colorInputClass}  id="comment" cols="30" rows="8" alue={comment} onChange={e => setComment(e.target.value)}></textarea>
+                <textarea className={colorInputClass}  id="comment" cols="30" rows="8" alue={comment} onChange={e => setComment(e.target.value)} onBlur={() => setCommentIsTouched(true)}></textarea>
                 <button onClick={event => addItem(event)}>Submit</button>
             </form>
 
