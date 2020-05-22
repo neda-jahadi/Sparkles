@@ -5,22 +5,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { musicListActions } from '../features/musicReducer';
 import { booksListActions } from '../features/booksReducer';
 import { moviesListActions } from '../features/moviesReducer';
-import {categoryActions} from '../features/categoryReducer';
-import bookIcon from '../assets/good.png';
-import musicIcon from '../assets/music.png';
-import movieIcon from '../assets/video-camera.png';
 
 
 const FormComponent = ()=>{
 
-    const category = useSelector(state => state.category);
+    const category = useSelector( state => state.category );
     let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
     let colorFormClass = '';
     let colorInputClass='';
     let buttonColor=''
-    let musicTab=''
-    let bookTab=''
-    let movieTab=''
    
 
     switch(category){
@@ -32,7 +25,6 @@ const FormComponent = ()=>{
             colorFormClass = 'background-red text-red';
             colorInputClass='input-background-red';
             buttonColor='button-red'
-            musicTab=' tab-active'
         break;
         case 'books':
             h2 = 'Add Book';
@@ -42,7 +34,6 @@ const FormComponent = ()=>{
             colorFormClass = 'background-yellow text-yellow';
             colorInputClass='input-background-yellow';
             buttonColor='button-yellow'
-            bookTab=' tab-active';
         break;
         case 'movies':
             h2 = 'Add Movie';
@@ -52,8 +43,8 @@ const FormComponent = ()=>{
             colorFormClass = 'background-green text-green';
             buttonColor='button-green'
             colorInputClass='input-background-green';
-            movieTab=' tab-active';
         break;
+        default:
     }
 
    	const [title, setTitle] = useState('')
@@ -88,21 +79,7 @@ const FormComponent = ()=>{
 
     return(
 
-    <>   
-
-        <div className="form-view">
-
-            <nav>
-                <button className={'tab background-red'+musicTab} onClick={()=> dispatch(categoryActions.choseMusic())}><img src={musicIcon} alt="Go to music category" className="music-icon"/></button>   
-                <button className={'tab background-yellow'+bookTab} onClick={()=> dispatch(categoryActions.choseBooks())}><img src={bookIcon} alt="Go to book category" className="book-icon"/></button>
-                <button className={'tab background-green'+movieTab} onClick={()=> dispatch(categoryActions.choseMovies())}><img src={movieIcon} alt="Go to movie category" className="movie-icon"/></button>
-
-            </nav>
-     
             <form className={colorFormClass}>
-
-            
-
             
                 <h2>{h2}</h2>
 
@@ -132,10 +109,6 @@ const FormComponent = ()=>{
                 <textarea className={colorInputClass}  id="comment" cols="30" rows="8" alue={comment} onChange={e => setComment(e.target.value)}></textarea>
                 <button className={buttonColor} onClick={event => addItem(event)}>Submit</button>
             </form>
-
-        </div>
-    </>
-
     )
 }
 export default FormComponent;

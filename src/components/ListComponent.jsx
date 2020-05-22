@@ -3,7 +3,6 @@ import './listcomponent.css';
 import ListCard from './ListCard';
 import { useDispatch,useSelector } from 'react-redux';
 import {screenActions} from '../features/screenReducer';
-import {categoryActions} from '../features/categoryReducer';
 
 let search = [];
 const ListComponent = ({formScreen,startCard}) =>{
