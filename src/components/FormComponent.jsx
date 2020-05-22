@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './FormStyle.css';
-
+import {useForm} from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux';
 import { musicListActions } from '../features/musicReducer';
 import { booksListActions } from '../features/booksReducer';
@@ -12,15 +12,24 @@ import movieIcon from '../assets/video-camera.png';
 
 
 const FormComponent = ()=>{
+    const {register, handleSubmit, errors } = useForm();
+    const [usedBefore, setUsedBefore] = useState(null);
+    const dispatch = useDispatch();
+
+    const onSubmit = (data) => {
+
+    dispatch(musicListActions.addToList(data));
+}
 
     const category = useSelector(state => state.category);
     let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
     let colorFormClass = '';
     let colorInputClass='';
-    let musicTab=''
-    let bookTab=''
-    let movieTab=''
-   
+    let musicTab='';
+    let bookTab='';
+    let movieTab='';
+    let buttonClass='';
+    let errorClass='';
 
     switch(category){
         case 'music':
@@ -30,7 +39,9 @@ const FormComponent = ()=>{
             usedBeforeText = 'Listened to';
             colorFormClass = 'background-red text-red';
             colorInputClass='input-background-red';
-            musicTab=' tab-active'
+            musicTab=' tab-active';
+            buttonClass=' button-red';
+            errorClass=' error-red';
         break;
         case 'books':
             h2 = 'Add Book';
@@ -40,6 +51,8 @@ const FormComponent = ()=>{
             colorFormClass = 'background-yellow text-yellow';
             colorInputClass='input-background-yellow';
             bookTab=' tab-active';
+            buttonClass=' button-yellow';
+            errorClass=' error-yellow';
         break;
         case 'movies':
             h2 = 'Add Movie';
@@ -49,35 +62,13 @@ const FormComponent = ()=>{
             colorFormClass = 'background-green text-green';
             colorInputClass='input-background-green';
             movieTab=' tab-active';
+            buttonClass=' button-green';
+            errorClass=' error-green';
         break;
     }
 
-   	const [title, setTitle] = useState('')
-    const [creator, setCreator] = useState('');
-    const [usedBefore, setUsedBefore] = useState(null);
-    const [rating, setRating] = useState('');
-    const [comment, setComment] = useState('');
+   	
     
-    const dispatch = useDispatch();
-
-    const addItem = (event) =>{
-
-		event.preventDefault();
-
-        let newItem = {
-            title: title, 
-            creator: creator,
-            usedBefore: usedBefore,
-            rating: rating,
-            comment:comment
-        } 
-        if(category === 'music')	
-        dispatch(musicListActions.addToList(newItem));
-        else if(category === 'books')	
-        dispatch(booksListActions.addToList(newItem));
-        else if(category === 'movies')	
-        dispatch(moviesListActions.addToList(newItem));
-    }
 
     return(
     <>   
@@ -90,8 +81,8 @@ const FormComponent = ()=>{
                 <button className={'tab background-green'+movieTab} onClick={()=> dispatch(categoryActions.choseMovies())}><img src={movieIcon} alt="Go to movie category" className="movie-icon"/></button>
 
             </nav>
-            
-            <form className={colorFormClass}>
+
+            <form className={colorFormClass} onSubmit={handleSubmit(onSubmit)}>
 
             
 
@@ -99,30 +90,38 @@ const FormComponent = ()=>{
                 <h2>{h2}</h2>
 
                 <label htmlFor="title">{titleText}</label>
-                <input className={colorInputClass} id="title" type="text" value={title} onChange={e => setTitle(e.target.value)}/>
+                <input className={colorInputClass} id="title" type="text" ref={register({ required: true, minLength:2, maxLength:30 })} name="title"/>
+                
+                
+                {errors.title && errors.title.type === 'required' && <p className={errorClass}>Title is required</p>}
+                {errors.title && errors.title.type === "minLength" && <p className={errorClass}>This field required min length of 2</p>}
 
+                
+                
                 <label htmlFor="creator">{creatorText}</label>
-                    <input className={colorInputClass} id="creator" type="text" value={creator} onChange={e => setCreator(e.target.value)}/>
+                    <input className={colorInputClass} id="creator" type="text"  ref={register({maxLength:30})} name="creator"/>
                 <div>
 
                     <fieldset>
                         <legend>{usedBeforeText}</legend>
 
                             <label htmlFor="yes">Yes</label>
-                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" onClick={() => setUsedBefore(true)} />
+                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='yes' onClick={()=> setUsedBefore(true)} ref={register}/>
 
                             <label htmlFor="no">No</label>
-                            <input className={colorInputClass} id="no" type="radio" name="usedBefore" onClick={() => setUsedBefore(false)}/>
+                            <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="no" onClick={()=> setUsedBefore(false)} ref={register}/>
                     </fieldset>
 
                     <div className="rate-div">
                         <label className="rate" htmlFor="rating">Rating 1-5</label>
-                        <input className={colorInputClass} type="number" min="1" max="5" value={rating} onChange={e => setRating(e.target.value)}/>
+                        <input className={colorInputClass} type="number" min="1" max="5" ref={register( {required:usedBefore}) } name="rating"/>
+                        {errors.rating && errors.rating.type === 'required' && <span className={errorClass}>Rating is required</span>}
                     </div>
                 </div>
                 <label htmlFor="comment">Comment</label>
-                <textarea className={colorInputClass}  id="comment" cols="30" rows="8" alue={comment} onChange={e => setComment(e.target.value)}></textarea>
-                <button onClick={event => addItem(event)}>Submit</button>
+                <textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register} name="comment"/>
+                {/* <button onClick={event => addItem(event)} className={buttonClass}>Submit</button> */}
+                <input type="submit"/>
             </form>
 
         </div>
