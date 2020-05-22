@@ -2,14 +2,14 @@ import React from 'react'
 import './ListCardStyle.css'
 import Edit from '../assets/edit.png'
 import { useSelector, useDispatch } from 'react-redux';
-import {musicListActions} from '../features/musicReducer'
-import {booksListActions} from '../features/booksReducer'
-import {moviesListActions} from '../features/moviesReducer'
+import { musicListActions } from '../features/musicReducer'
+import { booksListActions } from '../features/booksReducer'
+import { moviesListActions } from '../features/moviesReducer'
 
 const ListCard=({title, creator, usedBefore, rating, comment})=>{
     
     const dispatch = useDispatch();
-    const category=useSelector(state=>state.category);
+    const category = useSelector(state=>state.category);
 
     let creatorText='', usedBeforeText='', colorClass='', colorClassButton='';
     
@@ -61,7 +61,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             <h3>{title}</h3>
 
             <p>{creatorText}: {creator}</p>
-            <p>{usedBeforeText}: {usedBefore}s</p>
+            <p>{usedBeforeText}: {usedBefore}</p>
             <p>Rating: {rating} of 5</p>
             <p>Comment: {comment} </p>
             

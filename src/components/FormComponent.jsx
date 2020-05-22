@@ -3,6 +3,8 @@ import './FormStyle.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { musicListActions } from '../features/musicReducer';
+import { booksListActions } from '../features/booksReducer';
+import { moviesListActions } from '../features/moviesReducer';
 import {categoryActions} from '../features/categoryReducer';
 import bookIcon from '../assets/good.png';
 import musicIcon from '../assets/music.png';
@@ -52,7 +54,7 @@ const FormComponent = ()=>{
 
    	const [title, setTitle] = useState('')
     const [creator, setCreator] = useState('');
-    const [usedBefore, setUsedBefore] = useState(null);
+    const [usedBefore, setUsedBefore] = useState('');
     const [rating, setRating] = useState('');
     const [comment, setComment] = useState('');
     
@@ -68,8 +70,16 @@ const FormComponent = ()=>{
             usedBefore: usedBefore,
             rating: rating,
             comment:comment
-		} 		
-        dispatch(musicListActions.addToList(newItem));
+        }
+        if(category==='music'){
+            dispatch(musicListActions.addToList(newItem));
+        } 
+        else if(category==='books'){
+            dispatch(booksListActions.addToList(newItem));
+        }
+        else if(category==='movies'){
+            dispatch(moviesListActions.addToList(newItem));
+        }
     }
  
 
@@ -104,10 +114,10 @@ const FormComponent = ()=>{
                         <legend>{usedBeforeText}</legend>
 
                             <label htmlFor="yes">Yes</label>
-                             <input className={colorInputClass} id="yes" type="radio" name="usedBefore" onClick={() => setUsedBefore(true)} />
+                             <input className={colorInputClass} id="yes" type="radio" name="usedBefore" onClick={() => setUsedBefore('yes')} />
 
                             <label htmlFor="no">No</label>
-                             <input className={colorInputClass} id="no" type="radio" name="usedBefore" onClick={() => setUsedBefore(false)}/>
+                             <input className={colorInputClass} id="no" type="radio" name="usedBefore" onClick={() => setUsedBefore('no')}/>
                     </fieldset>
 
                     <div className="rate-div">
