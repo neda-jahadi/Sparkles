@@ -21,7 +21,7 @@
 }
 .card{
 	height:95%;
-	margin-top: -14em;
+	margin-top: -14.5em;
 }
 
 .start-card-wrapper input[type="radio"]:checked + label {
