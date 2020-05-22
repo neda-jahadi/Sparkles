@@ -103,10 +103,6 @@ const ListComponent = ({formScreen,startCard}) =>{
         dispatch(screenActions.formScreen(e));
     }
 
-   
-
-    
-    
  
     return(
         
