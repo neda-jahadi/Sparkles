@@ -17,11 +17,11 @@
 	flex-direction: column;
 	margin:0 auto;
 	/* NY */
-	padding-top: 19em;
+	padding-top: 21em;
 }
 .card{
 	height:95%;
-	margin-top: -10em;
+	margin-top: -14em;
 }
 
 .start-card-wrapper input[type="radio"]:checked + label {

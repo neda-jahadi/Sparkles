@@ -22,7 +22,7 @@
 
 .start-card{
 	display: flex;
-	min-height: 22em;
+	min-height: 25em;
 	flex-direction: column;
 	justify-content: space-around;
     padding: 0 2em 3em;
