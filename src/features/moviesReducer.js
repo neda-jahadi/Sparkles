@@ -10,8 +10,8 @@ const moviesListActions = {
 }
 
 const moviesList = [
-    {title: 'Jag fem', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
-    {title: 'Jag sex', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
+    {title: 'Jag fem', creator: 'David Leviathan', rating:'1', usedBefore:'no', comment: 'Läs den!'},
+    {title: 'Jag sex', creator: 'David Leviathan', rating:'2', usedBefore:'yes', comment: 'Läs den!'},
 
 ];
 
