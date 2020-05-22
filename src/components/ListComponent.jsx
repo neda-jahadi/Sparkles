@@ -50,24 +50,15 @@ const ListComponent = ({formScreen,startCard}) =>{
     }
 
     if(h2 ==='Music'){
-        list = musicList;
-       
-       
+        list = musicList;   
     } else if (h2 === 'Movies'){
-        list = moviesList;
-        
+        list = moviesList;    
     }else {
-        list = booksList;
-        
+        list = booksList;  
     }
     
     
-    const handleSearch =(event) => {
-        
-        setMySearch(event.target.value);
-       
-        
-    }
+
      if (mySearch !==''){
          search =[...list].filter(item=>
             (item.title).toLowerCase().includes(mySearch)||
@@ -80,18 +71,7 @@ const ListComponent = ({formScreen,startCard}) =>{
     
      
 
-    const handleSortTitle = () => {
-       sorteringsNyckel = 'title';
-    }
-    const handleSortCreator = () => {
-        sorteringsNyckel = 'creator';
-    }
-    const handleSortUsedBefore = () => {
-        sorteringsNyckel = 'usedBedfore';
-    }
-    const handleSortRate = () => {
-        sorteringsNyckel = 'rating';
-    }
+    
      const sorteradeList = () => {
          copy = [...list];
          
@@ -116,15 +96,15 @@ const ListComponent = ({formScreen,startCard}) =>{
                 <div className="sort">
                         <div className={`drop-div text-${colorClass} background-${colorClass} `}>Sort</div>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
-                            <div className={`sortItem-${colorClass}`}>{titleText}</div>
-                            <div className={`sortItem-${colorClass}`}>{creatorText}</div>
-                            <div className={`sortItem-${colorClass}`}>Rating</div>
-                            <div className={`sortItem-${colorClass}`}>{usedBeforeText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>sorteringsNyckel = 'title'}>{titleText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>sorteringsNyckel = 'creator'}>{creatorText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>sorteringsNyckel = 'rating'}>Rating</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>sorteringsNyckel = 'usedBefore'}>{usedBeforeText}</div>
                         </div>
                   
                 </div> 
                 <div className="listcomponent-input">
-                    <input type="text" value={mySearch} onChange = {handleSearch} placeholder="Search"></input>
+                    <input type="text" value={mySearch} onChange = {(event)=>setMySearch(event.target.value)} placeholder="Search"></input>
                 </div>
             </div>
            
@@ -138,15 +118,16 @@ const ListComponent = ({formScreen,startCard}) =>{
                     <div className="sort">
                         <h2 className={`drop-div text-${colorClass} background-${colorClass}`}>Sort</h2>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
-                            <div className={`sortItem-${colorClass}`} onClick={handleSortTitle}>{titleText}</div>
-                            <div className={`sortItem-${colorClass}`} onClick={handleSortCreator}>{creatorText}</div>
-                            <div className={`sortItem-${colorClass}`} onClick={handleSortRate}>Rating</div>
-                            <div className={`sortItem-${colorClass}`} onClick={handleSortUsedBefore}>{usedBeforeText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>sorteringsNyckel = 'title'}>{titleText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>sorteringsNyckel = 'creator'}>{creatorText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>sorteringsNyckel = 'rating'}>Rating</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>sorteringsNyckel = 'usedBefore'}>{usedBeforeText}</div>
                         </div>
                     
                     </div> 
                     <div>
-                        <input type="text" placeholder="Search" />
+                        {/* <input type="text" value={mySearch} onChange = {(event)=>setMySearch(event.target.value)} placeholder="Search"></input> */}
+                        <input type="text" value={mySearch} onChange = {(event)=>setMySearch(event.target.value)} placeholder="Search"></input>
                     </div>
                 
                 </div>
@@ -158,7 +139,7 @@ const ListComponent = ({formScreen,startCard}) =>{
                  </div>
                 <div className='add-button'>
                    <button className={`button-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
-                   
+                   {/* <input type="text" placeholder="test"></input> */}
                   
 
                 </div>

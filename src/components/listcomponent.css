@@ -3,11 +3,9 @@
     border-radius: 9px;
     height: 100vh;
    padding:1em;
-    /* background-color: var(--background-color-red); */
-    
     display: grid;
     grid-template-rows: 3em 5em 1fr 5em;
-    /* color: var(--text-color-red); */
+   
 }
  main > * {
     margin: 0.5em;
@@ -20,8 +18,6 @@
     padding: 1.5em;
     border-radius: 5px;
     border: none;
-    /* background-color:  var(--text-color-red);
-    color: var(--background-color-red); */
 }
 
   
@@ -43,12 +39,8 @@
     background: transparent;
     border: none;
     padding: 0.2em;
-    /* color: var(--text-color-red); */
     width: 100%;
     border-radius: 0%;
-    /* background-color:  var(--background-color-red);
-     */
-    
     padding: 0.55em;
     border-bottom: 1px solid var(--text-color-red);
 }
@@ -82,7 +74,6 @@
 .drop-div {
 
     border-bottom: 1px solid  var(--text-color-red);
-    /* border-radius: 5px; */
     padding-left: 1em;
     font-size: 1.5em;
 }
@@ -102,11 +93,6 @@
 .dropdown-content div {
     padding: 1em;
 }
-.dropdown-content div:hover {
-    /* background-color: var(--background-color-red);
-    color: var(--text-color-red); */
-    width:100%;
-}
 .desktop-menu {
     display: none;
 }
@@ -114,9 +100,7 @@
 @media screen and (max-width:700px) {
     
      .scrollable {
-        
-        overflow-y: auto;
-        
+      overflow-y: auto;  
     } 
     
     .listcomponent-logo{
@@ -143,8 +127,6 @@
         
     } 
      .main {
-   
-
         display:grid;
         grid-template-columns:1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -158,16 +140,9 @@
        justify-content:flex-end;
     }
 
-
-
-    /* .menu-desktop {
-        display: block;
-    } */
     .desktop-mobil {
         margin-left:7em; 
         margin-right:7em; 
-        /* margin-top: 3em; */
-        /* height: 30%; */
         font-family: 'Roboto', sans-serif;
         display: grid;
         grid-template-rows: 5em 1fr;
@@ -175,9 +150,6 @@
          
     }
  
-    /* .desktop-menu img {
-        width: 100%;
-    } */
     .desktop-menu {
         display: block;
         display: grid;
@@ -190,32 +162,26 @@
     .desktop-menu input {
         background: transparent;
         border: none;
-        
-        /* color: var(--background-color-red); */
      
-      width: 100%;
-      border-radius: 0%;
+        width: 100%;
+        border-radius: 0%;
      
-      border-bottom: 1px solid var(--text-color-red);
+        border-bottom: 1px solid var(--text-color-red);
       
-      padding: 1.4em;
+        padding: 1.4em;
     }
     .desktop-menu input:focus {
         outline: none;
     }
     ::placeholder {
-        /* color: var(--background-color-red); */
         opacity: 1;
-        font-size: 1.5em;
-        
+        font-size: 1.5em;   
       }
       
       .drop-div {
         border: 1px solid  var(--text-color-red);
         border: none;
         padding: 0.5em;
-        /* color: var(--background-color-red);
-        background-color: var(--text-color-red); */
         font-size: 1.5em;
        
     }
