@@ -134,6 +134,7 @@
         grid-template-rows: 1fr 1fr;
         grid-gap:1em;
         height: 300px;
+        /* border: 2px solid red; */
         
     }
    
@@ -141,44 +142,69 @@
         display:flex;
        justify-content:flex-end;
     }
+/* DETTA PILLAR VI MED*/
 
-    .desktop-mobil {
-        margin-left:7em; 
-        margin-right:7em; 
-        font-family: 'Roboto', sans-serif;
-        display: grid;
-        grid-template-rows: 5em 1fr;
-        
-         
-    }
- 
-    .desktop-menu {
-        display: block;
-        display: grid;
-        grid-template-columns: 7em 1fr 1fr;
-    }
-    .desktop-menu > * {
-        margin: 0.5em;
-    }
-    
-    .desktop-menu input {
+    .listcomponent-menu input {
         background: transparent;
-        border: none;
-     
-        width: 100%;
+        padding: 0.2em;
         border-radius: 0%;
-     
-        border-bottom: 1px solid var(--text-color-red);
-      
-        padding: 1.4em;
+        padding: 0.55em;
+        margin-top: 1.7rem;
+        width: calc(80vw - 21rem - 10rem);
+        max-width: calc(39rem - 15rem);
     }
-    .desktop-menu input:focus {
+    .listcomponent-menu input.red{
+        color: var(--background-color-red);
+        border-bottom: 1px solid var(--background-color-red);
+    }
+    .listcomponent-menu input.yellow{
+        color: var(--background-color-yellow);
+        border-bottom: 1px solid var(--background-color-yellow);
+        
+    }
+    .listcomponent-menu input.green{
+        color: var(--background-color-green);
+        border-bottom: 1px solid var(--background-color-green);
+    }
+
+    .listcomponent-menu input:focus {
         outline: none;
     }
     ::placeholder {
+        color: inherit;
         opacity: 1;
-        font-size: 1.5em;   
-      }
+        font-size: 1.5em;
+        
+    }  
+    
+    .listcomponent-menu {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: calc(80vw - 21rem);
+        max-width: 39rem;
+        padding-right: 2rem;
+        position: absolute;
+        right: 0;
+        top: -5rem;
+    
+    }
+    .listcomponent-menu > div {
+        margin: 0.5em;
+        margin-top: 1em;
+    }
+
+    .sort {
+        position: relative;
+        display: inline-block;
+        width: 10em;
+        border-radius: 10px;
+    }
+    .sort:hover{
+        border: 1px solid white;
+        border-radius: 10px 10px 0px 0px;
+    }
       
       .drop-div {
         border: 1px solid  var(--text-color-red);
@@ -187,13 +213,12 @@
         font-size: 1.5em;
        
     }
-    .listcomponent-menu, .listcomponent-logo {
-        display: none;
-    }
+
      main {
         display: grid;
-        grid-template-rows: 5em 1fr 5em;
+        grid-template-rows: 2em 2rem 5em;
         height: 100%;
+        /* border: 2px solid blue; */
     }
     
      main > h1 {

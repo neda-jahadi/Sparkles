@@ -95,10 +95,7 @@ const ListComponent = ({formScreen,startCard}) =>{
     //      search = sorterade;
     //  }
     
-     
 
-    
-     
 
     const jsxLista=search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
      const handleFormScreen = (e) => {
@@ -107,24 +104,7 @@ const ListComponent = ({formScreen,startCard}) =>{
 
  
     return(
-        
-        <div className="desktop-mobil">
-            
-            <div className='desktop-menu'>
-                <div className="sort">
-                        <div className={`drop-div text-${colorClass} background-${colorClass} `}>Sort</div>
-                        <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
-                            <div className={`sortItem-${colorClass}`} onClick={()=>setSorteringNyckel('title')}>{titleText}</div>
-                            <div className={`sortItem-${colorClass}`} onClick={()=>setSorteringNyckel('creator')}>{creatorText}</div>
-                            <div className={`sortItem-${colorClass}`} onClick={()=>setSorteringNyckel('rating')}>Rating</div>
-                            <div className={`sortItem-${colorClass}`} onClick={()=>setSorteringNyckel('usedBefore')}>{usedBeforeText}</div>
-                        </div>
-                  
-                </div> 
-                <div className="listcomponent-input">
-                    <input type="text" value={mySearch} onChange = {(event)=>setMySearch(event.target.value)} placeholder="Search"></input>
-                </div>
-            </div>
+    
            
         
             <main className={`text-${colorClass} background-${colorClass}`}>
@@ -133,8 +113,8 @@ const ListComponent = ({formScreen,startCard}) =>{
                    {h2}
                 </h1>
                 <div className='listcomponent-menu'>
-                    <div className="sort">
-                        <h2 className={`drop-div text-${colorClass} background-${colorClass}`}>Sort</h2>
+                    <div className={`sort background-${colorClass}`}>
+                        <h2 className={`drop-div text-${colorClass} `}>Sort</h2>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
                             <div className={`sortItem-${colorClass}`} onClick={()=>setSorteringNyckel('title')}>{titleText}</div>
                             <div className={`sortItem-${colorClass}`} onClick={()=>()=>setSorteringNyckel('creator')}>{creatorText}</div>
@@ -144,7 +124,7 @@ const ListComponent = ({formScreen,startCard}) =>{
                     
                     </div> 
                     <div>
-                        <input type="text" value={mySearch} onChange = {(event)=>setMySearch(event.target.value)} placeholder="Search"></input>
+                        <input className={colorClass} type="text" value={mySearch} onChange = {(event)=>setMySearch(event.target.value)} placeholder="Search"></input>
                     </div>
                 
                 </div>
@@ -156,12 +136,10 @@ const ListComponent = ({formScreen,startCard}) =>{
                  </div>
                 <div className='add-button'>
                    <button className={`button-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
-                   {/* <input type="text" placeholder="test"></input> */}
-                  
 
                 </div>
             </main>
-        </div>
+       
         
         
     );
