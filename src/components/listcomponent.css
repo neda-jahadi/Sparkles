@@ -1,4 +1,6 @@
-
+* {
+    font-family: 'Robboto', sans-serif;
+}
  main {
     border-radius: 9px;
     height: 90vh;
@@ -8,12 +10,18 @@
     
    
 }
-
+main > .add-button {
+    text-align: center;
+    
+ }
 
 .add-button > button {
     padding: 1.5em;
     border-radius: 5px;
     border: none;
+    width: 10rem;
+    font-size: 1rem;
+   
 }
 
   
@@ -93,6 +101,8 @@
     display: none;
 }
 
+
+/* mobile *//* mobile *//* mobile *//* mobile *//* mobile */
 @media screen and (max-width:700px) {
     
      .scrollable {
@@ -111,14 +121,18 @@
     .main > div {
         margin-bottom: 1em;
     }
-    main > h1 {
+    main > h2 {
         text-align: center;
+        font-size: 2rem;
+        font-weight: lighter;
     }
     .main {
         height: 90%;
     }
 
 }
+
+/* Desktop *//* Desktop *//* Desktop *//* Desktop *//* Desktop */
 @media screen and (min-width: 701px){
     .listcomponent-largelogo:hover{
         cursor: pointer;
@@ -133,15 +147,15 @@
         grid-template-columns:1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-gap:1em;
-        height: 300px;
-        /* border: 2px solid red; */
+         height: 90%; 
+        
         
     }
    
-    .add-button{
+    /* .add-button{
         display:flex;
        justify-content:flex-end;
-    }
+    } */
 /* DETTA PILLAR VI MED*/
 
     .listcomponent-menu input {
@@ -216,14 +230,24 @@
 
      main {
         display: grid;
-        grid-template-rows: 2em 2rem 5em;
+        grid-template-rows: 7em 1fr 5em  ;
         height: 100%;
-        /* border: 2px solid blue; */
+         
     }
     
-     main > h1 {
+     main > h2 {
         text-align: left;
+        margin-top: 0.5em;
+        font-size: 3rem;
+        font-weight: lighter;
+        
     }
+    main > .add-button {
+       text-align: right;
+       
+    }
+    
+
      
 }
 @media screen and (max-width: 870px){

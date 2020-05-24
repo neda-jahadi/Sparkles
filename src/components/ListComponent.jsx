@@ -78,6 +78,24 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
+    } else if (sorteringNyckel === 'usedBefore') {
+        let sorterade = search.sort((a,b)=>{
+            if (a.usedBefore.toLowerCase() > b.usedBefore.toLowerCase()) return -1;
+            else if (a.usedBefore.toLowerCase() < b.usedBefore.toLowerCase()) return 1;
+            else return 0;
+        })
+        search = sorterade;
+    }else if (sorteringNyckel === 'creator') {
+        let sorterade = search.sort((a,b)=>{
+            if (a.creator.toLowerCase() > b.creator.toLowerCase()) return -1;
+            else if (a.creator.toLowerCase() < b.creator.toLowerCase()) return 1;
+            else return 0;
+        })
+        search = sorterade;
+    }else {
+        
+        let sorterade = search.sort((a,b)=> Number(a.rating) - Number(b.rating));
+        search = sorterade;
     }
 
     
@@ -111,17 +129,17 @@ const ListComponent = ({formScreen,startCard}) =>{
         
             <main className={`text-${colorClass} background-${colorClass}`}>
                
-                <h1>
+                <h2>
                    {h2}
-                </h1>
+                </h2>
                 <div className='listcomponent-menu'>
                     <div className={`sort background-${colorClass}`}>
                         <h2 className={`drop-div text-${colorClass} `}>Sort</h2>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
-                            <div className={`sortItem-${colorClass}`} onClick={()=>setSorteringNyckel('title')}>{titleText}</div>
-                            <div className={`sortItem-${colorClass}`} onClick={()=>()=>setSorteringNyckel('creator')}>{creatorText}</div>
-                            <div className={`sortItem-${colorClass}`} onClick={()=>()=>setSorteringNyckel('rating')}>Rating</div>
-                            <div className={`sortItem-${colorClass}`} onClick={()=>()=>setSorteringNyckel('usedBefore')}>{usedBeforeText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('title'); console.log('sortering is:',sorteringNyckel); }}>{titleText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('creator'); console.log('sortering is:',sorteringNyckel); }}>{creatorText}</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('rating'); console.log('sortering is:',sorteringNyckel);}}>Rating</div>
+                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('usedBefore'); console.log('sortering is:',sorteringNyckel); }}>{usedBeforeText}</div>
                         </div>
                     
                     </div> 
