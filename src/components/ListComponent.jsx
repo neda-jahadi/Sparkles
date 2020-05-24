@@ -62,7 +62,9 @@ const ListComponent = ({formScreen,startCard}) =>{
          search =[...list].filter(item=>
             (item.title).toLowerCase().includes(mySearch)||
             (item.creator).toLowerCase().includes(mySearch)||
-            (item.comment).toLowerCase().includes(mySearch)
+            (item.comment).toLowerCase().includes(mySearch) ||
+            (item.usedBefore).toLowerCase().includes(mySearch) ||
+            (item.rating).includes(mySearch)
         );
      }else {
          search = [...list];
