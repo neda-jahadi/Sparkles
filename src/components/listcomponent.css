@@ -1,5 +1,5 @@
 * {
-    font-family: 'Robboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
  main {
     border-radius: 9px;
@@ -23,7 +23,10 @@ main > .add-button {
     font-size: 1rem;
    
 }
-
+.sortChosed-red {
+    background-color:  var(--text-color-red);
+    color: var(--error-color-red);
+}
   
 .sortItem-red:hover {
     background-color:  var(--text-color-red);

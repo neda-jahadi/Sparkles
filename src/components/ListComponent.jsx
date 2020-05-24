@@ -17,7 +17,7 @@ const ListComponent = ({formScreen,startCard}) =>{
     const [mySearch, setMySearch] = useState('');
     const [sorteringNyckel,setSorteringNyckel] = useState('');
 
-    let h2 = '', titleText = '', creatorText = '',
+    let h2 = '', titleText = '', creatorText = '', search = [],
      usedBeforeText = '' , addButtonText = '' , list =[];
     let colorClass = '';
     
@@ -52,7 +52,6 @@ const ListComponent = ({formScreen,startCard}) =>{
         break;
     }
 
-    let search = [...list];
       
     
 
@@ -94,10 +93,16 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
-    }else {
+    }else if(sorteringNyckel === 'rating'){
         
-        let sorterade = search.sort((a,b)=> Number(a.rating) - Number(b.rating));
+        let sorterade = search.sort((a,b)=>{
+            if (Number(a.rating) > Number(b.rating)) return -1;
+            else if (Number(a.rating) < Number(b.rating)) return 1;
+            else return 0;
+        })
         search = sorterade;
+    }else {
+        search = [...list];
     }
 
     
@@ -157,3 +162,5 @@ const ListComponent = ({formScreen,startCard}) =>{
     );
 }
 export default ListComponent;
+
+// className={`sortItem-${colorClass}` ? sorteringNyckel !== 'title' : `sortChosed-${colorClass}`}
