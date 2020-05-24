@@ -69,6 +69,7 @@ const ListComponent = ({formScreen,startCard}) =>{
      }else {
          search = [...list];
      }
+
      
      if(sorteringNyckel ==='title'){
        
@@ -85,10 +86,11 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
-    }else if (sorteringNyckel === 'creator') {
+    }else
+     if (sorteringNyckel === 'creator') {
         let sorterade = search.sort((a,b)=>{
-            if (a.creator.toLowerCase() > b.creator.toLowerCase()) return -1;
-            else if (a.creator.toLowerCase() < b.creator.toLowerCase()) return 1;
+            if (a.creator.toLowerCase() < b.creator.toLowerCase()) return -1;
+            else if (a.creator.toLowerCase() > b.creator.toLowerCase()) return 1;
             else return 0;
         })
         search = sorterade;
@@ -99,21 +101,7 @@ const ListComponent = ({formScreen,startCard}) =>{
     }
 
     
-    //  if (sorteringNyckel ==='rating'){
-    //       let sorterade = [...search].sort((a,b)=>{
-    //          if( a.sorteringNyckel >b.sorteringNyckel) return -1;
-    //          else if (a.sorteringNyckel < b.sorteringNyckel) return 1;
-    //          else return 0;
-    //      })
-    //      search = sorterade;
-    //  } else {
-    //       let sorterade = [...search].sort((a,b)=>{
-    //          if (a[sorteringNyckel].toLowerCase() < b[sorteringNyckel].toLowerCase()) return -1;
-    //          else if (a[sorteringNyckel].toLowerCase() > b[sorteringNyckel].toLowerCase()) return 1;
-    //          else return 0;
-    //      })
-    //      search = sorterade;
-    //  }
+    
     
 
 
