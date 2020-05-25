@@ -67,9 +67,6 @@ const FormComponent = ()=>{
         break;
     }
 
-   	
-    
-
     return(
     <>   
 
