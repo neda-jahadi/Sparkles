@@ -36,17 +36,17 @@ const Container = ({children}) => {
 
         <section className={colorBackground}>
             <nav>
-                    <button className={'tab background-red'+musicTab} 
+                    <button aria-label="Go to music" className={'tab background-red'+musicTab} 
                     onClick={()=> dispatch(categoryActions.choseMusic())}>
                         <img src={musicIcon} alt="Go to music category" className="music-icon"/>
                     </button>
 
-                    <button className={'tab background-yellow'+bookTab} 
+                    <button aria-label="Go to book" className={'tab background-yellow'+bookTab} 
                     onClick={()=> dispatch(categoryActions.choseBooks())}>
                         <img src={bookIcon} alt="Go to book category" className="book-icon"/>
                     </button>
 
-                    <button className={'tab background-green'+movieTab} 
+                    <button aria-label="Go to movies" className={'tab background-green'+movieTab} 
                     onClick={()=> dispatch(categoryActions.choseMovies())}>
                         <img src={movieIcon} alt="Go to movie category" className="movie-icon"/>
                     </button>

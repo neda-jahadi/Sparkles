@@ -17,6 +17,7 @@ const StartCard = ({genre}) => {
 	let color = null;
 	let lista = null;
 	let list = null;
+	
 	switch(genre){
 		case 'music': 
 			list = musicList;

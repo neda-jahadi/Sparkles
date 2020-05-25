@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './ListCardStyle.css'
 import Edit from '../assets/edit.png'
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,6 +12,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
     const category = useSelector(state=>state.category);
 
     let creatorText='', usedBeforeText='', colorClass='', colorClassButton='';
+    let content='itemCard'
     
     switch (category){
 
@@ -37,7 +38,6 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             break;
 
         default:
-  
     }
     
     const handleDelete=(item)=>{
@@ -51,28 +51,84 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
         else if (category==='movies'){
             dispatch(moviesListActions.removeFromList(item));
         }
+    }
 
+    const handleSaveEdit=()=>{
+
+        setEditable(false)
 
     }
 
+    // <p>{creatorText}:
+    // <span className={editable===true ? 'no-edit' : 'edit'}>{creator} </span>
+    //     <input type='text' className={editable===true ? 'edit' : 'no-edit'}/>
+    // </p>
+
+    const itemCard=(
+            <div className={'list-card '+colorClass}>
+
+                <h3>{title}</h3>
+
+                <p>{creatorText}:{creator}</p>
+                <p>{usedBeforeText}: {usedBefore}</p>
+                <p>Rating: {rating} of 5</p>
+                <p>Comment: {comment} </p>
+                
+                <button className={'edit-button '+colorClassButton} onClick={()=>setEditable(true)}>
+                    <img src={Edit} alt="Edit" className="edit-logo"/>
+                </button>
+            
+                <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
+            </div>
+    )
+
+    const editCard=(
+        <form className='edit-list-card'>
+        
+            <label htmlFor='title'>Title</label>
+            <input type='text' id='title'/>
+
+            <label htmlFor='creator'>{creatorText}</label>
+            <input type='text' id='creator'/>
+
+            <label htmlFor='yes'>Yes</label>
+            <input type='radio' id='yes'/>
+            <label htmlFor='no'>No</label>
+            <input type='radio' id='no'/>
+
+            <label htmlFor='rate'>Rating 1-5</label>
+            <input type='number'id='rate' min="1" max="5"/>
+
+            <label htmlFor='comment'>Comment</label>
+            <input type='textarea' id='comment'/>
+     
+            <button className={'save-edit-button '+colorClassButton} onClick={handleSaveEdit}>
+                Save
+            </button>
+
+            <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
+
+        </form>
+    )
+
+    const [editable, setEditable]=useState(false)
+    if (editable===false){
+        content=itemCard;
+    }
+    else{
+        content=editCard;
+    }
+    
+   
+   
+  
+
     return (
 
-        <div className={'list-card '+colorClass}>
-            <h3>{title}</h3>
+        <div>
+           
 
-            <p>{creatorText}: {creator}</p>
-            <p>{usedBeforeText}: {usedBefore}</p>
-            <p>Rating: {rating} of 5</p>
-            <p>Comment: {comment} </p>
-            
-            
-            <button className={'edit-button '+colorClassButton}>
-                <img src={Edit} alt="Edit" className="edit-logo"/>
-            </button>
-          
-
-            {/* skapa onClick dispatch delete from musiclist */}
-            <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
+            {content}
 
         </div>
 
