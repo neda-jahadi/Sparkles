@@ -130,13 +130,13 @@ const ListComponent = ({formScreen,startCard}) =>{
                         <h2 className={`drop-div text-${colorClass} `}>Sort</h2>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('title')}}>{titleText}</div>
+                            <div className={sorteringNyckel!=='title' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('title')}}>{titleText}</div>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('creator')}}>{creatorText}</div>
+                            <div className={sorteringNyckel!=='creator' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('creator')}}>{creatorText}</div>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('rating')}}>Rating</div>
+                            <div className={sorteringNyckel!=='rating' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('rating')}}>Rating</div>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('usedBefore')}}>{usedBeforeText}</div>
+                            <div className={sorteringNyckel!=='usedBefore' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('usedBefore')}}>{usedBeforeText}</div>
                         </div>
                     
                     </div> 
@@ -152,7 +152,7 @@ const ListComponent = ({formScreen,startCard}) =>{
 
                  </div>
                 <div className='add-button'>
-                   <button className={`button-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
+                   <button className={`addButton-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
 
                 </div>
             </main>
@@ -163,4 +163,4 @@ const ListComponent = ({formScreen,startCard}) =>{
 }
 export default ListComponent;
 
-// className={`sortItem-${colorClass}` ? sorteringNyckel !== 'title' : `sortChosed-${colorClass}`}
+
