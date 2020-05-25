@@ -10,6 +10,7 @@
     font-family:'Roboto', sans-serif;
     
 }
+
 .red{
     background-color:var(--text-color-red);
     color:var(--error-color-red);
@@ -48,6 +49,7 @@
     font-size:14px;
     align-self:end;
 }
+
 .list-card > button {
     /* background-color: var(--background-color-red); */
     border:none;
@@ -60,6 +62,7 @@
 .list-card > .edit-button{
     grid-column:9/10;
     margin-right:5px;
+    cursor:pointer;
     
     
 }
@@ -75,4 +78,25 @@
     /* color:var(--text-color-red); */
     cursor:pointer;
    
+}
+.edit-list-card{
+
+    color:black;
+}
+.edit-list-card > input {
+   
+    padding:0;
+    display:inline-block;
+    border-radius:5px;
+    width:100%;
+    font-size:14px;
+    padding:0.2em;
+    
+}
+.edit-list-card >label {
+    font-size:14px;
+    margin-top:0rem;
+}
+.save-edit-button{
+    border:1px solid orange;
 }
