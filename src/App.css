@@ -43,10 +43,11 @@
 		padding-top:23em;
 	}
 	.start-card-wrapper input[type="radio"]:checked + label {
-		margin-bottom: -1em;
+		margin-bottom: -2em;
 	}
 	.card{
-		margin-top: -16em;
+		margin-top: -16.3em;
+		height:auto;
 	}
 }
 @media only screen and (max-height: 700px){

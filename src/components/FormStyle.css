@@ -120,7 +120,7 @@ form > button{
 
     form h2{
         align-self: center;
-        font-size: 3rem;
+        font-size: 2rem; /*!*/
         padding-top: 1rem;
 
     }

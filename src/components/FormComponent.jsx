@@ -17,20 +17,18 @@ const FormComponent = ()=>{
 
 
     const onSubmit = (data) => {
-
-	/* dispatch(musicListActions.addToList(data)); */
 	  	if(category === 'music'){
 		  	console.log('category', category);
-            dispatch(musicListActions.addToList(data));
+            dispatch(musicListActions.addToMusicList(data));
         } 
-/*         else if(category === 'books'){
+        else if(category === 'books'){
 			console.log('category', category);
-            dispatch(booksListActions.addToList(data));
+            dispatch(booksListActions.addToBooksList(data));
         }
         else if(category === 'movies'){
 			console.log('category', category);
-            dispatch(moviesListActions.addToList(data));
-        } */
+            dispatch(moviesListActions.addToMoviesList(data));
+        }
 }
 
     const category = useSelector( state => state.category );
@@ -90,10 +88,6 @@ const FormComponent = ()=>{
             </nav>
 
             <form className={colorFormClass} onSubmit={handleSubmit(onSubmit)}>
-
-            
-
-            
                 <h2>{h2}</h2>
 
                 <label htmlFor="title">{titleText}</label>
@@ -126,7 +120,8 @@ const FormComponent = ()=>{
                     </div>
                 </div>
                 <label htmlFor="comment">Comment</label>
-                <textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register} name="comment"/>
+                <textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register({maxLength:50})} name="comment"/>
+				{errors.title && errors.title.type === "maxLength" && <p className={errorClass}>Maximum 50 characters in this field</p>}
                 <input type="submit" className={buttonClass + " submit-button"}/>
             </form>
 		</div>
