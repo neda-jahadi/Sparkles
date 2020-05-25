@@ -46,7 +46,8 @@
 		margin-bottom: -1em;
 	}
 	.card{
-		margin-top: -16em;
+		margin-top: -16.3em;
+		height:auto;
 	}
 }
 @media only screen and (max-height: 700px){
