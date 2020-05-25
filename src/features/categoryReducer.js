@@ -5,19 +5,21 @@ const categoryDisplayed = '';
 const choseMusic = createAction('music');
 const choseBooks = createAction('books');
 const choseMovies = createAction('movies');
+const startPage = createAction('')
 
 const categoryActions = {
     choseMusic,
     choseBooks,
-    choseMovies
+    choseMovies,
+    startPage
 }
-
 
 
 const reducer = createReducer(categoryDisplayed, {
     [choseMusic]: ()=> 'music',
     [choseBooks]: ()=> 'books',
-    [choseMovies]: ()=> 'movies'
+    [choseMovies]: ()=> 'movies',
+    [startPage]: ()=> 'start'
 });
 
 export { reducer , categoryActions };

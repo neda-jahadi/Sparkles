@@ -8,6 +8,7 @@
   --error-color-red: #AA3737;
   --error-color-yellow: #9A7B0E;
   --error-color-green: #49701A;
+  
 
 }
 
@@ -17,11 +18,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* COMMON STYLING */
 p, h1, h2, h3{
-	font-family: 'Roboto', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
 }
 .text-red{
   color: var(--text-color-red);
@@ -55,12 +57,22 @@ p, h1, h2, h3{
 }
 .error-red{
   color: var(--error-color-red);
+  padding-top:0.5em;
 }
 .error-yellow{
   color: var(--error-color-yellow);
+  padding-top:0.5em;
 }
 .error-green{
   color: var(--error-color-green);
+  padding-top:0.5em;
 }
-
+.input-background-red{
+  background-color: var(--text-color-red);
+}
+.input-background-yellow{
+  background-color: var(--text-color-yellow);
+}.input-background-green{
+  background-color: var(--text-color-green);
+}
 /* END */
