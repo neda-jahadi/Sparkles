@@ -30,9 +30,9 @@ form input{
 }
 form > .rating-container{
   width: 100%;
-  margin-top: 2.5rem;
+  margin-top: 1.8rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 input[type="radio"]{
@@ -62,7 +62,7 @@ legend{
   display: inline;
 }
 div.rate-div{
-  /* width: min-content; */
+  width: min-content;
 }
   
 textarea{
@@ -72,15 +72,15 @@ textarea{
   padding: 1rem;
   width: 100%;
 }
-form > button{
+
+form > input[type="submit"]{
   font-size: 1.5rem;
-  
   width: 100%;
   border: none;
   margin-top: 1.5rem;
   padding: .5em;
   border-radius: 10px;
-  cursor:pointer;
+  cursor: pointer;
 }
 .button-red{
   color: var(--background-color-red);
@@ -95,6 +95,14 @@ form > button{
   background-color: var(--text-color-green);
 }
 
+.form-textarea-container{
+  width: 100%;
+
+}
+.form-textarea-container span{
+  width: 100%;
+}
+
 
   .valid{
 	border: 2px solid green;
@@ -102,14 +110,30 @@ form > button{
   .invalid{
 	border: 2px solid red;
   }
+
+  .form-input-container{
+    position: relative;
+  }
+  .form-input-container span{
+    position: absolute;
+    right: 0;
+    bottom: -1.3rem;
+    font-size: .9rem;
+	}
   /* For those crazy ass small screens */
 
   @media(max-width: 337px){
-      form > div{
-          width: 101%;
-      }
+
     input[type="radio"]:nth-of-type(1){
         margin-right: 0;
+    }
+    form .rating-container{
+      width: calc(100vw - 6rem);
+      justify-content: space-between;
+    }
+    form textarea{
+      max-height: 4rem;
+      width: calc(100vw - 6rem);
     }
   
   }
@@ -152,7 +176,7 @@ form > button{
 	}
 	.form-textarea-container{
 		width: 100%;
-		display: flex;
+    display: flex;
 	
 	}
 	.form-textarea-container span{
@@ -163,8 +187,9 @@ form > button{
   textarea{
       width: 60%;
       max-width: 31rem;
+      height: 7rem;
   }
-  form > .submit-button{
+  form > input[type="submit"]{
     width: 10rem;
     position: absolute;
     bottom: 2rem;

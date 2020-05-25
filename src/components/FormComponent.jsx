@@ -126,13 +126,13 @@ const FormComponent = ()=>{
                     </fieldset>
 
                     
-					<label className="rate" htmlFor="rating">Rating 1-5</label>
+
 					<div className="rate-div">
+                    <label className="rate" htmlFor="rating">Rating 1-5</label>
                         <input className={colorInputClass} type="number" min="1" max="5" ref={register( {required:usedBefore}) } name="rating"/>
                         {errors.rating && errors.rating.type === 'required' && <span className={errorClass + " error-rating"}>Rating is required</span>}
                     </div>
                 </div>
-
 				<label htmlFor="comment">Comment</label>
 				<div className="form-textarea-container">
 					<textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register({maxLength:5})} name="comment"/>
