@@ -84,6 +84,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
 
     const editCard=(
         <form className='edit-list-card'>
+        
             <label htmlFor='title'>Title</label>
             <input type='text' id='title'/>
 
@@ -101,11 +102,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             <label htmlFor='comment'>Comment</label>
             <input type='textarea' id='comment'/>
      
-            {/* <button className={'edit-button '+colorClassButton} onClick={handleEdit}>
-                <img src={Edit} alt="Edit" className="edit-logo"/>
-            </button> */}
-
-            <button className={'edit-button '+colorClassButton} onClick={handleSaveEdit}>
+            <button className={'save-edit-button '+colorClassButton} onClick={handleSaveEdit}>
                 Save
             </button>
 
