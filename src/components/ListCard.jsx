@@ -60,13 +60,6 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
     const [editRating, setEditRating]=useState(rating);
     const [editComment, setEditComment]=useState(comment);
 
-    // let editedObject={
-    //     title:editTitle,
-    //     creator:editCreator,
-    //     usedBefore:editUsedBefore,
-    //     rating:editRating,
-    //     comment:editComment
-    // }
     const handleSaveEdit=()=>{
 
         if (title===editTitle && creator===editCreator && usedBefore===editUsedBefore && rating===editRating && comment===editComment){
@@ -85,14 +78,21 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
                     comment:editComment
                 }
             }
-            dispatch(booksListActions.editBooksList(editObject));
+
+            if(category==='books'){
+                dispatch(booksListActions.editBooksList(editObject));
+            }
+            else if (category==='music'){
+                dispatch(moviesListActions.editMusicList(editObject));
+            }
+            else{
+                dispatch(moviesListActions.editMoviesList(editObject))
+            }
+          
 
             setEditable(false)
 
         }
-
-
-      
 
     }
 
