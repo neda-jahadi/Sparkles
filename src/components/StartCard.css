@@ -22,7 +22,7 @@
 
 .start-card{
 	display: flex;
-	min-height: 25em;
+	min-height: 23em;
 	flex-direction: column;
 	justify-content: space-around;
     padding: 0 2em 3em;
@@ -69,7 +69,17 @@
 	cursor: pointer;
 
 }
-
+@media only screen and (max-height: 580px){
+	.start-card{
+		min-height: 19em;
+	}
+	.icon{
+		display: none;
+	}
+	.title-container{
+		padding: 0em;
+	}
+}
 @media only screen and (min-width: 700px){
 	.start-card{
 		margin-left: -3em;
