@@ -6,8 +6,8 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-   
 }
+
   
 form h2{
   font-size: 1.875rem;
@@ -28,7 +28,7 @@ form input{
   border: none;
   background-color: var(--text-color-red);
 }
-form > div{
+form > .rating-container{
   width: 100%;
   margin-top: 2.5rem;
   display: flex;
@@ -62,7 +62,7 @@ legend{
   display: inline;
 }
 div.rate-div{
-  width: min-content;
+  /* width: min-content; */
 }
   
 textarea{
@@ -120,28 +120,46 @@ form > button{
 
     form h2{
         align-self: center;
-        font-size: 3rem;
+        font-size: 2rem; 
         padding-top: 1rem;
 
     }
 
     form{
       align-items: flex-start;
-    }
-
+	}
     form input{
         width: 60%;
         max-width: 31rem;
     }
 
-  form > div{
+  form > .rating-container{
     width: 60%;
-    max-width: 20rem;
+    /* max-width: 20rem; */
     min-width: fit-content;
     margin-top: 1rem;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
-
+  
+  .form-input-container{
+	  width: 100%;
+  }
+  .form-input-container span{
+	padding-left: 0.6em;
+	}
+	.error-rating{
+		padding-top: 0.6em;
+	}
+	.form-textarea-container{
+		width: 100%;
+		display: flex;
+	
+	}
+	.form-textarea-container span{
+		padding-left: 0.6em;
+		align-self: start;
+	}
+	
   textarea{
       width: 60%;
       max-width: 31rem;

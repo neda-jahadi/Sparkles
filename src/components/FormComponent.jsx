@@ -6,6 +6,7 @@ import { musicListActions } from '../features/musicReducer';
 import { booksListActions } from '../features/booksReducer';
 import { moviesListActions } from '../features/moviesReducer';
 import {categoryActions} from '../features/categoryReducer';
+import { screenActions } from '../features/screenReducer';
 import bookIcon from '../assets/good.png';
 import musicIcon from '../assets/music.png';
 import movieIcon from '../assets/video-camera.png';
@@ -17,20 +18,19 @@ const FormComponent = ()=>{
 
 
     const onSubmit = (data) => {
-
-	/* dispatch(musicListActions.addToList(data)); */
 	  	if(category === 'music'){
 		  	console.log('category', category);
-            dispatch(musicListActions.addToList(data));
+            dispatch(musicListActions.addToMusicList(data));
         } 
-/*         else if(category === 'books'){
+        else if(category === 'books'){
 			console.log('category', category);
-            dispatch(booksListActions.addToList(data));
+            dispatch(booksListActions.addToBooksList(data));
         }
         else if(category === 'movies'){
 			console.log('category', category);
-            dispatch(moviesListActions.addToList(data));
-        } */
+            dispatch(moviesListActions.addToMoviesList(data));
+		}
+		dispatch(screenActions.listScreen())
 }
 
     const category = useSelector( state => state.category );
@@ -90,43 +90,56 @@ const FormComponent = ()=>{
             </nav>
 
             <form className={colorFormClass} onSubmit={handleSubmit(onSubmit)}>
-
-            
-
-            
                 <h2>{h2}</h2>
 
-                <label htmlFor="title">{titleText}</label>
-                <input className={colorInputClass} id="title" type="text" ref={register({ required: true, minLength:2, maxLength:30 })} name="title"/>
-                
-                
-                {errors.title && errors.title.type === 'required' && <p className={errorClass}>Title is required</p>}
-                {errors.title && errors.title.type === "minLength" && <p className={errorClass}>This field required min length of 2</p>}
+				
+				<label htmlFor="title">{titleText}</label>
+				<div className="form-input-container">
+					<input className={colorInputClass} id="title" type="text" ref={register({ required: true, minLength:2, maxLength:20 })} name="title"/>
+					
+					
+					{errors.title && errors.title.type === 'required' && <span className={errorClass}>Title is required</span>}
+					{errors.title && errors.title.type === "minLength" && <span className={errorClass}>This field required min length of 2</span>}
+					{errors.title && errors.title.type === "maxLength" && <span className={errorClass}>This field required max length of 20</span>}
+				</div>
+				
 
-                
-                
-                <label htmlFor="creator">{creatorText}</label>
+					
+        
+				
+				<label htmlFor="creator">{creatorText}</label>
+				<div className="form-input-container">
                     <input className={colorInputClass} id="creator" type="text"  ref={register({maxLength:30})} name="creator"/>
-                <div>
-
+					{errors.creator && errors.creator.type === "maxLength" && <span className={errorClass}>Max 30 characters</span>}
+				</div>
+               
+			    <div className="rating-container">
                     <fieldset>
                         <legend>{usedBeforeText}</legend>
 
                             <label htmlFor="yes">Yes</label>
-                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='yes' onClick={()=> setUsedBefore(true)} ref={register}/>
+                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='yes' onClick={()=> setUsedBefore(true)} ref={register({required: true})}/>
 
                             <label htmlFor="no">No</label>
-                            <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="no" onClick={()=> setUsedBefore(false)} ref={register}/>
+                            <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="no" onClick={()=> setUsedBefore(false)} ref={register({required: true})}/>
+							{errors.usedBefore && errors.usedBefore.type === 'required' && <p className={errorClass}>Select Yes or No</p>}
                     </fieldset>
 
-                    <div className="rate-div">
-                        <label className="rate" htmlFor="rating">Rating 1-5</label>
+                    
+					<label className="rate" htmlFor="rating">Rating 1-5</label>
+					<div className="rate-div">
                         <input className={colorInputClass} type="number" min="1" max="5" ref={register( {required:usedBefore}) } name="rating"/>
-                        {errors.rating && errors.rating.type === 'required' && <span className={errorClass}>Rating is required</span>}
+                        {errors.rating && errors.rating.type === 'required' && <span className={errorClass + " error-rating"}>Rating is required</span>}
                     </div>
                 </div>
-                <label htmlFor="comment">Comment</label>
-                <textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register} name="comment"/>
+
+				<label htmlFor="comment">Comment</label>
+				<div className="form-textarea-container">
+					<textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register({maxLength:5})} name="comment"/>
+					{errors.comment && errors.comment.type === 'maxLength' && <span className={errorClass}>Max 50 characters</span>}
+				</div>
+               
+	
                 <input type="submit" className={buttonClass + " submit-button"}/>
             </form>
 		</div>
