@@ -80,7 +80,7 @@ main > .add-button {
     outline: none;
 }
 ::placeholder {
-    color: var(--text-color-red);
+    /* color: var(--text-color-red); */
     opacity: 1;
     font-size: 1.5em;
     
@@ -97,7 +97,7 @@ main > .add-button {
 .listcomponent-menu > div {
     margin: 0.5em;
     margin-top: 1em;
-    /* border: 1px solid blue; */
+   
     
 }
 
@@ -166,6 +166,24 @@ main > .add-button {
         padding-left: 0.5em;
         
     }
+    .listcomponent-menu input.red{
+        color: var(--text-color-red);
+        border-bottom: 1px solid var(--text-color-red);
+    }
+    .listcomponent-menu input.yellow{
+        color: var(--text-color-yellow);
+        border-bottom: 1px solid var(--text-color-yellow);
+    }
+    .listcomponent-menu input.green{
+        color: var(--text-color-green);
+        border-bottom: 1px solid var(--text-color-green);
+    }
+    ::placeholder {
+        color: inherit;
+        opacity: 1;
+        font-size: 1.5em;
+        
+    }  
 }
 
 /* Desktop *//* Desktop *//* Desktop *//* Desktop *//* Desktop */
