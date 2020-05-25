@@ -1,25 +1,7 @@
-div.form-view{
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-   
-}
-nav {
-  display:none;
-}
-
-
-
-.tab > img {
-  height:3em;
-  
-  
-}
 
 form{
-    width: 100vw;
+    width: 100%;
     height: 100%;
-    padding: 4rem 3.5rem 2rem;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -27,81 +9,99 @@ form{
    
 }
   
- form h2{
-    font-size: 1.875rem;
-    font-weight: lighter;
-  }
-  form label{
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    padding-bottom: .3rem;
-    align-self: flex-start;
-  }
-  form input{
-    width: 70vw;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    padding: .5rem;
-    font-weight: lighter;
-    border: none;
-    background-color: var(--text-color-red);
-  }
-  form > div{
-    width: 100%;
-    margin-top: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  input[type="radio"]{
-    width: 1.6em;
-    height: 1.5rem;
-    margin-right: 1rem;
-    position: relative;
-    top: .3rem;
-  }
-  input[type="radio"]:nth-of-type(2){
-      margin-right: 0;
-  }
+form h2{
+  font-size: 1.875rem;
+  font-weight: lighter;
+}
+form label{
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding-bottom: .3rem;
+  align-self: flex-start;
+}
+form input{
+  width: 70vw;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: .5rem;
+  font-weight: lighter;
+  border: none;
+  background-color: var(--text-color-red);
+}
+form > div{
+  width: 100%;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
 
-  input[type="number"]{
-    width: 6rem;
-    position: relative;
-    top: .3rem;
-  }
-  
-  fieldset{
-    border: none;
-    padding: 0;
-  }
+input[type="radio"]{
+  width: 1.6em;
+  height: 1.5rem;
+  margin-right: 1rem;
+  position: relative;
+  top: .3rem;
+}
+input[type="radio"]:nth-of-type(2){
+    margin-right: 0;
+}
 
-  legend{
-    font-size: 1.125rem;
-    display: inline;
-  }
-  div.rate-div{
-    width: min-content;
-  }
-  
-  textarea{
-    resize: none;
-    border: none;
-    border-radius: 10px;
-    padding: 1rem;
-    width: 100%;
-  }
-  
-  form > button{
-    font-size: 1.5rem;
-    color: var(--background-color-red);
-    background-color: var(--text-color-red);
-    width: 100%;
-    border: none;
-    margin-top: 1.5rem;
-    padding: .5em;
-    border-radius: 10px;
-  }
+input[type="number"]{
+  width: 6rem;
+  position: relative;
+  top: .3rem;
+}
 
+fieldset{
+  border: none;
+  padding: 0;
+}
+
+legend{
+  font-size: 1.125rem;
+  display: inline;
+}
+div.rate-div{
+  width: min-content;
+}
+  
+textarea{
+  resize: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 100%;
+}
+form > button{
+  font-size: 1.5rem;
+  
+  width: 100%;
+  border: none;
+  margin-top: 1.5rem;
+  padding: .5em;
+  border-radius: 10px;
+  cursor:pointer;
+}
+.button-red{
+  color: var(--background-color-red);
+  background-color: var(--text-color-red);
+}
+.button-yellow{
+  color: var(--background-color-yellow);
+  background-color: var(--text-color-yellow);
+}
+.button-green{
+  color: var(--background-color-green);
+  background-color: var(--text-color-green);
+}
+
+
+  .valid{
+	border: 2px solid green;
+  }
+  .invalid{
+	border: 2px solid red;
+  }
   /* For those crazy ass small screens */
 
   @media(max-width: 337px){
@@ -118,53 +118,6 @@ form{
 
 @media(min-width: 700px){
 
-    div.form-view{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 5rem;
-        position:relative;
-    }
-   
-    nav{
-      position:absolute;
-      left:13vw;
-      top:-4.3rem;
-      display:inline-block;
-     
-    }
-    .tab{
-      border:none;
-      padding:1em;
-      border-radius: 25px 25px 0px 0px;
-      margin:0 -1.5rem 0 0;
-      width:7rem;
-      position:relative;
-    
-    }
-    nav button:first-child{
-      z-index:3;
-     
-    }
-    nav button:nth-child(2){
-      z-index:2;
-     
-    }
-    nav button:last-child{
-      z-index:1;
-      
-    }
-    .tab:hover{
-     cursor:pointer;
-    }
-    button.tab-active{
-      padding-bottom:2.5rem;
-      bottom:1.6rem;
-      z-index:5;
-    
-    }
-
     form h2{
         align-self: center;
         font-size: 3rem;
@@ -173,16 +126,7 @@ form{
     }
 
     form{
-        width: 80vw;
-        max-width: 60rem;
-        height: 70vh;
-        padding: 0 3.5rem 2rem;
-        align-items: flex-start;
-        border-radius: 20px;
-        border-top-left-radius: 0;
-        position: relative;
-        box-shadow: 0px 0px 5px -50px rgba(0,0,0,.8), 8px 7px 20px -12px rgba(0,0,0,.8);
-
+      align-items: flex-start;
     }
 
     form input{
@@ -202,7 +146,7 @@ form{
       width: 60%;
       max-width: 31rem;
   }
-  form > button{
+  form > .submit-button{
     width: 10rem;
     position: absolute;
     bottom: 2rem;

@@ -38,7 +38,6 @@ const HeaderComponent = () => {
             textColor=' error-green';
             break;
         default:
-            console.log('inget just nu')
 
     }
 

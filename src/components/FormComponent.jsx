@@ -10,22 +10,34 @@ import bookIcon from '../assets/good.png';
 import musicIcon from '../assets/music.png';
 import movieIcon from '../assets/video-camera.png';
 
-
 const FormComponent = ()=>{
     const {register, handleSubmit, errors } = useForm();
     const [usedBefore, setUsedBefore] = useState(null);
-    const dispatch = useDispatch();
+	const dispatch = useDispatch();
+
 
     const onSubmit = (data) => {
 
-    dispatch(musicListActions.addToList(data));
+	/* dispatch(musicListActions.addToList(data)); */
+	  	if(category === 'music'){
+		  	console.log('category', category);
+            dispatch(musicListActions.addToList(data));
+        } 
+/*         else if(category === 'books'){
+			console.log('category', category);
+            dispatch(booksListActions.addToList(data));
+        }
+        else if(category === 'movies'){
+			console.log('category', category);
+            dispatch(moviesListActions.addToList(data));
+        } */
 }
 
-    const category = useSelector(state => state.category);
+    const category = useSelector( state => state.category );
     let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
     let colorFormClass = '';
     let colorInputClass='';
-    let musicTab='';
+	let musicTab='';
     let bookTab='';
     let movieTab='';
     let buttonClass='';
@@ -37,7 +49,7 @@ const FormComponent = ()=>{
             titleText = 'Song Title';
             creatorText = 'Artist';
             usedBeforeText = 'Listened to';
-            colorFormClass = 'background-red text-red';
+            colorFormClass = 'text-red';
             colorInputClass='input-background-red';
             musicTab=' tab-active';
             buttonClass=' button-red';
@@ -48,7 +60,7 @@ const FormComponent = ()=>{
             titleText = 'Book Title';
             creatorText = 'Author';
             usedBeforeText = 'Read before';
-            colorFormClass = 'background-yellow text-yellow';
+            colorFormClass = 'text-yellow';
             colorInputClass='input-background-yellow';
             bookTab=' tab-active';
             buttonClass=' button-yellow';
@@ -59,19 +71,17 @@ const FormComponent = ()=>{
             titleText = 'Movie Title';
             creatorText = 'Director';
             usedBeforeText = 'Seen';
-            colorFormClass = 'background-green text-green';
+            colorFormClass = 'text-green';
             colorInputClass='input-background-green';
             movieTab=' tab-active';
             buttonClass=' button-green';
             errorClass=' error-green';
         break;
+        default:
     }
 
     return(
-    <>   
-
-        <div className="form-view">
-
+		<div className="form-view">
             <nav>
                 <button className={'tab background-red'+musicTab} onClick={()=> dispatch(categoryActions.choseMusic())}><img src={musicIcon} alt="Go to music category" className="music-icon"/></button>   
                 <button className={'tab background-yellow'+bookTab} onClick={()=> dispatch(categoryActions.choseBooks())}><img src={bookIcon} alt="Go to book category" className="book-icon"/></button>
@@ -117,13 +127,9 @@ const FormComponent = ()=>{
                 </div>
                 <label htmlFor="comment">Comment</label>
                 <textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register} name="comment"/>
-                {/* <button onClick={event => addItem(event)} className={buttonClass}>Submit</button> */}
-                <input type="submit"/>
+                <input type="submit" className={buttonClass + " submit-button"}/>
             </form>
-
-        </div>
-    </>
-
+		</div>
     )
 }
 export default FormComponent;

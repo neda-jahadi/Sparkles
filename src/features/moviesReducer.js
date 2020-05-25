@@ -1,25 +1,23 @@
 import {createReducer, createAction} from '@reduxjs/toolkit';
 
-const addToList = createAction('add to list');
-const editList = createAction('edit list');
-const removeFromList = createAction('remove from list');
+const addToMoviesList = createAction('add to movies list');
+const editMoviesList = createAction('edit movies list');
+const removeFromMoviesList = createAction('remove from movies list');
 const moviesListActions = {
-    addToList,
-    editList,
-    removeFromList
+    addToMoviesList,
+    editMoviesList,
+    removeFromMoviesList
 }
 
 const moviesList = [
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
+    {title: 'Kill Bill', creator: 'Quentin Tarantino', rating:'', usedBefore:'no', comment: 'Läs den!'},
+    {title: 'Fight Club', creator: 'David Fincher', rating:'5', usedBefore:'yes', comment: 'We do not talk about fight club!'},
 
 ];
 
-
-
 const reducer = createReducer(moviesList, {
-    [addToList]: (state, action) => [...state, action.payload],
-	[removeFromList]: (state, action) => state.filter(item => item.id !== action.payload.id)
+    [addToMoviesList]: (state, action) => [...state, action.payload],
+	[removeFromMoviesList]: (state, action) => state.filter(item => item.title !== action.payload)
 })
 
 export { reducer, moviesListActions };

@@ -1,79 +1,166 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './listcomponent.css';
-import smallRedLogo from '../assets/LogoSmallRed.png';
-import largeLogo from '../assets/LogoBig.png';
-import ListCard from './ListCard'
+import ListCard from './ListCard';
+import { useDispatch,useSelector } from 'react-redux';
+import {screenActions} from '../features/screenReducer';
 
-const ListComponent = () =>{
+
+const ListComponent = ({formScreen,startCard}) =>{
+    const dispatch = useDispatch();
+
+    const category = useSelector(state => state.category);
+    const musicList = useSelector(state => state.musicList);
+    const moviesList = useSelector(state => state.moviesList);
+    const booksList = useSelector(state => state.booksList);
+
+    
+    const [mySearch, setMySearch] = useState('');
+    const [sorteringNyckel,setSorteringNyckel] = useState('');
+
+    let h2 = '', titleText = '', creatorText = '', search = [],
+     usedBeforeText = '' , addButtonText = '' , list =[];
+    let colorClass = '';
+    
+
+    switch(category){
+        case 'music':
+            h2 = 'Music';
+            titleText = 'Song Title';
+             creatorText = 'Artist';
+             usedBeforeText = 'Listened to';
+             addButtonText = 'Add music';
+             colorClass = 'red';
+             list = musicList; 
+        break;
+        case 'books':
+            h2 = 'Books';
+            titleText = 'Book Title';
+            creatorText = 'Author';
+            usedBeforeText = 'Read before';
+            addButtonText = 'Add book';
+             colorClass = 'yellow';
+             list = booksList; 
+        break;
+        case 'movies':
+            h2 = 'Movies';
+            titleText = 'Movie Title';
+            creatorText = 'Director';
+            usedBeforeText = 'Seen';
+            addButtonText = 'Add movie';
+             colorClass = 'green';
+             list = moviesList; 
+        break;
+    }
+
+      
+    
+
+     if (mySearch !==''){
+         
+         search =[...list].filter(item=>
+            (item.title).toLowerCase().includes(mySearch.toLowerCase())||
+            (item.creator).toLowerCase().includes(mySearch.toLowerCase())||
+            (item.comment).toLowerCase().includes(mySearch.toLowerCase()) ||
+            (item.usedBefore).toLowerCase().includes(mySearch.toLowerCase()) ||
+            (item.rating).includes(mySearch.toLowerCase())
+        );
+     }else {
+         search = [...list];
+     }
+
      
+     if(sorteringNyckel ==='title'){
 
-    let testLista=[
-        {title:'en titel', creator:'en creator', usedBefore:true, rating: 4, comment:'en kommentar'},
-        {title:'2 titel', creator:'2 creator', usedBefore:true, rating: 4, comment:'2 kommentar'},
-        {title:'3 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'4 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'},
-        {title:'5 titel', creator:'3 creator', usedBefore:true, rating: 4, comment:'3 kommentar'}
-    ]
+        let sorterade = search.sort((a,b)=>{
+            if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
+            else if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;
+            else return 0;
+        })
+        search = sorterade;
+    } else if (sorteringNyckel === 'usedBefore') {
 
-    const jsxLista=testLista.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
+        let sorterade = search.sort((a,b)=>{
+            if (a.usedBefore.toLowerCase() > b.usedBefore.toLowerCase()) return -1;
+            else if (a.usedBefore.toLowerCase() < b.usedBefore.toLowerCase()) return 1;
+            else return 0;
+        })
+        search = sorterade;
+    }else if (sorteringNyckel === 'creator') {
+
+        let sorterade = search.sort((a,b)=>{
+            if (a.creator.toLowerCase() < b.creator.toLowerCase()) return -1;
+            else if (a.creator.toLowerCase() > b.creator.toLowerCase()) return 1;
+            else return 0;
+        })
+        search = sorterade;
+    }else if(sorteringNyckel === 'rating'){
+        
+        let sorterade = search.sort((a,b)=>{
+            if (Number(a.rating) > Number(b.rating)) return -1;
+            else if (Number(a.rating) < Number(b.rating)) return 1;
+            else return 0;
+        })
+        search = sorterade;
+    }else {
+        search = [...list];
+    }
+
+    
+    
+    
+
+
+    const jsxLista=search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
+     const handleFormScreen = (e) => {
+        dispatch(screenActions.formScreen(e));
+    }
 
  
     return(
-        <div className="desktop-mobil">
-        <div className="menu-desktop">
-            <div className='desktop-menu'>
-                <div className="sort">
-                        <div className="drop-div">Sort</div>
-                        <div className="dropdown-content">
-                            <div>Song title</div>
-                            <div>Artist</div>
-                            <div>Rating</div>
-                            <div>Listen</div>
-                        </div>
-                  
-                </div> 
-                <div className="listcomponent-input">
-                    <input type="text" placeholder="Search" />
-                </div>
+    
+           
         
-                
-            </div>
-        </div>
-        <div className="listcomponent-body">
-       
-            <h1>
-                Music
-            </h1>
-            <div className='listcomponent-menu'>
-                <div className="sort">
-                        <h2 className="drop-div">Sort</h2>
-                        <div className="dropdown-content">
-                            <div>Song title</div>
-                            <div>Artist</div>
-                            <div>Rating</div>
-                            <div>Listen</div>
+            <main className={`text-${colorClass} background-${colorClass}`}>
+               
+                <h2>
+                   {h2}
+                </h2>
+                <div className='listcomponent-menu'>
+                    <div className={`sort background-${colorClass}`}>
+                        <h2 className={`drop-div text-${colorClass} `}>Sort</h2>
+                        <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
+
+                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('title')}}>{titleText}</div>
+
+                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('creator')}}>{creatorText}</div>
+
+                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('rating')}}>Rating</div>
+
+                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('usedBefore')}}>{usedBeforeText}</div>
                         </div>
                     
-                </div> 
-                <div className="listcomponent-input">
-                   <input type="text" placeholder="Search" />
-                </div>
+                    </div> 
+                    <div>
+                        <input className={colorClass} type="text" value={mySearch} onChange = {(event)=>setMySearch(event.target.value)} placeholder="Search"></input>
+                    </div>
                 
-            </div>
-            <div className=" main scrollable">
+                </div>
+                <div className=" main scrollable">
 
                     {jsxLista}
             
 
-            </div>
-            <div className='add-button'>
-               <button>Add music</button>
-            </div>
-        </div>
-        </div>
+                 </div>
+                <div className='add-button'>
+                   <button className={`button-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
+
+                </div>
+            </main>
+       
+        
+        
     );
 }
 export default ListComponent;
 
+// className={`sortItem-${colorClass}` ? sorteringNyckel !== 'title' : `sortChosed-${colorClass}`}

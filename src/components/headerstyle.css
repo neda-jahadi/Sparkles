@@ -38,11 +38,13 @@ img.go-back:hover{
   }
   img.big{
     width: 35rem;
+    cursor:pointer;
    
   }
   img.medium{
     width: 25rem;
     margin-right: 5.5rem;
+    cursor:pointer;
   }
   .mobile-size{
     display: none;
@@ -55,7 +57,7 @@ img.go-back:hover{
     padding:0;
     padding-top:.7em;
     align-self:flex-start;
-    
+    cursor:pointer;
     font-size: 1.3em;
     border:none;
     background-color:transparent;

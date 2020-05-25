@@ -10,30 +10,31 @@
     font-family:'Roboto', sans-serif;
     
 }
+
 .red{
     background-color:var(--text-color-red);
-    color:var(--background-color-red);
+    color:var(--error-color-red);
 }
 .yellow{
     background-color: var(--text-color-yellow);
-    color: var(--background-color-yellow);
+    color: var(--error-color-yellow);
 }
 .green{
     background-color: var(--text-color-green);
-    color: var(--background-color-green);
+    color: var(--error-color-green);
 }
 .red-button{
     color:var(--text-color-red);
-    background-color:var(--background-color-red);
+    background-color:var(--error-color-red);
 }
 .yellow-button{
     color: var(--text-color-yellow);
-    background-color: var(--background-color-yellow);
+    background-color: var(--error-color-yellow);
 
 }
 .green-button{
     color: var(--text-color-green);
-    background-color: var(--background-color-green);
+    background-color: var(--error-color-green);
 }
 /* Ändra grid-column 1/10 om man inte vill h3 ska sträcka sig till kanten på kortet, alltså över knapparn*/
 .list-card > h3{
@@ -48,6 +49,7 @@
     font-size:14px;
     align-self:end;
 }
+
 .list-card > button {
     /* background-color: var(--background-color-red); */
     border:none;
@@ -60,6 +62,7 @@
 .list-card > .edit-button{
     grid-column:9/10;
     margin-right:5px;
+    cursor:pointer;
     
     
 }
@@ -75,4 +78,25 @@
     /* color:var(--text-color-red); */
     cursor:pointer;
    
+}
+.edit-list-card{
+
+    color:black;
+}
+.edit-list-card > input {
+   
+    padding:0;
+    display:inline-block;
+    border-radius:5px;
+    width:100%;
+    font-size:14px;
+    padding:0.2em;
+    
+}
+.edit-list-card >label {
+    font-size:14px;
+    margin-top:0rem;
+}
+.save-edit-button{
+    border:1px solid orange;
 }

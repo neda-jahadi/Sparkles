@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './StartCard.css';
 import Music from '../assets/music.png'
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,6 +17,7 @@ const StartCard = ({genre}) => {
 	let color = null;
 	let lista = null;
 	let list = null;
+	
 	switch(genre){
 		case 'music': 
 			list = musicList;

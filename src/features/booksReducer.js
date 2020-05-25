@@ -1,27 +1,28 @@
 import {createReducer, createAction} from '@reduxjs/toolkit';
 
-const addToList = createAction('add to list');
-const editList = createAction('edit list');
-const removeFromList = createAction('remove from list');
+const addToBooksList = createAction('add to book list');
+const editBooksList = createAction('edit to book list');
+const removeFromBooksList = createAction('remove from book list');
+
 const booksListActions = {
-    addToList,
-    editList,
-    removeFromList
+    addToBooksList,
+    editBooksList,
+    removeFromBooksList
 }
 
 const booksList = [
-    {title: 'Astrid lindgren', creator: 'Kalle', usedBefore:true, comment: 'Apläskig'},
-    {title: 'Sagan om ringen', creator: 'JRR Tolkien', usedBefore:false, comment: 'Kan den här vara bra?'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
-    {title: 'Jag En', creator: 'David Leviathan', usedBefore:true, comment: 'Läs den!'},
+    {title: 'Ronja Rövardotter', creator: 'Astrid Lindgren', rating:'5', usedBefore:'yes', comment: 'Bra barnbok'},
+    {title: 'Narnia', creator: 'C.S Lewis', rating: '', usedBefore:'no', comment: 'Kan den här vara bra?'},
+    {title: 'Jag En', creator: 'David Leviathan', rating:'3', usedBefore:'yes', comment: 'Läs den!'},
+    {title: 'Lida', creator: 'Stephen King', rating:'2', usedBefore:'yes', comment: 'Sjukt läskig'},
+    {title: 'Egalias Döttrar', creator: 'Bra fråga', rating:'', usedBefore:'no', comment: 'Nåt feministiskt'},
 ];
 
 
 
 const reducer = createReducer(booksList, {
-    [addToList]: (state, action) => [...state, action.payload],
-	[removeFromList]: (state, action) => state.filter(item => item.id !== action.payload.id)
+    [addToBooksList]: (state, action) => [...state, action.payload],
+	[removeFromBooksList]: (state, action) => state.filter(item => item.title !== action.payload)
 })
 
 export { reducer, booksListActions };
