@@ -7,9 +7,7 @@
     display: grid;
     grid-template-rows: 3em 5em 1fr 5em;
 }
-main > * {
-    border: 1px solid black;
-}
+
 main > .add-button {
     text-align: center;
     
@@ -72,10 +70,9 @@ main > .add-button {
 .listcomponent-menu input {
     background: transparent;
     border: none;
-    padding: 0.2em;
     width: 100%;
     border-radius: 0%;
-    padding: 0.55em;
+    padding: 0.3em;
     border-bottom: 1px solid var(--text-color-red);
     font-size: 1rem;
 }
@@ -93,12 +90,14 @@ main > .add-button {
     display: grid;
     grid-template-columns: 7em 1fr;
     text-align: left;
-    /* border: 1px solid blue; */
+    
+   
     
 }
 .listcomponent-menu > div {
     margin: 0.5em;
     margin-top: 1em;
+    /* border: 1px solid blue; */
     
 }
 
@@ -111,8 +110,8 @@ main > .add-button {
 .drop-div {
 
     border-bottom: 1px solid  var(--text-color-red);
-    padding-left: 1em;
     font-size: 1.5em;
+    padding-left: 0.2em;
 }
 
 
@@ -129,6 +128,7 @@ main > .add-button {
 }
 .dropdown-content div {
     padding: 1em;
+    padding-left: 0.5em;
 }
 .desktop-menu {
     display: none;
@@ -141,10 +141,6 @@ main > .add-button {
      .scrollable {
       overflow-y: auto;  
     } 
-    
-    /* .listcomponent-logo{
-        text-align: right;
-    } */
     
     .main {
         display: flex;
@@ -166,13 +162,14 @@ main > .add-button {
     .listcomponent-menu {
         grid-template-columns: 8em 1fr;  
     }
+    .drop-div {
+        padding-left: 0.5em;
+        
+    }
 }
 
 /* Desktop *//* Desktop *//* Desktop *//* Desktop *//* Desktop */
 @media screen and (min-width: 701px){
-    /* .listcomponent-largelogo:hover{
-        cursor: pointer;
-    } */
     .scrollable {
         
         overflow-y: auto;
@@ -196,7 +193,7 @@ main > .add-button {
         padding: 0.2em;
         border-radius: 0%;
         padding: 0.55em;
-        margin-top: 1.7rem;
+        margin-top: 1.2rem;
         width: calc(80vw - 21rem - 10rem);
         max-width: calc(39rem - 15rem);
     }
@@ -234,14 +231,11 @@ main > .add-button {
         padding-right: 2rem;
         position: absolute;
         right: 0;
-        top: -6rem;
+        top: -5rem;
+        /* border: 1px solid blue; */
+
         
     }
-    .listcomponent-menu > div {
-        margin: 0.5em;
-        margin-top: 1em;
-    }
-
     .sort {
         position: relative;
         display: inline-block;

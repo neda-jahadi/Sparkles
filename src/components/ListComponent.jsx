@@ -77,7 +77,7 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
-    } else if (sorteringNyckel === 'usedBefore') {
+    }else if (sorteringNyckel === 'usedBefore') {
 
         let sorterade = search.sort((a,b)=>{
             if (a.usedBefore.toLowerCase() > b.usedBefore.toLowerCase()) return -1;
@@ -93,7 +93,7 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
-    }else if(sorteringNyckel === 'rating'){
+    } else if(sorteringNyckel === 'rating'){
         
         let sorterade = search.sort((a,b)=>{
             if (Number(a.rating) > Number(b.rating)) return -1;
@@ -101,9 +101,8 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
-    }else {
-        search = [...list];
     }
+    
 
     
     
