@@ -52,7 +52,7 @@ const ListComponent = ({formScreen,startCard}) =>{
         break;
     }
 
-      
+    
     
 
      if (mySearch !==''){
