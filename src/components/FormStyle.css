@@ -96,6 +96,12 @@ form > button{
 }
 
 
+  .valid{
+	border: 2px solid green;
+  }
+  .invalid{
+	border: 2px solid red;
+  }
   /* For those crazy ass small screens */
 
   @media(max-width: 337px){
@@ -140,7 +146,7 @@ form > button{
       width: 60%;
       max-width: 31rem;
   }
-  form > button{
+  form > .submit-button{
     width: 10rem;
     position: absolute;
     bottom: 2rem;
