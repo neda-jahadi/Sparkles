@@ -130,7 +130,7 @@ const ListComponent = ({formScreen,startCard}) =>{
                         <h2 className={`drop-div text-${colorClass} `}>Sort</h2>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('title')}}>{titleText}</div>
+                            <div className={`sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('title')}}>{titleText}</div>
 
                             <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('creator')}}>{creatorText}</div>
 
