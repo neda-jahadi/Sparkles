@@ -50,6 +50,7 @@ const ListComponent = ({formScreen,startCard}) =>{
              colorClass = 'green';
              list = moviesList; 
         break;
+        default:
     }
 
       

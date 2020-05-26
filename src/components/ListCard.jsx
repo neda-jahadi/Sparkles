@@ -12,8 +12,15 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
     const category = useSelector(state=>state.category);
     const [editable, setEditable]=useState(false)
 
-    let creatorText='', usedBeforeText='', colorClass='', colorClassButton='';
+    const [editTitle, setEditTitle]=useState(title);
+    const [editCreator, setEditCreator]=useState(creator);
+    const [editUsedBefore, setEditUsedBefore]=useState(usedBefore);
+    const [editRating, setEditRating]=useState(rating);
+    const [editComment, setEditComment]=useState(comment);
+
+    let creatorText='', usedBeforeText='', colorClass='', colorClassButton='', ratingText='';
     let content='itemCard'
+   
     
     switch (category){
 
@@ -54,12 +61,6 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
         }
     }
 
-    const [editTitle, setEditTitle]=useState(title);
-    const [editCreator, setEditCreator]=useState(creator);
-    const [editUsedBefore, setEditUsedBefore]=useState(usedBefore);
-    const [editRating, setEditRating]=useState(rating);
-    const [editComment, setEditComment]=useState(comment);
-
     const handleSaveEdit=()=>{
 
         if (title===editTitle && creator===editCreator && usedBefore===editUsedBefore && rating===editRating && comment===editComment){
@@ -89,9 +90,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
                 dispatch(moviesListActions.editMoviesList(editObject))
             }
           
-
             setEditable(false)
-
         }
 
     }
@@ -100,17 +99,25 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
     // <span className={editable===true ? 'no-edit' : 'edit'}>{creator} </span>
     //     <input type='text' className={editable===true ? 'edit' : 'no-edit'}/>
     // </p>
-    //TODO Kolla rating. Om ingen rating, skriv ut 'not rated' (of 5 ska alltså inte vara med)
+
     //TODO ändra så att titel creator osv är i fetstil
+   
+    if(rating===''){
+        ratingText='Not rated'
+    }
+    else{
+        ratingText='of 5'
+    }
     const itemCard=(
+    
             <div className={'list-card '+colorClass}>
 
                 <h3>{title}</h3>
 
-                <p><span>{creatorText}: </span> {creator}</p>
-                <p>{usedBeforeText}: {usedBefore}</p>
-                <p>Rating: {rating} of 5</p>
-                <p>Comment: {comment} </p>
+                <p><strong>{creatorText}: </strong> {creator}</p>
+                <p><strong>{usedBeforeText}: </strong> {usedBefore}</p>
+                <p><strong>Rating: </strong>{rating} {ratingText}</p>
+                <p><strong>Comment: </strong> {comment} </p>
                 
                 <button className={'edit-button '+colorClassButton} onClick={()=>setEditable(true)}>
                     <img src={Edit} alt="Edit" className="edit-logo"/>
@@ -121,24 +128,33 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
     )
 
     const editCard=(
-        <div className='edit-list-card'>
+        <div className={'edit-list-card ' +colorClass}>
+            <div>
+                <label htmlFor='title'>Title:</label>
+                <input type='text' id='title' value={editTitle} onChange={event=>setEditTitle(event.target.value)}/>
+            </div>
         
-            <label htmlFor='title'>Title</label>
-            <input type='text' id='title' value={editTitle} onChange={event=>setEditTitle(event.target.value)}/>
-
-            <label htmlFor='creator'>{creatorText}</label>
-            <input type='text' id='creator' value={editCreator} onChange={event=>setEditCreator(event.target.value)} />
-
+            <div>   
+                <label htmlFor='creator'>{creatorText}:</label>
+                <input type='text' id='creator' value={editCreator} onChange={event=>setEditCreator(event.target.value)}/>
+            </div>
+         
+       
             <label htmlFor='yes'>Yes</label>
-            <input type='radio' id='yes' onClick={()=>setEditUsedBefore('yes')}/>
+            <input type='radio' id='yes' name='usedBefore' onClick={()=>setEditUsedBefore('Yes')}/>
             <label htmlFor='no'>No</label>
-            <input type='radio' id='no' onClick={()=>setEditUsedBefore('no')}/>
+            <input type='radio' id='no' name='usedBefore' onClick={()=>setEditUsedBefore('No')}/>
 
-            <label htmlFor='rate'>Rating 1-5</label>
-            <input type='number'id='rate' min="1" max="5" value={editRating} onChange={event=>setEditRating(event.target.value)}/>
-
-            <label htmlFor='comment'>Comment</label>
-            <input type='textarea' id='comment' value={editComment} onChange={event=>setEditComment(event.target.value)}/>
+            <div>
+            <label htmlFor='rate'>Rating 1-5:</label>
+                <input type='number'id='rate' min="1" max="5" value={editRating} onChange={event=>setEditRating(event.target.value)}/>
+            </div>
+          
+            <div>
+            <label htmlFor='comment' className='comment-label'>Comment:</label>
+                <input type='textarea' id='comment' value={editComment} onChange={event=>setEditComment(event.target.value)}/>
+            </div>
+  
      
             <button className={'save-edit-button '+colorClassButton} onClick={handleSaveEdit}>
                 Save

@@ -18,20 +18,20 @@ const FormComponent = ()=>{
 
     const onSubmit = (data) => {
 
-	/* dispatch(musicListActions.addToList(data)); */
+	
 	  	if(category === 'music'){
 		  	console.log('category', category);
-            dispatch(musicListActions.addToList(data));
+            dispatch(musicListActions.addToMusicList(data));
         } 
-/*         else if(category === 'books'){
+      else if(category === 'books'){
 			console.log('category', category);
-            dispatch(booksListActions.addToList(data));
+            dispatch(booksListActions.addToBooksList(data));
         }
         else if(category === 'movies'){
 			console.log('category', category);
-            dispatch(moviesListActions.addToList(data));
-        } */
-}
+            dispatch(moviesListActions.addToMoviesList(data));
+        }
+    }
 
     const category = useSelector( state => state.category );
     let h2 = '', titleText = '', creatorText = '', usedBeforeText = '';
@@ -113,10 +113,10 @@ const FormComponent = ()=>{
                         <legend>{usedBeforeText}</legend>
 
                             <label htmlFor="yes">Yes</label>
-                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='yes' onClick={()=> setUsedBefore(true)} ref={register}/>
+                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='Yes' onClick={()=> setUsedBefore(true)} ref={register}/>
 
                             <label htmlFor="no">No</label>
-                            <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="no" onClick={()=> setUsedBefore(false)} ref={register}/>
+                            <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="No" onClick={()=> setUsedBefore(false)} ref={register}/>
                     </fieldset>
 
                     <div className="rate-div">

@@ -1,7 +1,5 @@
 .list-card{
-    height: 135px;
-    /* width:238px;
-    min-height:115px; */
+    height: 160px;
     border-radius:5px;
     padding:15px;
     display:grid;
@@ -10,7 +8,6 @@
     font-family:'Roboto', sans-serif;
     
 }
-
 .red{
     background-color:var(--text-color-red);
     color:var(--error-color-red);
@@ -49,30 +46,28 @@
     font-size:14px;
     align-self:end;
 }
-
-
 .list-card > button {
     /* background-color: var(--background-color-red); */
     border:none;
-    height:20px;
-    width:20px;
+    height:23px;
+    width:23px;
     justify-self:end;
     align-self:end;
     border-radius:5px;
+
 }
 .list-card > .edit-button{
     grid-column:9/10;
     margin-right:5px;
     cursor:pointer;
-    
-    
+ 
 }
 .edit-button > .edit-logo{
     height:15px;
     width:15px;
     margin-top:2px;
    
-    
+     
 }
 .list-card >.delete-button{
     grid-column:10/11;
@@ -81,25 +76,39 @@
    
 }
 .edit-list-card{
-
-    color:black;
-    background-color:var(--text-color-red);
-}
-.edit-list-card > input {
-   
-    padding:0;
-    /* display:inline-block; */
+    /* display:grid;
+    grid-template-columns:2fr 1fr; */
+    height: 160px;
     border-radius:5px;
-    /* width:100%; */
+    padding:15px;
+  
+}
+
+.comment-label{
+    /* display:block; */
+}
+
+.edit-list-card  input {
+    border-radius:5px;
     font-size:14px;
-    padding:0.2em;
+    border:none; 
+    
     
 }
 .edit-list-card >label {
-    display:inline-block;
+    /* display:inline-block; */
     font-size:14px;
     margin-top:0rem;
 }
 .save-edit-button{
     border:1px solid orange;
+}
+.edit-list-card > .delete-button{
+    border:none;
+    height:23px;
+    width:23px;
+    /* justify-self:end;
+    align-self:end; */
+    border-radius:5px;
+
 }
