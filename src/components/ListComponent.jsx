@@ -50,9 +50,18 @@ const ListComponent = ({formScreen,startCard}) =>{
              colorClass = 'green';
              list = moviesList; 
         break;
+        default:
+            h2 = 'Movies';
+            titleText = 'Movie Title';
+            creatorText = 'Director';
+            usedBeforeText = 'Seen';
+            addButtonText = 'Add movie';
+            colorClass = 'green';
+            list = moviesList; 
+			break;
     }
 
-      
+    
     
 
      if (mySearch !==''){
@@ -77,7 +86,7 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
-    } else if (sorteringNyckel === 'usedBefore') {
+    }else if (sorteringNyckel === 'usedBefore') {
 
         let sorterade = search.sort((a,b)=>{
             if (a.usedBefore.toLowerCase() > b.usedBefore.toLowerCase()) return -1;
@@ -93,7 +102,7 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
-    }else if(sorteringNyckel === 'rating'){
+    } else if(sorteringNyckel === 'rating'){
         
         let sorterade = search.sort((a,b)=>{
             if (Number(a.rating) > Number(b.rating)) return -1;
@@ -101,20 +110,24 @@ const ListComponent = ({formScreen,startCard}) =>{
             else return 0;
         })
         search = sorterade;
-    }else {
-        search = [...list];
+    }
+    
+
+    
+    
+    if(list.length === 0){
+       list= <h1>No item in the list...</h1>
+    }else{
+        list = search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
     }
 
-    
-    
-    
 
-
-    const jsxLista=search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
-     const handleFormScreen = (e) => {
-        dispatch(screenActions.formScreen(e));
+    
+    
+    const handleFormScreen = () => {
+        dispatch(screenActions.formScreen());
     }
-
+    
  
     return(
     
@@ -130,13 +143,13 @@ const ListComponent = ({formScreen,startCard}) =>{
                         <h2 className={`drop-div text-${colorClass} `}>Sort</h2>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('title')}}>{titleText}</div>
+                            <div className={sorteringNyckel!=='title' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('title')}}>{titleText}</div>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('creator')}}>{creatorText}</div>
+                            <div className={sorteringNyckel!=='creator' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('creator')}}>{creatorText}</div>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('rating')}}>Rating</div>
+                            <div className={sorteringNyckel!=='rating' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('rating')}}>Rating</div>
 
-                            <div className={`sortItem-${colorClass}`} onClick={()=>{setSorteringNyckel('usedBefore')}}>{usedBeforeText}</div>
+                            <div className={sorteringNyckel!=='usedBefore' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('usedBefore')}}>{usedBeforeText}</div>
                         </div>
                     
                     </div> 
@@ -147,12 +160,12 @@ const ListComponent = ({formScreen,startCard}) =>{
                 </div>
                 <div className=" main scrollable">
 
-                    {jsxLista}
+                    {list}
             
 
                  </div>
                 <div className='add-button'>
-                   <button className={`button-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
+                   <button className={`addButton-${colorClass}`} onClick={handleFormScreen}>{addButtonText}</button>
 
                 </div>
             </main>
@@ -163,4 +176,4 @@ const ListComponent = ({formScreen,startCard}) =>{
 }
 export default ListComponent;
 
-// className={`sortItem-${colorClass}` ? sorteringNyckel !== 'title' : `sortChosed-${colorClass}`}
+
