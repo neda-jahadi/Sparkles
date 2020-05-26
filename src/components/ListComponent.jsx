@@ -50,6 +50,15 @@ const ListComponent = ({formScreen,startCard}) =>{
              colorClass = 'green';
              list = moviesList; 
         break;
+        default:
+            h2 = 'Movies';
+            titleText = 'Movie Title';
+            creatorText = 'Director';
+            usedBeforeText = 'Seen';
+            addButtonText = 'Add movie';
+            colorClass = 'green';
+            list = moviesList; 
+			break;
     }
 
     
@@ -106,14 +115,19 @@ const ListComponent = ({formScreen,startCard}) =>{
 
     
     
-    
-
-
-    const jsxLista=search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
-     const handleFormScreen = (e) => {
-        dispatch(screenActions.formScreen(e));
+    if(list.length === 0){
+       list= <h1>No item in the list...</h1>
+    }else{
+        list = search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
     }
 
+
+    
+    
+    const handleFormScreen = () => {
+        dispatch(screenActions.formScreen());
+    }
+    
  
     return(
     
@@ -146,7 +160,7 @@ const ListComponent = ({formScreen,startCard}) =>{
                 </div>
                 <div className=" main scrollable">
 
-                    {jsxLista}
+                    {list}
             
 
                  </div>
