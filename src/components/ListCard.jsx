@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import './ListCardStyle.css'
-import Edit from '../assets/edit.png'
 import { useSelector, useDispatch } from 'react-redux';
 import { musicListActions } from '../features/musicReducer'
 import { booksListActions } from '../features/booksReducer'
@@ -95,12 +94,6 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
 
     }
 
-    // <p>{creatorText}:
-    // <span className={editable===true ? 'no-edit' : 'edit'}>{creator} </span>
-    //     <input type='text' className={editable===true ? 'edit' : 'no-edit'}/>
-    // </p>
-
-  
    
     if(rating===''){
         ratingText='Not rated'
@@ -143,7 +136,8 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
                 <input type='text' id='creator' value={editCreator} onChange={event=>setEditCreator(event.target.value)}/>
             </div>
          
-            <div className='edit-radio-buttons'>
+            <div className='edit-radio-container'>
+                <p>{usedBeforeText}</p>
                 <label htmlFor='yes'>Yes</label>
                 <input type='radio' id='yes' name='usedBefore' onClick={()=>setEditUsedBefore('Yes')}/>
                 <label htmlFor='no'>No</label>
