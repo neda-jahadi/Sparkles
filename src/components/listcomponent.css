@@ -212,8 +212,12 @@ main > .add-button {
         border-radius: 0%;
         padding: 0.55em;
         margin-top: 1.2rem;
-        width: calc(50vw - 21rem - 10rem);
+        width: calc(60vw - 21rem - 10rem);
         max-width: calc(39rem - 15rem);
+    }
+    .listcomponent-menu .sort {
+        width: (30vw - 21rem - 15rem);
+        max-width: calc(25rem - 15rem);
     }
     .listcomponent-menu input.red{
         color: var(--background-color-red);
@@ -293,11 +297,11 @@ main > .add-button {
        
     }
     .listcomponent-menu {
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
      
     }
     .listcomponent-menu > div{
-        border: 1px solid black;
+        /* border: 1px solid black; */
         margin: 0px;
     }
     
