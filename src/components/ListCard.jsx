@@ -111,7 +111,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
     const itemCard=(
     
             <div className={'list-card '+colorClass}>
-
+                <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
                 <h3>{title}</h3>
 
                 <p><strong>{creatorText}: </strong> {creator}</p>
@@ -123,7 +123,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
                     <img src={Edit} alt="Edit" className="edit-logo"/>
                 </button>
             
-                <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
+                
             </div>
     )
 
