@@ -5,7 +5,7 @@
     display:grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows:repeat (10, 1fr);
-    /* grid-template-rows:auto; */
+  
     font-family:'Roboto', sans-serif;
     
 }
@@ -36,37 +36,38 @@
 }
 
 .list-card > h3{
-    grid-column:2/11;
+    grid-column:1/11;
     grid-row:1/1;
     text-align:left;
-    font-size:14px;
+    font-size:15px;
     align-self:center;
     
 }
+.list-card >div {
+    grid-column:1/11;
+}
 .list-card > p{
     text-align:left;
-    grid-column:2/11;
     font-size:14px;
-    align-self:end;
 }
 .list-card > button {
     border:none;
     border-radius:5px;
 }
 .list-card > .edit-button{
-    grid-column:12/12;
+    grid-column:1/13;
     grid-row:6/6;
     cursor:pointer;
     height:30px;
-    width:30px;
+    /* width:30px; */
     align-self:end;
 }
-.edit-button > .edit-logo{
+/* .edit-button > .edit-logo{
     height:20px;
     width:20px;
     margin-top:2px;
     
-}
+} */
 .list-card >.delete-button{
     grid-column:12/12;
     align-self:start;
@@ -77,23 +78,26 @@
     cursor:pointer;
    
 }
+
+
+/*================== Här börjar edit-card================== */
 .edit-list-card{
     height: 225px;
     min-width:200px;
     border-radius:5px;
-    padding:15px;
+    padding:.3em;
     font-size:14px;
 
-
-    /*håller på här */
+    display:grid;
     grid-template-columns: repeat(10, 1fr);
+    grid-template-rows:repeat (10, 1fr);
    
-  
 }
 .edit-list-card div{
     min-width:5rem;
     display:flex;
-    grid-column:1/9;
+    /* grid-column:1/9; */
+    grid-column:1/11;
 }
 .edit-list-card label {
     font-size:14px;
@@ -101,20 +105,32 @@
     font-weight:bold;
     /* margin:.1rem; */
 }
-.edit-list-card  input {
+.edit-list-card  input[type='text'], input[type='number'] {
     border-radius:5px;
     font-size:14px;
     border:none;
-    max-width:8rem;
+    width:100%;
     margin-left: .5rem;
     margin:.1rem;
  
 }
-
-.edit-list-card > input[type='radio']{
-    height:.9rem;
-    margin-bottom:.5rem;
+.edit-title-container{
+    
 }
+
+.edit-radio-buttons label{
+    align-self:end;
+    margin-right:0.3em;
+    
+
+}
+.edit-radio-button  input[type='radio']{
+    /* height:.9rem; */
+   border:1px solid blue;
+    /* margin-bottom:.5rem; */
+    
+}
+
 
 .edit-list-card .comment-container{
     display:flex;
@@ -122,12 +138,12 @@
 
 
 }
-.comment-container >textarea{
+.comment-container > textarea{
    
-    /* height:3rem; */
     resize:none;
-    width:10.5rem;
+    width:100%;
     height:3rem;
+    grid-column:1/13;
 }
 .edit-list-card  .comment-label{
     display:block;
@@ -137,14 +153,19 @@
     top:0;
 }
 
-
 .save-edit-button{
     border:1px solid orange;
+    grid-column:1/13;
+    border-radius:5px;
+    height:30px;
 }
 .edit-list-card > .delete-button{
     border:none;
-    height:23px;
-    width:23px;
     border-radius:5px;
+    grid-column:12/12;
+    align-self:start;
+    justify-self:end;
+    height:25px;
+    width:25px;
 
 }
