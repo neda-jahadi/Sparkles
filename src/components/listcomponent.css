@@ -296,7 +296,7 @@ main > .add-button {
 
      
 }
-@media screen and (max-width: 870px){
+@media screen and (max-width: 900px){
     .main{
         grid-template-columns:1fr 1fr;
         grid-template-rows: 1fr 1fr;
