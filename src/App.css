@@ -15,44 +15,45 @@
 	height: 125vh;
 	flex-direction: column;
 	margin:0 auto;
-	/* NY */
-	padding-top: 25em;
+	padding-top:25em;
 }
 .card{
 	height:95%;
-	margin-top: -17em;
+	margin-top: -18em;
 }
 
 .start-card-wrapper input[type="radio"]:checked + label {
 	flex: 1 1 auto;
+	margin-bottom: -3em;
 }
+
 .start-card-wrapper  label {
 	flex: 0 0 auto;
 	transition: all 1s;
 }
-/*
-.first-card{
-	margin-top: -11em;
-}
-.second-card{
-	margin-top: -13em;
-}
-.third-card{
-	margin-top: -15em;
-} */
 
 /* DISPLAY NONE I DESKTOP VY på ALLT utom korten */
 .start-card-wrapper > input	{
 	display: none;
 }
-
-@media only screen  
-	and (min-device-width: 1200px) 
-	and (max-device-width: 1600px) 
-	and (-webkit-min-device-pixel-ratio: 1) {
-	.start-card-wrapper {
+@media only screen and (max-height: 580px){
+	.start-card-wrapper{
+		height:150vh;
+		width:18em;
+		padding-top:23em;
 	}
-	
+	.start-card-wrapper input[type="radio"]:checked + label {
+		margin-bottom: -2em;
+	}
+	.card{
+		margin-top: -16.3em;
+		height:auto;
+	}
+}
+@media only screen and (max-height: 700px){
+	.start-card-wrapper{
+		height:140vh
+	}
 }
 @media only screen and (min-width: 700px){
 	.start-card-wrapper{
@@ -87,10 +88,6 @@
 @media only screen and (min-width: 1200px){
 	.start-card-wrapper{
 		width:60%;
-	}
-}
-@media only screen and (min-width: 1200px){
-	.start-card-wrapper{
-		width:60%;
+		padding-left: 3em;
 	}
 }

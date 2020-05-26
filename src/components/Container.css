@@ -16,9 +16,10 @@ section {
 @media(min-width: 700px){
 
   section{
-    width: 80vw;
+    width: 60vw;
     max-width: 60rem;
-    height: 60vh;
+    height: 80vh;
+    max-height: 30rem;
     margin: 5rem auto;
     padding: 0 3.5rem 2rem;
     border-radius: 20px;
