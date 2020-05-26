@@ -18,8 +18,6 @@ const booksList = [
     {title: 'Egalias Döttrar', creator: 'Bra fråga', rating:'', usedBefore:'no', comment: 'Nåt feministiskt'},
 ];
 
-
-
 const reducer = createReducer(booksList, {
     [addToBooksList]: (state, action) => [...state, action.payload],
     [removeFromBooksList]: (state, action) => state.filter( item => item.title !== action.payload),

@@ -41,18 +41,18 @@ form > .rating-container > div:first-child{
   text-align: end;
 }
 
-input[type="radio"]{
+form input[type="radio"]{
   width: 1.6em;
   height: 1.5rem;
   margin-right: 1rem;
   position: relative;
   top: .3rem;
 }
-input[type="radio"]:nth-of-type(2){
+form input[type="radio"]:nth-of-type(2){
     margin-right: 0;
 }
 
-input[type="number"]{
+form input[type="number"]{
   width: 8rem;
   position: relative;
 }
@@ -71,7 +71,7 @@ div.rate-div{
   width: min-content;
 }
   
-textarea{
+form textarea{
   resize: none;
   border: none;
   border-radius: 10px;
