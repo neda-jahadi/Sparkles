@@ -18,19 +18,18 @@ const FormComponent = ()=>{
 
     const onSubmit = (data) => {
 
-	/* dispatch(musicListActions.addToList(data)); */
-	  	if(category === 'music'){
-		  	console.log('category', category);
-            dispatch(musicListActions.addToList(data));
-        } 
-/*         else if(category === 'books'){
-			console.log('category', category);
-            dispatch(booksListActions.addToList(data));
-        }
-        else if(category === 'movies'){
-			console.log('category', category);
-            dispatch(moviesListActions.addToList(data));
-        } */
+    if(category === 'music'){
+        console.log('category', category);
+        dispatch(musicListActions.addToMusicList(data));
+    } 
+    else if(category === 'books'){
+        console.log('category', category);
+        dispatch(booksListActions.addToBooksList(data));
+    }
+    else if(category === 'movies'){
+        console.log('category', category);
+        dispatch(moviesListActions.addToMoviesList(data));
+    }
 }
 
     const category = useSelector( state => state.category );
