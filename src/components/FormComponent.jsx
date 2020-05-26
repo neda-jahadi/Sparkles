@@ -118,10 +118,10 @@ const FormComponent = ()=>{
                         <legend>{usedBeforeText}</legend>
 
                             <label htmlFor="yes">Yes</label>
-                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='yes' onClick={()=> setUsedBefore(true)} ref={register({required: true})}/>
+                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='Yes' onClick={()=> setUsedBefore(true)} ref={register({required: true})}/>
 
                             <label htmlFor="no">No</label>
-                            <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="no" onClick={()=> setUsedBefore(false)} ref={register({required: true})}/>
+                            <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="No" onClick={()=> setUsedBefore(false)} ref={register({required: true})}/>
 							{errors.usedBefore && errors.usedBefore.type === 'required' && <p className={errorClass}>Select Yes or No</p>}
                     </fieldset>
 
