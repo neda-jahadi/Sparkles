@@ -71,14 +71,12 @@
 }
 .list-card >.delete-button{
     grid-column:10/11;
-    /* color:var(--text-color-red); */
     cursor:pointer;
    
 }
 .edit-list-card{
-    /* display:grid;
-    grid-template-columns:2fr 1fr; */
     height: 160px;
+    min-width:200px;
     border-radius:5px;
     padding:15px;
   
