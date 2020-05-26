@@ -135,10 +135,34 @@ text-align: right;
 
 @media(min-width: 700px){
 
-  form h2{
-      align-self: center;
-      font-size: 2rem; 
-      padding-top: 1rem;
+    form h2{
+        align-self: center;
+        font-size: 2rem; 
+        padding-top: 1rem;
+
+    }
+
+    form{
+      align-items: flex-start;
+	}
+    form input{
+        width: 60%;
+        max-width: 31rem;
+    }
+
+  form > .rating-container{
+    width: 100%;
+    /* max-width: 20rem; */
+    min-width: fit-content;
+    
+    display: flex;
+  }
+  form > .rating-container > div:first-child{
+    width: calc(60% - 1em);
+    display:flex;
+    margin-top:1rem;
+    justify-content: space-between;
+  }
 
   }
 
@@ -214,5 +238,4 @@ form > input[type="submit"]{
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-}
 }
