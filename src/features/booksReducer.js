@@ -19,7 +19,7 @@ const booksList = [
 ];
 
 const reducer = createReducer(booksList, {
-    [addToBooksList]: (state, action) => [...state, action.payload],
+    [addToBooksList]: (state, action) => [ action.payload, ...state],
     [removeFromBooksList]: (state, action) => state.filter( item => item.title !== action.payload),
     [editBooksList]: (state, action) => 
         state.map( item=> { 

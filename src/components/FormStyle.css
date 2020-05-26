@@ -1,11 +1,17 @@
 
-form{
-  width: 100%;
+form {
+  width: 80%;
   height: 100%;
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid black;
+}
+
+form > div{
+  border: 2px solid blue;
+  width: auto;
 }
 
 
@@ -20,13 +26,13 @@ padding-bottom: .3rem;
 align-self: flex-start;
 }
 form input{
-width: 70vw;
-border-radius: 10px;
-font-size: 1.2rem;
-padding: .5rem;
-font-weight: lighter;
-border: none;
-background-color: var(--text-color-red);
+  width: 70vw;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: .5rem;
+  font-weight: lighter;
+  border: none;
+  background-color: var(--text-color-red);
 }
 form > .rating-container {
 width: 100%;
@@ -41,22 +47,21 @@ justify-content: space-between;
 text-align: end;
 }
 
-input[type="radio"]{
-width: 1.6em;
-height: 1.5rem;
-margin-right: 1rem;
-position: relative;
-top: .3rem;
+form input[type="radio"]{
+  width: 1.6em;
+  height: 1.5rem;
+  margin-right: 1rem;
+  position: relative;
+  top: .3rem;
 }
-input[type="radio"]:nth-of-type(2){
+form input[type="radio"]:nth-of-type(2){
   margin-right: 0;
 }
 
-input[type="number"]{
-width: 8rem;
-position: relative;
+form input[type="number"]{
+  width: 8rem;
+  position: relative;
 }
-
 
 fieldset{
 border: none;
@@ -117,7 +122,7 @@ text-align: right;
 
 @media(max-width: 337px){
 
-  input[type="radio"]:nth-of-type(1){
+ form input[type="radio"]:nth-of-type(1){
       margin-right: 0;
   }
   form .rating-container{
@@ -154,7 +159,6 @@ text-align: right;
     width: 100%;
     /* max-width: 20rem; */
     min-width: fit-content;
-    
     display: flex;
   }
   form > .rating-container > div:first-child{
@@ -188,7 +192,7 @@ form > .rating-container > div:first-child{
   justify-content: space-between;
 }
 
-input[type="radio"]{
+form input[type="radio"]{
   width: 1.6em;
   height: 1.5rem;
   margin-right: 1em;

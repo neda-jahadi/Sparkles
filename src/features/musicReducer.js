@@ -18,7 +18,7 @@ const musicList = [
 ];
 
 const reducer = createReducer(musicList, {
-    [addToMusicList]: (state, action) => [...state, action.payload],
+    [addToMusicList]: (state, action) => [ action.payload, ...state],
     [removeFromMusicList]: (state, action) => state.filter(item => item.title !== action.payload),
     [editMusicList]:(state, action)=> state.map(item=>{
 

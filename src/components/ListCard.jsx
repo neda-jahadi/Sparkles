@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import './ListCardStyle.css'
-import Edit from '../assets/edit.png'
 import { useSelector, useDispatch } from 'react-redux';
 import { musicListActions } from '../features/musicReducer'
 import { booksListActions } from '../features/booksReducer'
@@ -95,12 +94,6 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
 
     }
 
-    // <p>{creatorText}:
-    // <span className={editable===true ? 'no-edit' : 'edit'}>{creator} </span>
-    //     <input type='text' className={editable===true ? 'edit' : 'no-edit'}/>
-    // </p>
-
-    //TODO ändra så att titel creator osv är i fetstil
    
     if(rating===''){
         ratingText='Not rated'
@@ -111,25 +104,29 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
     const itemCard=(
     
             <div className={'list-card '+colorClass}>
-
+                <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
                 <h3>{title}</h3>
-
+            <div>  
                 <p><strong>{creatorText}: </strong> {creator}</p>
                 <p><strong>{usedBeforeText}: </strong> {usedBefore}</p>
                 <p><strong>Rating: </strong>{rating} {ratingText}</p>
                 <p><strong>Comment: </strong> {comment} </p>
+            </div>
+              
                 
-                <button className={'edit-button '+colorClassButton} onClick={()=>setEditable(true)}>
-                    <img src={Edit} alt="Edit" className="edit-logo"/>
+                <button className={'edit-button '+colorClassButton} onClick={()=>setEditable(true)}>Edit
+                    {/* <img src={Edit} alt="Edit" className="edit-logo"/> */}
                 </button>
             
-                <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
+                
             </div>
     )
 
     const editCard=(
         <div className={'edit-list-card ' +colorClass}>
-            <div>
+        
+        <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
+            <div className='edit-title-container'>
                 <label htmlFor='title'>Title:</label>
                 <input type='text' id='title' value={editTitle} onChange={event=>setEditTitle(event.target.value)}/>
             </div>
@@ -139,11 +136,15 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
                 <input type='text' id='creator' value={editCreator} onChange={event=>setEditCreator(event.target.value)}/>
             </div>
          
-       
-            <label htmlFor='yes'>Yes</label>
-            <input type='radio' id='yes' name='usedBefore' onClick={()=>setEditUsedBefore('Yes')}/>
-            <label htmlFor='no'>No</label>
-            <input type='radio' id='no' name='usedBefore' onClick={()=>setEditUsedBefore('No')}/>
+            <div className='edit-radio-container'>
+                <p>{usedBeforeText}</p>
+                <label htmlFor='yes'>Yes</label>
+                <input type='radio' id='yes' name='usedBefore' onClick={()=>setEditUsedBefore('Yes')}/>
+                <label htmlFor='no'>No</label>
+                <input type='radio' id='no' name='usedBefore' onClick={()=>setEditUsedBefore('No')}/>
+
+            </div>
+         
 
             <div>
             <label htmlFor='rate'>Rating 1-5:</label>
@@ -160,7 +161,6 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
                 Save
             </button>
 
-            <button className={'delete-button '+colorClassButton} onClick={()=>handleDelete(title)}>X</button>
 
         </div>
     )
