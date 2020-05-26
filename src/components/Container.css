@@ -13,6 +13,7 @@ section {
     height: 100%;
   }
 
+
 @media(min-width: 700px){
 
   section{
@@ -71,4 +72,10 @@ section {
         height: 3em;
       }
     
+}
+
+@media(max-height: 800px) and (min-width: 700px){
+  section {
+    max-height: 60vh;
+  }
 }
