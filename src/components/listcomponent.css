@@ -215,10 +215,10 @@ main > .add-button {
         width: calc(60vw - 21rem - 10rem);
         max-width: calc(39rem - 15rem);
     }
-    .listcomponent-menu .sort {
+    /* .listcomponent-menu .sort {
         width: (30vw - 21rem - 15rem);
         max-width: calc(25rem - 15rem);
-    }
+    } */
     .listcomponent-menu input.red{
         color: var(--background-color-red);
         border-bottom: 1px solid var(--background-color-red);
@@ -314,5 +314,17 @@ main > .add-button {
         grid-template-rows: 1fr 1fr;
         grid-gap:1em;
         
+    }
+   
+}
+@media screen and (max-width: 880px){
+    .listcomponent-menu input {
+        width: calc(60vw - 21rem - 10rem);
+        max-width: calc(39rem - 15rem);
+    }
+    .listcomponent-menu .sort {
+        width: 7rem;
+        /* max-width: calc(25rem - 15rem); */
+        border: 1px solid blue;
     }
 }
