@@ -99,22 +99,24 @@ const FormComponent = ()=>{
 					{errors.creator && errors.creator.type === "maxLength" && <span className={errorClass}>Max 20 characters</span>}
 				</div>
                 <div className="rating-container">
-                    <fieldset>
-                        <legend>{usedBeforeText}</legend>
-                            <label htmlFor="yes">Yes</label>
-                            <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='yes' onClick={()=> setUsedBefore(true)} ref={register({required: true})}/>
-                            <label htmlFor="no">No</label>
-                            <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="no" onClick={()=> setUsedBefore(false)} ref={register({required: true})}/>
-							{errors.usedBefore && errors.usedBefore.type === 'required' && <p className={errorClass}>Select Yes or No</p>}
-                    </fieldset>
-					<div className="rate-div">
-                    <label className="rate" htmlFor="rating">Rating 1-5</label>
-                        <input className={colorInputClass} type="number" ref={register( {required:usedBefore, maxLength:1, min:1, max:5}) } name="rating"/>
-                        {errors.rating && errors.rating.type === 'required' && <span className={errorClass + " error-rating"}>Rating is required</span>}
-                        {errors.rating && errors.rating.type === 'min' && <span className={errorClass + " error-rating"}>Must be between 1-5</span>}
-                        {errors.rating && errors.rating.type === 'max' && <span className={errorClass + " error-rating"}>Must be between 1-5</span>}
-                        {errors.rating && errors.rating.type === 'maxLength' && <span className={errorClass + " error-rating"}>Max 1 character</span>}
+                    <div>
+                        <fieldset>
+                            <legend>{usedBeforeText}</legend>
+                                <label htmlFor="yes">Yes</label>
+                                <input className={colorInputClass} id="yes" type="radio" name="usedBefore" value='yes' onClick={()=> setUsedBefore(true)} ref={register({required: true})}/>
+                                <label htmlFor="no">No</label>
+                                <input className={colorInputClass} id="no" type="radio" name="usedBefore"  value="no" onClick={()=> setUsedBefore(false)} ref={register({required: true})}/>
+                                {errors.usedBefore && errors.usedBefore.type === 'required' && <p className={errorClass}>Select Yes or No</p>}
+                        </fieldset>
+                        <div className="rate-div">
+                        <label className="rate" htmlFor="rating">Rating 1-5</label>
+                            <input className={colorInputClass} type="number" ref={register( {required:usedBefore, maxLength:1, min:1, max:5}) } name="rating"/>
+                        </div>                        
                     </div>
+                    {errors.rating && errors.rating.type === 'required' && <div className={errorClass + " error-rating"}>Rating is required</div>}
+                    {errors.rating && errors.rating.type === 'min' && <div className={errorClass + " error-rating"}>Must be between 1-5</div>}
+                    {errors.rating && errors.rating.type === 'max' && <div className={errorClass + " error-rating"}>Must be between 1-5</div>}
+                    {errors.rating && errors.rating.type === 'maxLength' && <div className={errorClass + " error-rating"}>Max 1 character</div>}
                 </div>
 				<label htmlFor="comment">Comment</label>
 				<div className="form-textarea-container">
