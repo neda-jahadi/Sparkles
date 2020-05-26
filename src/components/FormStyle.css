@@ -158,7 +158,7 @@ form > input[type="submit"]{
     display: flex;
   }
   form > .rating-container > div:first-child{
-    width:60%;
+    width: calc(60% - 1em);
     display:flex;
     margin-top:1rem;
     justify-content: space-between;
