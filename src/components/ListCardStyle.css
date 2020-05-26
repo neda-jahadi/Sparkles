@@ -4,7 +4,7 @@
     padding:15px;
     display:grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows:auto;
+    /* grid-template-rows:auto; */
     font-family:'Roboto', sans-serif;
     
 }
@@ -38,7 +38,7 @@
     grid-column:1/11;
     text-align:left;
     font-size:14px;
-    margin-bottom:10px;
+    
 }
 .list-card > p{
     text-align:left;
@@ -80,13 +80,34 @@
     border-radius:5px;
     padding:15px;
     font-size:14px;
+
+
+    /*håller på här */
+    grid-template-columns: repeat(10, 1fr);
+   
   
 }
 .edit-list-card div{
-    /* border:1px solid blue; */
     min-width:5rem;
     display:flex;
+    grid-column:1/9;
 }
+.edit-list-card label {
+    font-size:14px;
+    margin-top:0rem;
+    font-weight:bold;
+    /* margin:.1rem; */
+}
+.edit-list-card  input {
+    border-radius:5px;
+    font-size:14px;
+    border:none;
+    max-width:8rem;
+    margin-left: .5rem;
+    margin:.1rem;
+ 
+}
+
 .edit-list-card > input[type='radio']{
     height:.9rem;
     margin-bottom:.5rem;
@@ -113,19 +134,7 @@
     top:0;
 }
 
-.edit-list-card  input {
-    border-radius:5px;
-    font-size:14px;
-    border:none;
-    max-width:8rem;
-    margin-left: .5rem;
-    
-    
-}
-.edit-list-card >label {
-    font-size:14px;
-    margin-top:0rem;
-}
+
 .save-edit-button{
     border:1px solid orange;
 }
