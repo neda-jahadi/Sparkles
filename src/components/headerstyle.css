@@ -3,6 +3,7 @@ header {
   justify-content:center;
   width: 100vw;
   padding: 2rem;
+  padding-bottom: 1rem;
   background-color: transparent;
   position: absolute;
 }

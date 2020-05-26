@@ -73,3 +73,7 @@ p, h1, h2, h3{
   background-color: var(--text-color-green);
 }
 /* END */
+
+button{
+  cursor: pointer;
+}
