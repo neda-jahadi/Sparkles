@@ -198,7 +198,7 @@ main > .add-button {
         grid-template-columns:1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-gap:1em;
-         height: 90%; 
+        height: 90%; 
         
         
     }
@@ -296,7 +296,7 @@ main > .add-button {
 
      
 }
-@media screen and (max-width: 870px){
+@media screen and (max-width: 1121px){
     .main{
         grid-template-columns:1fr 1fr;
         grid-template-rows: 1fr 1fr;
