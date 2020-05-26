@@ -212,7 +212,7 @@ main > .add-button {
         border-radius: 0%;
         padding: 0.55em;
         margin-top: 1.2rem;
-        width: calc(80vw - 21rem - 10rem);
+        width: calc(50vw - 21rem - 10rem);
         max-width: calc(39rem - 15rem);
     }
     .listcomponent-menu input.red{
@@ -244,9 +244,9 @@ main > .add-button {
         flex-direction: row-reverse;
         align-items: flex-start;
         justify-content: space-between;
-        width: calc(80vw - 21rem);
+        width: calc(63vw - 21rem);
         max-width: 39rem;
-        padding-right: 2rem;
+        /* padding-right: 2rem; */
         position: absolute;
         right: 0;
         top: -5rem;
@@ -291,6 +291,14 @@ main > .add-button {
     main > .add-button {
        text-align: right;
        
+    }
+    .listcomponent-menu {
+        border: 1px solid blue;
+     
+    }
+    .listcomponent-menu > div{
+        border: 1px solid black;
+        margin: 0px;
     }
     
 
