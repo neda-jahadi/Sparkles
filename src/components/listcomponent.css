@@ -156,7 +156,7 @@ main > .add-button {
         font-weight: lighter;
     }
     .main {
-        height: 90%;
+        height: 95%;
     }
     
     .listcomponent-menu {
@@ -198,7 +198,7 @@ main > .add-button {
         grid-template-columns:1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-gap:1em;
-        height: 95%; 
+        height: 90%; 
         
         
     }
@@ -284,7 +284,7 @@ main > .add-button {
      main > h2 {
         text-align: left;
         margin-top: 0.5em;
-        font-size: 1.875rem;
+        font-size: 2rem;
         font-weight: lighter;
         
     }

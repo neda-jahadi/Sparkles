@@ -28,11 +28,17 @@ form input{
   border: none;
   background-color: var(--text-color-red);
 }
-form > .rating-container{
+form > .rating-container {
+  width: 100%;
+}
+form > .rating-container > div:first-child{
   width: 100%;
   margin-top: 1.8rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.error-rating{
+  text-align: end;
 }
 
 form input[type="radio"]{
@@ -46,11 +52,11 @@ form input[type="radio"]:nth-of-type(2){
     margin-right: 0;
 }
 
-form input[type="number"]{
-  width: 6rem;
+input[type="number"]{
+  width: 8rem;
   position: relative;
-  top: .3rem;
 }
+
 
 fieldset{
   border: none;
@@ -97,20 +103,8 @@ form > input[type="submit"]{
 
 .form-textarea-container{
   width: 100%;
-
+  text-align: right;
 }
-.form-textarea-container span{
-  width: 100%;
-}
-
-
-  .valid{
-	border: 2px solid green;
-  }
-  .invalid{
-	border: 2px solid red;
-  }
-
   .form-input-container{
     position: relative;
   }
@@ -118,7 +112,6 @@ form > input[type="submit"]{
     position: absolute;
     right: 0;
     bottom: -1.3rem;
-    font-size: .9rem;
 	}
   /* For those crazy ass small screens */
 
@@ -158,30 +151,57 @@ form > input[type="submit"]{
     }
 
   form > .rating-container{
-    width: 60%;
+    width: 100%;
     /* max-width: 20rem; */
     min-width: fit-content;
-    margin-top: 1rem;
-    /* justify-content: space-between; */
+    
+    display: flex;
   }
-  
+  form > .rating-container > div:first-child{
+    width: calc(60% - 1em);
+    display:flex;
+    margin-top:1rem;
+    justify-content: space-between;
+  }
+
+  input[type="radio"]{
+    width: 1.6em;
+    height: 1.5rem;
+    margin-right: 1em;
+    position: relative;
+    top: .3rem;
+  }
+
   .form-input-container{
 	  width: 100%;
   }
   .form-input-container span{
-	padding-left: 0.6em;
+    padding-left: 0.6em;
+    position: unset;
 	}
 	.error-rating{
-		padding-top: 0.6em;
-	}
+    display:flex;
+    align-items: center;
+    margin-top: 1.8rem;
+    padding-left:0.6em;
+    padding-top: 0.6em;
+  }
+  div.rate-div{
+    width:unset;
+  }
+  label.rate{
+    display: block;
+    margin-top: unset;
+  }
 	.form-textarea-container{
 		width: 100%;
     display: flex;
-	
+    text-align: unset;
 	}
 	.form-textarea-container span{
 		padding-left: 0.6em;
-		align-self: start;
+    align-self: start;
+    position: unset;
 	}
 	
   textarea{
