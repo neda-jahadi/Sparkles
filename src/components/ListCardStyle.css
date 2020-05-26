@@ -1,5 +1,5 @@
 .list-card{
-    height: 200px;
+    height: 210px;
     border-radius:5px;
     padding:15px;
     display:grid;
@@ -75,26 +75,54 @@
    
 }
 .edit-list-card{
-    height: 200px;
+    height: 210px;
     min-width:200px;
     border-radius:5px;
     padding:15px;
+    font-size:14px;
   
 }
+.edit-list-card div{
+    /* border:1px solid blue; */
+    min-width:5rem;
+    display:flex;
+}
+.edit-list-card > input[type='radio']{
+    height:.9rem;
+    margin-bottom:.5rem;
+}
 
-.comment-label{
-    /* display:block; */
+.edit-list-card .comment-container{
+    display:flex;
+    flex-direction: column;
+
+
+}
+.comment-container >textarea{
+   
+    /* height:3rem; */
+    resize:none;
+    width:10.5rem;
+    height:3rem;
+}
+.edit-list-card  .comment-label{
+    display:block;
+}
+.edit-list-card input[type='number']{
+    max-width:3rem;
+    top:0;
 }
 
 .edit-list-card  input {
     border-radius:5px;
     font-size:14px;
-    border:none; 
+    border:none;
+    max-width:8rem;
+    margin-left: .5rem;
     
     
 }
 .edit-list-card >label {
-    /* display:inline-block; */
     font-size:14px;
     margin-top:0rem;
 }
@@ -105,8 +133,6 @@
     border:none;
     height:23px;
     width:23px;
-    /* justify-self:end;
-    align-self:end; */
     border-radius:5px;
 
 }

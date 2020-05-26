@@ -84,7 +84,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
                 dispatch(booksListActions.editBooksList(editObject));
             }
             else if (category==='music'){
-                dispatch(moviesListActions.editMusicList(editObject));
+                dispatch(musicListActions.editMusicList(editObject));
             }
             else{
                 dispatch(moviesListActions.editMoviesList(editObject))
@@ -150,9 +150,9 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
                 <input type='number'id='rate' min="1" max="5" value={editRating} onChange={event=>setEditRating(event.target.value)}/>
             </div>
           
-            <div>
+            <div className='comment-container'>
             <label htmlFor='comment' className='comment-label'>Comment:</label>
-                <input type='textarea' id='comment' value={editComment} onChange={event=>setEditComment(event.target.value)}/>
+                <textarea id='comment'  value={editComment} onChange={event=>setEditComment(event.target.value)}/>
             </div>
   
      
