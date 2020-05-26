@@ -1,5 +1,5 @@
 .list-card{
-    
+    height: 135px;
     /* width:238px;
     min-height:115px; */
     border-radius:5px;
@@ -82,18 +82,20 @@
 .edit-list-card{
 
     color:black;
+    background-color:var(--text-color-red);
 }
 .edit-list-card > input {
    
     padding:0;
-    display:inline-block;
+    /* display:inline-block; */
     border-radius:5px;
-    width:100%;
+    /* width:100%; */
     font-size:14px;
     padding:0.2em;
     
 }
 .edit-list-card >label {
+    display:inline-block;
     font-size:14px;
     margin-top:0rem;
 }

@@ -57,15 +57,12 @@ p, h1, h2, h3{
 }
 .error-red{
   color: var(--error-color-red);
-  padding-top:0.5em;
 }
 .error-yellow{
   color: var(--error-color-yellow);
-  padding-top:0.5em;
 }
 .error-green{
   color: var(--error-color-green);
-  padding-top:0.5em;
 }
 .input-background-red{
   background-color: var(--text-color-red);
