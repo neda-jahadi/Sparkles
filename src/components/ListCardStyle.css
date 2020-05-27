@@ -146,9 +146,11 @@
 }
 .comment-container > textarea{
     resize:none;
-    width:100%;
+    width: 100%;
     height:3rem;
     grid-column:1/13;
+    border: none;
+    border-radius: 5px;
 }
 .edit-list-card  .comment-label{
     display:block;

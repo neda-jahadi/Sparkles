@@ -71,7 +71,7 @@ div.rate-div{
   width: min-content;
 }
   
-textarea{
+form textarea{
   resize: none;
   border: none;
   border-radius: 10px;

@@ -152,7 +152,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             </div>
           
             <div className='comment-container'>
-            <label htmlFor='comment' className='comment-label'>Comment:</label>
+                <label htmlFor='comment' className='comment-label'>Comment:</label>
                 <textarea id='comment'  value={editComment} onChange={event=>setEditComment(event.target.value)}/>
             </div>
   
