@@ -82,7 +82,7 @@ main > .add-button {
 ::placeholder {
     /* color: var(--text-color-red); */
     opacity: 1;
-    font-size: 1.5em;
+    font-size: 1.2em;
     
 }  
 
@@ -181,7 +181,7 @@ main > .add-button {
     ::placeholder {
         color: inherit;
         opacity: 1;
-        font-size: 1.5em;
+        font-size: 1.2em;
         
     }  
 }
@@ -228,10 +228,7 @@ main > .add-button {
         outline: none;
     }
     ::placeholder {
-        color: inherit;
-        opacity: 1;
-        font-size: 1.5em;
-        
+        color: inherit;        
     }  
     
     .listcomponent-menu {

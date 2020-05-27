@@ -116,7 +116,7 @@ const ListComponent = ({formScreen,startCard}) =>{
     
     
     if(list.length === 0){
-       list= <h1>No item in the list...</h1>
+       list= <h1>No items in the list...</h1>
     }else{
         list = search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
     }

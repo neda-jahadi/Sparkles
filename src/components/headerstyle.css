@@ -6,13 +6,14 @@ header {
   padding:2em;
   background-color: transparent;
   position: absolute;
-  margin:0 auto;
+  margin: 0 auto;
   max-width: 60rem;
 }
 
 img.big{
   width: 20rem;
   height: auto;
+  margin: 0 auto;
  
 } 
 img.go-back{

@@ -114,8 +114,8 @@ const FormComponent = ()=>{
                 </div>
 				<label htmlFor="comment">Comment</label>
 				<div className="form-textarea-container">
-					<textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register({maxLength:30})} name="comment"/>
-					{errors.comment && errors.comment.type === 'maxLength' && <span className={errorClass}>Max 30 characters</span>}
+					<textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register({maxLength:60})} name="comment"/>
+					{errors.comment && errors.comment.type === 'maxLength' && <span className={errorClass}>Max 60 characters</span>}
 				</div>
                 <input type="submit" className={buttonClass + " submit-button"}/>
             </form>
