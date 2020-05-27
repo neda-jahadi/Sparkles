@@ -3,20 +3,28 @@ header {
   justify-content:space-between;
   align-items: flex-start;
   width: 100vw;
-  padding:2em;
+  padding-top: 2rem;
   background-color: transparent;
   position: absolute;
-  margin:0 auto;
+  margin: 0 auto;
   max-width: 60rem;
 }
 
 img.big{
   width: 20rem;
   height: auto;
+  margin: 0 auto;
  
 } 
+
+@media(max-width: 340px){
+  img.big{
+    width: 18rem;
+  } 
+}
 img.go-back{
   height: 2rem;
+  padding-left: 2rem;
 }
 img.go-back:hover{
   cursor: pointer;
@@ -26,10 +34,14 @@ img.go-back:hover{
 }
 .mobile-size{
   display: inline-block;
+  
 }
 .logo-mobile{
   margin: 0 0 0 auto;
   height: 3.2rem;
+  padding-right: 2rem;
+  position: relative;
+  bottom: .5rem;
  
 }
 
@@ -40,7 +52,7 @@ img.go-back:hover{
     position: static;
     width: 75vw;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+   /*  padding-bottom: 2rem; */
   }
   img.big{
     width: 35rem;

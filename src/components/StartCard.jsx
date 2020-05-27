@@ -75,7 +75,7 @@ const StartCard = ({genre}) => {
 		lista = <p className={`text-${color}`}>No list items</p> 
 	}
 	else{
-		let fiveLatestItems = list.slice(Math.max(list.length - 5, 0))
+		let fiveLatestItems = list.slice(0, 5)
 		lista = fiveLatestItems.map((item,index) => (
 			<p key={item.title+index} className={`list-item text-${color}`}>{item.title} - {item.creator}</p>	
 		))

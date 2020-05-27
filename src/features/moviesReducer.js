@@ -17,7 +17,7 @@ const moviesList = [
 ];
 
 const reducer = createReducer(moviesList, {
-    [addToMoviesList]: (state, action) => [...state, action.payload],
+    [addToMoviesList]: (state, action) => [ action.payload, ...state],
     [removeFromMoviesList]: (state, action) => state.filter(item => item.title !== action.payload),
     [editMoviesList]: (state, action)=> state.map(item=>{
         if (item.title===action.payload.title && item.creator===action.payload.creator){

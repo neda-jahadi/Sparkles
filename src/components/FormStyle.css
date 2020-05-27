@@ -22,8 +22,8 @@ form label{
 form input{
   width: 70vw;
   border-radius: 10px;
-  font-size: 1.2rem;
-  padding: .5rem;
+  font-size: 1rem;
+  padding: .7rem;
   font-weight: lighter;
   border: none;
   background-color: var(--text-color-red);
@@ -52,7 +52,7 @@ form input[type="radio"]:nth-of-type(2){
     margin-right: 0;
 }
 
-input[type="number"]{
+form input[type="number"]{
   width: 8rem;
   position: relative;
 }
@@ -80,7 +80,7 @@ form textarea{
 }
 
 form > input[type="submit"]{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   width: 100%;
   border: none;
   margin-top: 1.5rem;
@@ -88,18 +88,7 @@ form > input[type="submit"]{
   border-radius: 10px;
   cursor: pointer;
 }
-.button-red{
-  color: var(--background-color-red);
-  background-color: var(--text-color-red);
-}
-.button-yellow{
-  color: var(--background-color-yellow);
-  background-color: var(--text-color-yellow);
-}
-.button-green{
-  color: var(--background-color-green);
-  background-color: var(--text-color-green);
-}
+
 
 .form-textarea-container{
   width: 100%;
@@ -121,17 +110,21 @@ form > input[type="submit"]{
         margin-right: 0;
     }
     form .rating-container{
-      width: calc(100vw - 6rem);
+     
       justify-content: space-between;
     }
     form textarea{
       max-height: 4rem;
-      width: calc(100vw - 6rem);
-    }
+    
+	}
+	form input[type="number"]{
+		width: 6rem;
+	}
   
   }
 
   /* For them fat screens */
+
 
 @media(min-width: 700px){
 
@@ -158,16 +151,17 @@ form > input[type="submit"]{
     display: flex;
   }
   form > .rating-container > div:first-child{
-    width: calc(60% - 1em);
+    width: 60%;
+    max-width: 31rem;
     display:flex;
     margin-top:1rem;
     justify-content: space-between;
   }
 
-  input[type="radio"]{
+  form input[type="radio"]{
     width: 1.6em;
     height: 1.5rem;
-    margin-right: 1em;
+    margin-right: .2em;
     position: relative;
     top: .3rem;
   }
@@ -204,15 +198,33 @@ form > input[type="submit"]{
     position: unset;
 	}
 	
-  textarea{
+  form textarea{
       width: 60%;
       max-width: 31rem;
       height: 7rem;
   }
   form > input[type="submit"]{
-    width: 10rem;
-    position: absolute;
     bottom: 2rem;
     right: 2rem;
+    position: absolute;
+    padding: 0.8em;
+    border-radius: 5px;
+    border: none;
+    width: 10rem;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+}
+
+@media(max-height: 800px) and (min-width: 700px){
+  form > div{
+    padding: 0;
+  }
+  form textarea{
+    max-height: 8rem;
+  }
+  form label{
+    padding-bottom: unset;
+    margin-top: .2rem;
   }
 }

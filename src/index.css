@@ -45,15 +45,15 @@ p, h1, h2, h3{
 }
 .button-red{
   background-color: var(--text-color-red);
-  color:var(--background-color-red);
+  color:var(--error-color-red);
 }
 .button-yellow{
   background-color: var(--text-color-yellow);
-  color:var(--background-color-yellow);
+  color:var(--error-color-yellow);
 }
 .button-green{
   background-color: var(--text-color-green);
-  color:var(--background-color-green);
+  color:var(--error-color-green);
 }
 .error-red{
   color: var(--error-color-red);
@@ -73,3 +73,7 @@ p, h1, h2, h3{
   background-color: var(--text-color-green);
 }
 /* END */
+
+button{
+  cursor: pointer;
+}

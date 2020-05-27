@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import './listcomponent.css';
 import ListCard from './ListCard';
 import { useDispatch,useSelector } from 'react-redux';
@@ -116,7 +116,7 @@ const ListComponent = ({formScreen,startCard}) =>{
     
     
     if(list.length === 0){
-       list= <h1>No item in the list...</h1>
+       list= <h1>No items in the list...</h1>
     }else{
         list = search.map((item, index)=><ListCard key={item.title+index} title={item.title} creator={item.creator} usedBefore={item.usedBefore} rating={item.rating} comment={item.comment} />)
     }
@@ -140,7 +140,7 @@ const ListComponent = ({formScreen,startCard}) =>{
                 </h2>
                 <div className='listcomponent-menu'>
                     <div className={`sort background-${colorClass}`}>
-                        <h2 className={`drop-div text-${colorClass} `}>Sort</h2>
+                        <p className={`drop-div text-${colorClass} `}>Sort</p>
                         <div className={`dropdown-content text-${colorClass} background-${colorClass}`}>
 
                             <div className={sorteringNyckel!=='title' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('title')}}>{titleText}</div>
@@ -149,7 +149,7 @@ const ListComponent = ({formScreen,startCard}) =>{
 
                             <div className={sorteringNyckel!=='rating' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('rating')}}>Rating</div>
 
-                            <div className={sorteringNyckel!=='usedBefore' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}`} onClick={()=>{setSorteringNyckel('usedBefore')}}>{usedBeforeText}</div>
+                            <div className={sorteringNyckel!=='usedBefore' ? `sortItem-${colorClass}`  : `sortChosed-${colorClass}` } onClick={()=>{setSorteringNyckel('usedBefore')}}>{usedBeforeText}</div>
                         </div>
                     
                     </div> 

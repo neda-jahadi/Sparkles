@@ -82,7 +82,7 @@ main > .add-button {
 ::placeholder {
     /* color: var(--text-color-red); */
     opacity: 1;
-    font-size: 1.5em;
+    font-size: 1.2em;
     
 }  
 
@@ -108,7 +108,6 @@ main > .add-button {
    
 }
 .drop-div {
-
     border-bottom: 1px solid  var(--text-color-red);
     font-size: 1.5em;
     padding-left: 0.2em;
@@ -119,8 +118,12 @@ main > .add-button {
     display: none;
     position: relative;
 }
+.dropdown-content > div:last-child {
+    border-radius: 0 0 10px 10px;
+}
 .sort:hover .dropdown-content {
-    display: block;
+	display: block;
+	border-radius: 10px 10px 10px 10px;
     
 }
 .dropdown-content{
@@ -128,7 +131,7 @@ main > .add-button {
 }
 .dropdown-content div {
     padding: 1em;
-    padding-left: 0.5em;
+    padding-left: 1em;
 }
 .desktop-menu {
     display: none;
@@ -181,7 +184,7 @@ main > .add-button {
     ::placeholder {
         color: inherit;
         opacity: 1;
-        font-size: 1.5em;
+        font-size: 1.2em;
         
     }  
 }
@@ -206,37 +209,29 @@ main > .add-button {
    
 /* DETTA PILLAR VI MED*/
 
-    .listcomponent-menu input {
-        background: transparent;
-        padding: 0.2em;
-        border-radius: 0%;
-        padding: 0.55em;
-        margin-top: 1.2rem;
-        width: calc(80vw - 21rem - 10rem);
-        max-width: calc(39rem - 15rem);
-    }
+    
+    /* .listcomponent-menu .sort {
+        width: (30vw - 21rem - 15rem);
+        max-width: calc(25rem - 15rem);
+    } */
     .listcomponent-menu input.red{
-        color: var(--background-color-red);
-        border-bottom: 1px solid var(--background-color-red);
+        color: var(--error-color-red);
+        border-bottom: 1px solid var(--error-color-red);
     }
     .listcomponent-menu input.yellow{
-        color: var(--background-color-yellow);
-        border-bottom: 1px solid var(--background-color-yellow);
-        
+        color: var(--error-color-yellow);
+        border-bottom: 1px solid var(--error-color-yellow);
     }
     .listcomponent-menu input.green{
-        color: var(--background-color-green);
-        border-bottom: 1px solid var(--background-color-green);
+        color: var(--error-color-green);
+        border-bottom: 1px solid var(--error-color-green);
     }
 
     .listcomponent-menu input:focus {
         outline: none;
     }
     ::placeholder {
-        color: inherit;
-        opacity: 1;
-        font-size: 1.5em;
-        
+        color: inherit;        
     }  
     
     .listcomponent-menu {
@@ -244,34 +239,48 @@ main > .add-button {
         flex-direction: row-reverse;
         align-items: flex-start;
         justify-content: space-between;
-        width: calc(80vw - 21rem);
+        width: calc(75vw - 21rem);
         max-width: 39rem;
-        padding-right: 2rem;
+        /* padding-right: 2rem; */
         position: absolute;
         right: 0;
-        top: -5rem;
-        /* border: 1px solid blue; */
-
+        top: -4rem;
         
     }
+    
+    .listcomponent-menu input {
+        background: transparent;
+        padding: 0.2em;
+        border-radius: 0%;
+        padding: 0.55em;   
+        width: calc(80vw - 21rem - 10rem);
+		max-width: calc(39rem - 20rem);
+		margin-top: 0.81em;
+		margin-right: 0.8em;
+    }
+    
     .sort {
         position: relative;
         display: inline-block;
-        width: 10em;
-        border-radius: 10px;
+        width: 8rem;
+		border-radius: 10px;
+
+		
+        
     }
     .sort:hover{
         border: 1px solid white;
 
-        border-radius: 10px 10px 0px 0px;
+        border-radius: 10px 10px 10px 10px;
     }
       
-      .drop-div {
-        border: 1px solid  var(--text-color-red);
-        border: none;
-        padding: 0.5em;
-        font-size: 1.5em;
-       
+	.drop-div {
+		padding: 0.8em;
+		border-radius: 5px;
+		border: none;
+		width: 10rem;
+		font-weight: bolder;
+		font-size: 1.2rem;
     }
 
      main {
@@ -292,9 +301,11 @@ main > .add-button {
        text-align: right;
        
     }
-    
-
-     
+   
+    .listcomponent-menu > div{
+        /* border: 1px solid black; */
+        margin: 0px;
+    }     
 }
 @media screen and (max-width: 1130px){
     .main{
@@ -303,4 +314,5 @@ main > .add-button {
         grid-gap:1em;
         
     }
+   
 }

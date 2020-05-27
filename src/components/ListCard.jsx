@@ -137,7 +137,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             </div>
          
             <div className='edit-radio-container'>
-                <p>{usedBeforeText}</p>
+                <p>{usedBeforeText}:</p>
                 <label htmlFor='yes'>Yes</label>
                 <input type='radio' id='yes' name='usedBefore' onClick={()=>setEditUsedBefore('Yes')}/>
                 <label htmlFor='no'>No</label>
@@ -152,7 +152,7 @@ const ListCard=({title, creator, usedBefore, rating, comment})=>{
             </div>
           
             <div className='comment-container'>
-            <label htmlFor='comment' className='comment-label'>Comment:</label>
+                <label htmlFor='comment' className='comment-label'>Comment:</label>
                 <textarea id='comment'  value={editComment} onChange={event=>setEditComment(event.target.value)}/>
             </div>
   

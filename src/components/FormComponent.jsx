@@ -10,7 +10,6 @@ import { screenActions } from '../features/screenReducer';
 import bookIcon from '../assets/good.png';
 import musicIcon from '../assets/music.png';
 import movieIcon from '../assets/video-camera.png';
-
 const FormComponent = ()=>{
     const {register, handleSubmit, errors } = useForm();
     const [usedBefore, setUsedBefore] = useState(null);
@@ -24,7 +23,6 @@ const FormComponent = ()=>{
     let movieTab='';
     let buttonClass='';
     let errorClass='';
-
     const onSubmit = (data) => {
         if(category === 'music'){
             dispatch(musicListActions.addToMusicList(data));
@@ -79,13 +77,9 @@ const FormComponent = ()=>{
                 <button className={'tab background-red'+musicTab} onClick={()=> dispatch(categoryActions.choseMusic())}><img src={musicIcon} alt="Go to music category" className="music-icon"/></button>   
                 <button className={'tab background-yellow'+bookTab} onClick={()=> dispatch(categoryActions.choseBooks())}><img src={bookIcon} alt="Go to book category" className="book-icon"/></button>
                 <button className={'tab background-green'+movieTab} onClick={()=> dispatch(categoryActions.choseMovies())}><img src={movieIcon} alt="Go to movie category" className="movie-icon"/></button>
-
             </nav>
-
             <form className={colorFormClass} onSubmit={handleSubmit(onSubmit)}>
                 <h2>{h2}</h2>
-
-				
 				<label htmlFor="title">{titleText}</label>
 				<div className="form-input-container">
 					<input className={colorInputClass} id="title" type="text" ref={register({ required: true, minLength:2, maxLength:20 })} name="title"/>
@@ -120,10 +114,10 @@ const FormComponent = ()=>{
                 </div>
 				<label htmlFor="comment">Comment</label>
 				<div className="form-textarea-container">
-					<textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register({maxLength:30})} name="comment"/>
-					{errors.comment && errors.comment.type === 'maxLength' && <span className={errorClass}>Max 30 characters</span>}
+					<textarea className={colorInputClass}  id="comment" cols="30" rows="8" ref={register({maxLength:60})} name="comment"/>
+					{errors.comment && errors.comment.type === 'maxLength' && <span className={errorClass}>Max 60 characters</span>}
 				</div>
-                <input type="submit" className={buttonClass + " submit-button"}/>
+                <input type="submit" value='Submit' className={buttonClass + " submit-button"}/>
             </form>
 		</div>
     )
