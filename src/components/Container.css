@@ -18,7 +18,7 @@ section {
 
   section{
     width: 75vw;
-    max-width: 60rem;
+    max-width: 65rem;
     max-height: 70vh;
     margin: 5rem auto;
     padding: 0 3.5rem 2rem;
@@ -76,6 +76,6 @@ section {
 
 @media(max-height: 800px) and (min-width: 700px){
   section {
-    max-height: 60vh;
+    max-height: 65vh;
   }
 }

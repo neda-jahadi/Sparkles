@@ -52,7 +52,7 @@ img.go-back:hover{
     position: static;
     width: 75vw;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+   /*  padding-bottom: 2rem; */
   }
   img.big{
     width: 35rem;

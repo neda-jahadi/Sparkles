@@ -244,7 +244,7 @@ main > .add-button {
         /* padding-right: 2rem; */
         position: absolute;
         right: 0;
-        top: -5rem;
+        top: -4rem;
         
     }
     
@@ -252,11 +252,11 @@ main > .add-button {
         background: transparent;
         padding: 0.2em;
         border-radius: 0%;
-        padding: 0.55em;
-        margin-top: 1.2rem;
-       
-        width: calc(80vw - 21rem - 8rem);
-        max-width: calc(39rem - 20rem);
+        padding: 0.55em;   
+        width: calc(80vw - 21rem - 10rem);
+		max-width: calc(39rem - 20rem);
+		margin-top: 0.81em;
+		margin-right: 0.8em;
     }
     
     .sort {
@@ -264,6 +264,7 @@ main > .add-button {
         display: inline-block;
         width: 8rem;
 		border-radius: 10px;
+
 		
         
     }
