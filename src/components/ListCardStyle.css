@@ -80,6 +80,9 @@
     cursor:pointer;
    
 }
+.list-card span{
+	font-weight: 500;
+}
 
 
 /*================== Här börjar edit-card================== */
