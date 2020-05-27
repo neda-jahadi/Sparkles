@@ -206,31 +206,22 @@ main > .add-button {
    
 /* DETTA PILLAR VI MED*/
 
-    .listcomponent-menu input {
-        background: transparent;
-        padding: 0.2em;
-        border-radius: 0%;
-        padding: 0.55em;
-        margin-top: 1.2rem;
-        width: calc(60vw - 21rem - 10rem);
-        max-width: calc(39rem - 15rem);
-    }
+    
     /* .listcomponent-menu .sort {
         width: (30vw - 21rem - 15rem);
         max-width: calc(25rem - 15rem);
     } */
     .listcomponent-menu input.red{
-        color: var(--background-color-red);
-        border-bottom: 1px solid var(--background-color-red);
+        color: var(--error-color-red);
+        border-bottom: 1px solid var(--error-color-red);
     }
     .listcomponent-menu input.yellow{
-        color: var(--background-color-yellow);
-        border-bottom: 1px solid var(--background-color-yellow);
-        
+        color: var(--error-color-yellow);
+        border-bottom: 1px solid var(--error-color-yellow);
     }
     .listcomponent-menu input.green{
-        color: var(--background-color-green);
-        border-bottom: 1px solid var(--background-color-green);
+        color: var(--error-color-green);
+        border-bottom: 1px solid var(--error-color-green);
     }
 
     .listcomponent-menu input:focus {
@@ -248,21 +239,32 @@ main > .add-button {
         flex-direction: row-reverse;
         align-items: flex-start;
         justify-content: space-between;
-        width: calc(63vw - 21rem);
+        width: calc(75vw - 21rem);
         max-width: 39rem;
         /* padding-right: 2rem; */
         position: absolute;
         right: 0;
         top: -5rem;
-        /* border: 1px solid blue; */
-
         
     }
+    
+    .listcomponent-menu input {
+        background: transparent;
+        padding: 0.2em;
+        border-radius: 0%;
+        padding: 0.55em;
+        margin-top: 1.2rem;
+       
+        width: calc(80vw - 21rem - 8rem);
+        max-width: calc(39rem - 20rem);
+    }
+    
     .sort {
         position: relative;
         display: inline-block;
-        width: 10em;
+        width: 8rem;
         border-radius: 10px;
+        
     }
     .sort:hover{
         border: 1px solid white;
@@ -313,15 +315,4 @@ main > .add-button {
         
     }
    
-}
-@media screen and (max-width: 880px){
-    .listcomponent-menu input {
-        width: calc(60vw - 21rem - 10rem);
-        max-width: calc(39rem - 15rem);
-    }
-    .listcomponent-menu .sort {
-        width: 7rem;
-        /* max-width: calc(25rem - 15rem); */
-        border: 1px solid blue;
-    }
 }
