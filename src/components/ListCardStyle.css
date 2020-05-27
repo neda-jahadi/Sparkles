@@ -157,6 +157,7 @@
 .save-edit-button{
     border:1px solid orange;
     grid-column:1/13;
+    align-self:end;
     border-radius:5px;
     height:30px;
 }
