@@ -1,7 +1,7 @@
 
 {
   "homepage": 
-    "https://LadyLockheed.github.io/sparkle-library",
+    "https://neda-jahadi.github.io/sparkles",
   
   "name": "sparkle-library",
   "version": "0.1.0",
@@ -19,7 +19,7 @@
     "redux": "^4.0.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=4000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
